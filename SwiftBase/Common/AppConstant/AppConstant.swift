@@ -7,12 +7,22 @@
 
 import Foundation
 
+/// Values that can only be filled once the app exists on App Store Connect.
+///
+/// 🔎 Grep the whole project for `TODO: RELEASE` to jump to every placeholder
+///    you must fill before submitting (see AppStore/RELEASE_STEPS.md).
 struct AppConstants {
-    /// App Store numeric id — fill once the app is registered. Drives the
-    /// share link (and the rate URL if you switch to a manual one).
+    /// App Store numeric id — the digits after "id" in the store URL,
+    /// e.g. `apps.apple.com/app/id6701234567` → `"6701234567"`.
+    /// Drives the Settings → Share link. While empty, Share sends just the name.
+    // TODO: RELEASE — paste the App Store id here after the app is created (Step 1.3).
     static let appId = ""
-    /// Privacy-policy URL for the Settings "Privacy Policy" row. While empty,
-    /// the row is shown but tapping it does nothing.
+
+    /// Published privacy-policy URL for the Settings → "Privacy Policy" row.
+    /// While empty, the row still shows but tapping it does nothing.
+    // TODO: RELEASE — set the privacy-policy URL (same one used in App Privacy, Step 4).
     static let policyLink = ""
+
+    /// Full App Store page link, built from `appId`. Used by Share.
     static let appLi = "https://apps.apple.com/app/id\(appId)"
 }
