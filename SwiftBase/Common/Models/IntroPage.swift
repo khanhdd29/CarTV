@@ -9,30 +9,15 @@ import SwiftUI
 
 struct IntroPage: Identifiable {
     let id = UUID()
-    let systemImage: String
+    /// Full-bleed background image (asset catalog name).
+    let imageName: String
     let title: String
     let message: String
-    let tint: Color
 
-    /// The three slides shown in order.
+    /// The three slides shown in order. Localized strings are reused as-is.
     static let all: [IntroPage] = [
-        IntroPage(
-            systemImage: "square.grid.2x2.fill",
-            title: "intro_title_1",
-            message: "intro_message_1",
-            tint: .blue
-        ),
-        IntroPage(
-            systemImage: "bolt.fill",
-            title: "intro_title_2",
-            message: "intro_message_2",
-            tint: .orange
-        ),
-        IntroPage(
-            systemImage: "checkmark.seal.fill",
-            title: "intro_title_3",
-            message: "intro_message_3",
-            tint: .green
-        )
+        IntroPage(imageName: "onboard_1", title: "intro_title_1", message: "intro_message_1"),
+        IntroPage(imageName: "onboard_2", title: "intro_title_2", message: "intro_message_2"),
+        IntroPage(imageName: "onboard_3", title: "intro_title_3", message: "intro_message_3")
     ]
 }

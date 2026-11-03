@@ -4,6 +4,8 @@
 //
 //  Created by VanTuan on 18/6/26.
 //
+//  Full-bleed cinematic onboarding: a photo per page with a dark scrim and the
+//  copy pinned to the bottom, over a fixed dots + CTA bar.
 //  Native ads are preserved under `MONETIZATION_ENABLED` (off in v1).
 //
 
@@ -38,80 +40,82 @@ struct IntroView: View {
     #endif
 
     var body: some View {
-        VStack(spacing: 0) {
-            skipBar
-
+        ZStack(alignment: .bottom) {
             TabView(selection: $index) {
                 ForEach(Array(pages.enumerated()), id: \.element.id) { offset, page in
-                    pageView(page)
-                        .tag(offset)
+                    pageView(page).tag(offset)
                 }
             }
             .tabViewStyle(.page(indexDisplayMode: .never))
+            .ignoresSafeArea()
 
-            pageIndicator
-
-            primaryButton
-
-            #if MONETIZATION_ENABLED
-            if let vm = currentAdVM {
-                NativeContentView(nativeViewModel: vm, style: .nativeNormalMediaCtaTop)
-                    .padding(.horizontal)
-                    .padding(.bottom, 8)
-            }
-            #endif
+            bottomBar
         }
+        .overlay(alignment: .top) { skipBar }
+        .background(Color.black)
         #if MONETIZATION_ENABLED
         .onAppear { loadAds() }
         #endif
         .trackScreen(.intro)
     }
 
-    /// Custom page dots — no pill background, current page tinted.
+    // MARK: Page
+
+    private func pageView(_ page: IntroPage) -> some View {
+        ZStack(alignment: .bottomLeading) {
+            GeometryReader { geo in
+                Image(page.imageName)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: geo.size.width, height: geo.size.height)
+                    .clipped()
+            }
+            LinearGradient(
+                colors: [.clear, .black.opacity(0.35), .black.opacity(0.94)],
+                startPoint: .top, endPoint: .bottom
+            )
+            VStack(alignment: .leading, spacing: 12) {
+                Text(page.title.localized)
+                    .font(.system(size: 34, weight: .heavy))
+                    .foregroundStyle(.white)
+                    .fixedSize(horizontal: false, vertical: true)
+                Text(page.message.localized)
+                    .font(.body)
+                    .foregroundStyle(.white.opacity(0.82))
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+            .padding(.horizontal, 28)
+            .padding(.bottom, 230)
+            .frame(maxWidth: .infinity, alignment: .leading)
+        }
+        .ignoresSafeArea()
+    }
+
+    // MARK: Bottom bar (fixed)
+
+    private var bottomBar: some View {
+        VStack(spacing: 18) {
+            pageIndicator
+            #if MONETIZATION_ENABLED
+            if let vm = currentAdVM {
+                NativeContentView(nativeViewModel: vm, style: .nativeNormalMediaCtaTop)
+                    .padding(.horizontal, 4)
+            }
+            #endif
+            primaryButton
+        }
+        .padding(.horizontal, 24)
+        .padding(.bottom, 24)
+    }
+
     private var pageIndicator: some View {
         HStack(spacing: 8) {
             ForEach(pages.indices, id: \.self) { i in
-                Circle()
-                    .fill(i == index ? Color.accentColor : Color.secondary.opacity(0.3))
-                    .frame(width: 8, height: 8)
-                    .animation(.easeInOut(duration: 0.2), value: index)
+                Capsule()
+                    .fill(i == index ? Color.white : Color.white.opacity(0.35))
+                    .frame(width: i == index ? 22 : 8, height: 8)
+                    .animation(.easeInOut(duration: 0.25), value: index)
             }
-        }
-        .padding(.top, 8)
-    }
-
-    private var skipBar: some View {
-        HStack {
-            Spacer()
-            Button("skip".localized) { coordinator.finishOnboarding() }
-                .font(.subheadline.weight(.medium))
-                .foregroundStyle(.secondary)
-                .opacity(showSkip && !isLast ? 1 : 0)
-                .disabled(!showSkip || isLast)
-        }
-        .padding(.horizontal)
-        .padding(.top, 12)
-        .frame(height: 28)
-    }
-
-    private func pageView(_ page: IntroPage) -> some View {
-        VStack(spacing: 24) {
-            Spacer()
-            Image(systemName: page.systemImage)
-                .font(.system(size: 96, weight: .bold))
-                .foregroundStyle(page.tint)
-            VStack(spacing: 12) {
-                Text(page.title.localized)
-                    .font(.title.bold())
-                    .multilineTextAlignment(.center)
-                Text(page.message.localized)
-                    .font(.body)
-                    .foregroundStyle(.secondary)
-                    .multilineTextAlignment(.center)
-            }
-            .padding(.horizontal, 32)
-            Spacer()
-            Spacer()
         }
     }
 
@@ -125,10 +129,28 @@ struct IntroView: View {
         } label: {
             Text((isLast ? "get_started" : "next").localized)
                 .font(.headline)
-                .foregroundStyle(Color.accentColor)
+                .foregroundStyle(.white)
                 .frame(maxWidth: .infinity)
-                .padding()
+                .padding(.vertical, 16)
+                .background(AppColors.brandGradient, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
+                .shadow(color: AppColors.primary.opacity(0.5), radius: 16, y: 8)
         }
+        .buttonStyle(.plain)
+    }
+
+    private var skipBar: some View {
+        HStack {
+            Spacer()
+            Button("skip".localized) { coordinator.finishOnboarding() }
+                .font(.subheadline.weight(.semibold))
+                .foregroundStyle(.white.opacity(0.9))
+                .padding(.horizontal, 14).padding(.vertical, 8)
+                .background(.black.opacity(0.28), in: Capsule())
+                .opacity(showSkip && !isLast ? 1 : 0)
+                .disabled(!showSkip || isLast)
+        }
+        .padding(.horizontal, 16)
+        .padding(.top, 10)
     }
 
     #if MONETIZATION_ENABLED
