@@ -25,6 +25,8 @@ final class AppDelegate: NSObject, UIApplicationDelegate {
         configureFirebase()
         // Ad SDKs (MobileAds, Facebook, Adjust) are wired from SplashView.
         #endif
+        // Background health refresh (local-only; see HealthRefreshScheduler).
+        HealthRefreshScheduler.register()
         return true
     }
 

@@ -16,6 +16,12 @@
 	<array>
 		<!-- Keep audio playing + enable Picture in Picture when backgrounded. -->
 		<string>audio</string>
+		<!-- Periodic background health re-probe (BGTaskScheduler). -->
+		<string>processing</string>
+	</array>
+	<key>BGTaskSchedulerPermittedIdentifiers</key>
+	<array>
+		<string>com.vtn.SwiftBase.health</string>
 	</array>
 	<key>CFBundleURLTypes</key>
 	<array>

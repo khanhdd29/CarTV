@@ -35,8 +35,12 @@ struct ContainerView: View {
             }
         }
         .onChange(of: scenePhase) { phase in
-            // Re-lock when leaving the app so returning needs the PIN.
-            if phase == .background { appLock.lockIfEnabled() }
+            if phase == .background {
+                // Re-lock when leaving the app so returning needs the PIN, and
+                // queue a background health refresh.
+                appLock.lockIfEnabled()
+                HealthRefreshScheduler.schedule()
+            }
         }
         .background(AppColors.background.ignoresSafeArea())
         .environmentObject(coordinator)
