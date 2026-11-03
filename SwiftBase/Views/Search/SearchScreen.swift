@@ -8,6 +8,7 @@ import Factory
 
 struct SearchScreen: View {
     @StateObject private var viewModel = SearchViewModel()
+    @StateObject private var voice = VoiceSearch()
     @InjectedObject(\.appFlow) private var appFlow: AppFlowCoordinator
     @InjectedObject(\.app) private var app: AppManager
 
@@ -42,7 +43,8 @@ struct SearchScreen: View {
         }
         .cinematicBackground()
         .onAppear { viewModel.onAppear() }
-        .onChange(of: app.activeTab) { if $0 == .search { viewModel.onAppear() } }
+        .onChange(of: app.activeTab) { if $0 == .search { viewModel.onAppear() } else { voice.stop() } }
+        .onChange(of: voice.transcript) { if !$0.isEmpty { viewModel.query = $0 } }
         .task(id: viewModel.query) {
             try? await Task.sleep(nanoseconds: 300_000_000)
             guard !Task.isCancelled else { return }
@@ -59,8 +61,16 @@ struct SearchScreen: View {
                 .autocorrectionDisabled()
                 .foregroundStyle(AppColors.textPrimary)
             if !viewModel.query.isEmpty {
-                Button { viewModel.query = "" } label: {
+                Button { viewModel.query = ""; voice.stop() } label: {
                     Image(systemName: "xmark.circle.fill").foregroundStyle(AppColors.textTertiary)
+                }
+                .buttonStyle(.plain)
+            }
+            if voice.isAvailable {
+                Button { voice.toggle() } label: {
+                    Image(systemName: voice.isListening ? "mic.fill" : "mic")
+                        .foregroundStyle(voice.isListening ? AppColors.favorite : AppColors.secondary)
+                        .frame(width: 24, height: 24)
                 }
                 .buttonStyle(.plain)
             }
