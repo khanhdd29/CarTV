@@ -48,12 +48,20 @@ final class LocalEPGRepository: EPGRepository {
 
     func nowNext(for channel: Channel) async -> EPGNowNext {
         let empty = EPGNowNext(now: nil, next: nil)
-        var tvgId = channel.tvgId
-        if tvgId == nil || tvgId?.isEmpty == true {
-            tvgId = try? await store.tvgId(forStreamURL: channel.streamURL)
-        }
-        guard let id = tvgId, !id.isEmpty else { return empty }
+        guard let id = await resolveTvgId(for: channel) else { return empty }
         return (try? await store.nowNext(tvgId: id, at: Date().timeIntervalSince1970)) ?? empty
+    }
+
+    func schedule(for channel: Channel) async -> [EPGEntry] {
+        guard let id = await resolveTvgId(for: channel) else { return [] }
+        let now = Date().timeIntervalSince1970
+        return (try? await store.schedule(tvgId: id, from: now - 3 * 3600, to: now + 24 * 3600)) ?? []
+    }
+
+    private func resolveTvgId(for channel: Channel) async -> String? {
+        if let id = channel.tvgId, !id.isEmpty { return id }
+        let resolved = try? await store.tvgId(forStreamURL: channel.streamURL)
+        return (resolved?.isEmpty == false) ? resolved : nil
     }
 
     func clear() async {

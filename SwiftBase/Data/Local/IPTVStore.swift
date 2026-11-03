@@ -487,6 +487,24 @@ actor IPTVStore {
         return EPGNowNext(now: nowEntry, next: nextEntry)
     }
 
+    /// All programmes overlapping a window (for the schedule/timeline view).
+    func schedule(tvgId: String, from: Double, to: Double) throws -> [EPGEntry] {
+        let stmt = try db.prepare("""
+        SELECT title, start, stop FROM epg
+        WHERE tvg_id = ? AND stop > ? AND start < ? ORDER BY start ASC;
+        """)
+        defer { stmt.finalize() }
+        stmt.bind([.text(tvgId), .double(from), .double(to)])
+        var result: [EPGEntry] = []
+        while stmt.stepRow() {
+            result.append(EPGEntry(
+                title: stmt.string(0) ?? "",
+                start: Date(timeIntervalSince1970: stmt.double(1)),
+                stop: Date(timeIntervalSince1970: stmt.double(2))))
+        }
+        return result
+    }
+
     private func readEntry(_ stmt: Statement) -> EPGEntry? {
         guard stmt.stepRow() else { return nil }
         return EPGEntry(

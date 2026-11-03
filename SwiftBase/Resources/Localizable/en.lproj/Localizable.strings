@@ -165,3 +165,4 @@
 "pin_off" = "Off";
 "pin_set_hint" = "This PIN will be needed to open the app";
 "pin_disable_hint" = "Enter your PIN to turn off the lock";
+"epg_schedule_empty" = "No schedule for this channel";

@@ -19,6 +19,7 @@ struct PlayerScreen: View {
     @State private var hideWorkItem: DispatchWorkItem?
     @State private var scrub: Double = 0
     @State private var isScrubbing = false
+    @State private var showSchedule = false
 
     private var engine: AVPlayerEngine { controller.avEngine }
 
@@ -40,6 +41,11 @@ struct PlayerScreen: View {
         .onAppear { scheduleHide(); OrientationGate.allowAll() }
         .onDisappear { controller.stop(); OrientationGate.lockPortrait() }
         .statusBarHidden()
+        .sheet(isPresented: $showSchedule) {
+            if let channel = controller.current {
+                ChannelScheduleView(channel: channel) { showSchedule = false }
+            }
+        }
         .trackScreen(.player)
     }
 
@@ -283,6 +289,7 @@ struct PlayerScreen: View {
                 Spacer(minLength: 8)
                 Text("\(clock(now.start))–\(clock(now.stop))")
                     .font(.caption2.monospacedDigit()).foregroundStyle(.white.opacity(0.6))
+                Image(systemName: "chevron.right").font(.caption2.weight(.bold)).foregroundStyle(.white.opacity(0.5))
             }
             ProgressView(value: now.progress())
                 .tint(AppColors.secondary)
@@ -299,6 +306,8 @@ struct PlayerScreen: View {
         }
         .padding(.horizontal, 14).padding(.vertical, 10)
         .background(.black.opacity(0.42), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+        .contentShape(Rectangle())
+        .onTapGesture { cancelHide(); showSchedule = true }
         .padding(.horizontal, 16)
         .padding(.top, 8)
     }

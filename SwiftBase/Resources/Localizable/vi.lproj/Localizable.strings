@@ -165,3 +165,4 @@
 "pin_off" = "Tắt";
 "pin_set_hint" = "Cần mã PIN này để mở ứng dụng";
 "pin_disable_hint" = "Nhập PIN để tắt khoá";
+"epg_schedule_empty" = "Kênh này chưa có lịch";

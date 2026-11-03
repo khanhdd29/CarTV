@@ -22,6 +22,9 @@ protocol EPGRepository {
     /// the id is resolved from its stream URL.
     func nowNext(for channel: Channel) async -> EPGNowNext
 
+    /// The upcoming schedule for a channel (a day-ish window).
+    func schedule(for channel: Channel) async -> [EPGEntry]
+
     /// Remove the source + cached guide.
     func clear() async
 }
