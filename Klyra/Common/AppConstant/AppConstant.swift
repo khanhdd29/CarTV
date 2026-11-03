@@ -20,7 +20,7 @@ struct AppConstants {
     /// Published privacy-policy URL for the Settings → "Privacy Policy" row.
     /// While empty, the row still shows but tapping it does nothing.
     // TODO: RELEASE — set the privacy-policy URL (same one used in App Privacy, Step 4).
-    static let policyLink = ""
+    static let policyLink = "https://nguyenthingocanhhh.netlify.app/policy"
 
     /// Full App Store page link, built from `appId`. Used by Share.
     static let appLi = "https://apps.apple.com/app/id\(appId)"
