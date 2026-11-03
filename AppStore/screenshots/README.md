@@ -1,8 +1,12 @@
 # App Store screenshots (Klyra)
 
-- `en/01..04.png` — framed marketing screenshots, **1320×2868** (iPhone 6.9", the required size). Upload these to App Store Connect → 1.0 Prepare for Submission → iPhone 6.9" Display, in order.
-- `raw/` — the plain device captures used to build them.
-- Built with **demo data only**: invented channel names + abstract logos, **no real brands** (App Review 5.2.3). The player frame uses the Creative-Commons film *Tears of Steel* as sample footage.
+- `en/01..04.png` — framed marketing screenshots, **1206×2622** (iPhone 6.3"
+  "medium display" — one of the sizes App Store Connect accepts). Upload in order.
+  For the 6.9" slot pass `1320 2868` to the framing script instead.
+- `raw/` — the plain device captures used to build them (iPhone 17 Pro Max, 1320×2868).
+- Built with **demo data only**: invented channel names + abstract logos, **no real
+  brands** (App Review 5.2.3). The player frame uses the Creative-Commons film
+  *Tears of Steel* as sample footage.
 
 ## Regenerate
 
@@ -18,20 +22,22 @@
 3. **Capture the raw screens** (one per store slide) into a folder, e.g. `raw/`:
 
    ```bash
-   xcrun simctl io booted screenshot raw/cap1_channels.png   # Channels (with content)
-   xcrun simctl io booted screenshot raw/cap4_add.png        # Add playlist
-   xcrun simctl io booted screenshot raw/cap3_settings.png   # Settings
-   xcrun simctl io booted screenshot raw/cap2_player.png     # Player (open "Cinema One")
+   DEV=<simulator-udid>
+   xcrun simctl io $DEV screenshot raw/cap1_channels.png   # Channels (with content)
+   xcrun simctl io $DEV screenshot raw/cap4_add.png        # Add playlist
+   xcrun simctl io $DEV screenshot raw/cap3_settings.png   # Settings
+   xcrun simctl io $DEV screenshot raw/cap2_player.png     # Player (open "Cinema One")
    ```
 
-   ⚠️ For the **player** shot the controls auto-hide after 4s. Temporarily raise the
-   delay in `Klyra/Views/Player/PlayerScreen.swift` → `scheduleHide()`
-   (`.now() + 4` → `.now() + 600`), rebuild, capture, then **revert to 4**.
+   For the **player** shot, open *Cinema One*, let it buffer, **tap once to show the
+   controls**, then capture within ~4s (they auto-hide). If that's too tight, raise
+   `scheduleHide()` in `Klyra/Views/Player/PlayerScreen.swift` (`.now() + 4` →
+   `.now() + 600`), rebuild, capture, then revert.
 
-4. **Frame them**
+4. **Frame them** (default 1206×2622; pass `W H` for another slot):
 
    ```bash
-   python3 scripts/store/frame_screenshots.py raw AppStore/screenshots/en
+   python3 scripts/store/frame_screenshots.py raw AppStore/screenshots/en 1206 2622
    ```
 
    Edit the headline / subcaption map (`CAPTIONS`) at the top of
@@ -39,5 +45,6 @@
 
 ## Notes
 - App is **iPhone-only** → no iPad screenshots needed.
-- These are a first pass ("thử"). Polish ideas: nicer demo footage without a
-  burned-in bitrate label, add a Car-mode and an EPG-grid slide (5 total).
+- The player footage has a small burned-in bitrate label + "Unified Streaming"
+  watermark (from the Tears of Steel demo stream). Swap for your own demo clip to
+  remove it. Optional extra slides: Car mode, EPG grid.

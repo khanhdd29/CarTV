@@ -1,19 +1,20 @@
 #!/usr/bin/env python3
-"""Compose framed App Store marketing screenshots (1320x2868, iPhone 6.9").
+"""Compose framed App Store marketing screenshots.
 
 Takes raw device captures and places each on a brand-gradient background with a
 headline + subcaption. Capture the raw screens first with:
     xcrun simctl io booted screenshot <raw_dir>/<name>.png
 
 Usage:
-    python3 scripts/store/frame_screenshots.py <raw_dir> <out_dir>
+    python3 scripts/store/frame_screenshots.py <raw_dir> <out_dir> [W] [H]
 
+Output size defaults to 1206x2622 (the iPhone 6.3" "medium display" size that
+App Store Connect accepts). Pass W H for another slot, e.g. 1320 2868 (6.9").
 Map a headline/subcaption to each raw file in CAPTIONS below (keyed by filename).
 """
 import sys, os, math, numpy as np
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
 
-W, H = 1320, 2868
 def hx(h): return ((h >> 16) & 255, (h >> 8) & 255, h & 255)
 SKY, BLUE, INDIGO = hx(0x4FB0F6), hx(0x2E7BF0), hx(0x223FC0)
 
@@ -22,7 +23,7 @@ CAPTIONS = {
     "cap1_channels.png": (["Your channels,", "organized"],
                           "Groups, search, favorites & health at a glance"),
     "cap4_add.png":      (["Add M3U, Xtream", "or a QR code"],
-                          "Your own playlists — login kept in the Keychain"),
+                          "Your own playlists - login kept in the Keychain"),
     "cap3_settings.png": (["Guide, health &", "parental lock"],
                           "EPG now/next, A-Z, data saver, 16 languages"),
     "cap2_player.png":   (["A player built", "for watching"],
@@ -30,7 +31,7 @@ CAPTIONS = {
 }
 ORDER = ["cap1_channels.png", "cap4_add.png", "cap3_settings.png", "cap2_player.png"]
 
-def grad(stops, angle=120):
+def grad(W, H, stops, angle=120):
     ar = math.radians(angle); dx, dy = math.cos(ar), math.sin(ar)
     X, Y = np.meshgrid(np.arange(W), np.arange(H)); p = X * dx + Y * dy
     p = (p - p.min()) / (p.max() - p.min())
@@ -55,29 +56,30 @@ def rounded(img, rad):
     ImageDraw.Draw(m).rounded_rectangle([0, 0, *img.size], radius=rad, fill=255)
     out = Image.new("RGBA", img.size, (0, 0, 0, 0)); out.paste(img, (0, 0), m); return out
 
-def frame(raw_path, head, sub):
-    bg = grad([(0.0, SKY), (0.5, BLUE), (1.0, INDIGO)], 120).convert("RGBA")
+def frame(raw_path, head, sub, W, H):
+    s = W / 1320.0                       # scale layout to the chosen width
+    bg = grad(W, H, [(0.0, SKY), (0.5, BLUE), (1.0, INDIGO)], 120).convert("RGBA")
     d = ImageDraw.Draw(bg)
-    HEAD, SUB = font(96), font(46, bold=False)
-    y = 150
+    HEAD, SUB = font(int(96 * s)), font(int(46 * s), bold=False)
+    y = int(150 * s)
     for ln in head:
         bb = d.textbbox((0, 0), ln, font=HEAD); w = bb[2] - bb[0]
         d.text((W / 2 - w / 2 - bb[0], y), ln, font=HEAD, fill=(255, 255, 255))
-        y += (bb[3] - bb[1]) + 14
+        y += (bb[3] - bb[1]) + int(14 * s)
     bb = d.textbbox((0, 0), sub, font=SUB)
-    d.text((W / 2 - (bb[2] - bb[0]) / 2, y + 6), sub, font=SUB, fill=(234, 242, 255))
+    d.text((W / 2 - (bb[2] - bb[0]) / 2, y + int(6 * s)), sub, font=SUB, fill=(234, 242, 255))
     shot = Image.open(raw_path).convert("RGB")
-    tw = 1040; th = int(tw * shot.size[1] / shot.size[0])
-    shot = rounded(shot.resize((tw, th), Image.LANCZOS), 62)
-    sx, sy = (W - tw) // 2, 560
+    tw = int(1040 * s); th = int(tw * shot.size[1] / shot.size[0])
+    shot = rounded(shot.resize((tw, th), Image.LANCZOS), int(62 * s))
+    sx, sy = (W - tw) // 2, int(560 * s)
     sh = Image.new("RGBA", (W, H), (0, 0, 0, 0))
-    sh.paste(Image.new("RGBA", (tw, th), (0, 0, 0, 120)), (sx, sy + 18),
-             rounded(Image.new("RGB", (tw, th)), 62))
-    bg.alpha_composite(sh.filter(ImageFilter.GaussianBlur(40)))
+    sh.paste(Image.new("RGBA", (tw, th), (0, 0, 0, 120)), (sx, sy + int(18 * s)),
+             rounded(Image.new("RGB", (tw, th)), int(62 * s)))
+    bg.alpha_composite(sh.filter(ImageFilter.GaussianBlur(int(40 * s))))
     bg.alpha_composite(shot, (sx, sy))
     return bg.convert("RGB")
 
-def main(raw, out):
+def main(raw, out, W, H):
     os.makedirs(out, exist_ok=True)
     for i, fn in enumerate(ORDER, 1):
         src = os.path.join(raw, fn)
@@ -85,9 +87,11 @@ def main(raw, out):
             print("skip (missing):", fn); continue
         head, sub = CAPTIONS[fn]
         outp = os.path.join(out, f"{i:02d}_{fn.split('_', 1)[1]}")
-        frame(src, head, sub).save(outp); print("wrote", outp)
+        frame(src, head, sub, W, H).save(outp); print("wrote", outp, f"({W}x{H})")
 
 if __name__ == "__main__":
     raw = sys.argv[1] if len(sys.argv) > 1 else "caps"
     out = sys.argv[2] if len(sys.argv) > 2 else "AppStore/screenshots/en"
-    main(raw, out)
+    W = int(sys.argv[3]) if len(sys.argv) > 3 else 1206
+    H = int(sys.argv[4]) if len(sys.argv) > 4 else 2622
+    main(raw, out, W, H)
