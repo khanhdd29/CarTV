@@ -14,6 +14,7 @@ final class SearchViewModel: ObservableObject {
     @Injected(\.playlistRepository) private var playlistRepo: PlaylistRepository
     @Injected(\.userDataRepository) private var userRepo: UserDataRepository
     @Injected(\.playerController) private var player: PlayerController
+    @Injected(\.healthCenter) private var health: HealthCenter
     @Injected(\.app) private var app: AppManager
 
     @Published var query = ""
@@ -30,7 +31,11 @@ final class SearchViewModel: ObservableObject {
         guard !trimmed.isEmpty else { results = []; return }
         isSearching = true
         defer { isSearching = false }
-        results = (try? await playlistRepo.search(trimmed, limit: 200)) ?? []
+        let found = (try? await playlistRepo.search(trimmed, limit: 200)) ?? []
+        results = app.hideDeadChannels
+            ? found.filter { health.status(for: $0.streamURL) != .offline }
+            : found
+        health.autoProbe(found)
     }
 
     func isFavourite(_ channel: Channel) -> Bool { favouriteURLs.contains(channel.streamURL) }

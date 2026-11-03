@@ -139,3 +139,6 @@
 "health_checking" = "Memeriksa tautan…";
 "health_online_n" = "%d aktif";
 "health_offline_n" = "%d mati";
+
+/* Hide dead channels toggle */
+"hide_dead_channels" = "Sembunyikan saluran mati";

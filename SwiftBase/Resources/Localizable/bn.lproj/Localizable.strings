@@ -139,3 +139,6 @@
 "health_checking" = "লিঙ্ক যাচাই করা হচ্ছে…";
 "health_online_n" = "%d টি সচল";
 "health_offline_n" = "%d টি অচল";
+
+/* Hide dead channels toggle */
+"hide_dead_channels" = "অফলাইন চ্যানেল লুকান";

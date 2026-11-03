@@ -139,3 +139,6 @@
 "health_checking" = "リンクを確認中…";
 "health_online_n" = "%d 件が有効";
 "health_offline_n" = "%d 件が無効";
+
+/* Hide dead channels toggle */
+"hide_dead_channels" = "オフラインのチャンネルを隠す";

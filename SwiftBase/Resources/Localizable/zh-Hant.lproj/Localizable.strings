@@ -139,3 +139,6 @@
 "health_checking" = "正在檢查連結…";
 "health_online_n" = "%d 個上線";
 "health_offline_n" = "%d 個失效";
+
+/* Hide dead channels toggle */
+"hide_dead_channels" = "隱藏離線頻道";

@@ -139,3 +139,6 @@
 "health_checking" = "Đang kiểm tra kênh…";
 "health_online_n" = "%d hoạt động";
 "health_offline_n" = "%d lỗi";
+
+/* Hide dead channels toggle */
+"hide_dead_channels" = "Ẩn kênh lỗi";

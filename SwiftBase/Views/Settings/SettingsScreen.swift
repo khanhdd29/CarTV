@@ -4,9 +4,11 @@
 //
 
 import SwiftUI
+import Factory
 
 struct SettingsScreen: View {
     @StateObject private var viewModel = SettingsViewModel()
+    @InjectedObject(\.app) private var app: AppManager
     @EnvironmentObject private var coordinator: AppFlowCoordinator
     @Environment(\.openURL) private var openURL
 
@@ -26,6 +28,8 @@ struct SettingsScreen: View {
                     row("guide".localized, icon: "questionmark.circle.fill", tint: AppColors.secondary) {
                         viewModel.openGuide()
                     }
+                    toggleRow("hide_dead_channels".localized, icon: "eye.slash.fill",
+                              tint: AppColors.favorite, isOn: $app.hideDeadChannels)
                 }
                 .padding(.horizontal, 16)
 
@@ -74,6 +78,12 @@ struct SettingsScreen: View {
             rowContent(title, icon: icon, tint: tint) { chevron }
         }
         .buttonStyle(.plain)
+    }
+
+    private func toggleRow(_ title: String, icon: String, tint: Color, isOn: Binding<Bool>) -> some View {
+        rowContent(title, icon: icon, tint: tint) {
+            Toggle("", isOn: isOn).labelsHidden().tint(AppColors.primary)
+        }
     }
 
     private func rowContent<Trailing: View>(_ title: String, icon: String, tint: Color, @ViewBuilder trailing: () -> Trailing) -> some View {

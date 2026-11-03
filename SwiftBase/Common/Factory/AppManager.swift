@@ -23,5 +23,11 @@ final class AppManager: ObservableObject {
     /// watch recorded) so screens can reload immediately instead of on next appear.
     @Published var dataVersion: Int = 0
 
+    /// When on, channels probed as offline are hidden from the browse lists
+    /// (Playlist Health, Driver 3). Persisted across launches.
+    @Published var hideDeadChannels: Bool = UserDefaults.standard.bool(forKey: "settings.hideDeadChannels") {
+        didSet { UserDefaults.standard.set(hideDeadChannels, forKey: "settings.hideDeadChannels") }
+    }
+
     func bumpData() { dataVersion += 1 }
 }

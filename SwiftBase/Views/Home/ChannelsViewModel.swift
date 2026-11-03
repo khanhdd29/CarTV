@@ -21,6 +21,7 @@ final class ChannelsViewModel: ObservableObject {
     @Injected(\.playlistRepository) private var playlistRepo: PlaylistRepository
     @Injected(\.userDataRepository) private var userRepo: UserDataRepository
     @Injected(\.playerController) private var player: PlayerController
+    @Injected(\.healthCenter) private var health: HealthCenter
     @Injected(\.app) private var app: AppManager
 
     @Published var hero: Channel?
@@ -53,21 +54,34 @@ final class ChannelsViewModel: ObservableObject {
 
             let groups = try await playlistRepo.groups()
             var built: [ChannelRail] = []
+            var loaded: [Channel] = recentsRail + favouritesRail
             for group in groups.prefix(maxGroups) {
                 let channels = try await playlistRepo.channels(group: group, limit: perRail, offset: 0)
-                if !channels.isEmpty {
-                    built.append(ChannelRail(id: group, title: group, channels: channels))
+                loaded += channels
+                let shown = keepLive(channels)
+                if !shown.isEmpty {
+                    built.append(ChannelRail(id: group, title: group, channels: shown))
                 }
             }
             if built.isEmpty {
                 let all = try await playlistRepo.channels(group: nil, limit: 30, offset: 0)
-                built = [ChannelRail(id: "all", title: "all".localized, channels: all)]
+                loaded += all
+                built = [ChannelRail(id: "all", title: "all".localized, channels: keepLive(all))]
             }
             rails = built
-            hero = favouritesRail.first ?? recentsRail.first ?? built.first?.channels.first
+            hero = keepLive(favouritesRail).first ?? keepLive(recentsRail).first ?? built.first?.channels.first
+
+            // Fill in health in the background for anything not yet probed.
+            health.autoProbe(loaded)
         } catch {
             // Soft-fail: leave whatever we had.
         }
+    }
+
+    /// Drop channels known to be offline when the "hide dead" setting is on.
+    private func keepLive(_ channels: [Channel]) -> [Channel] {
+        guard app.hideDeadChannels else { return channels }
+        return channels.filter { health.status(for: $0.streamURL) != .offline }
     }
 
     func isFavourite(_ channel: Channel) -> Bool { favouriteURLs.contains(channel.streamURL) }

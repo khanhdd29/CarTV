@@ -139,3 +139,6 @@
 "health_checking" = "A verificar ligações…";
 "health_online_n" = "%d ativos";
 "health_offline_n" = "%d inativos";
+
+/* Hide dead channels toggle */
+"hide_dead_channels" = "Ocultar canais offline";

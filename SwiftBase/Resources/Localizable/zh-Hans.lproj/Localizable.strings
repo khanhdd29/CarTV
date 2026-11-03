@@ -139,3 +139,6 @@
 "health_checking" = "正在检查链接…";
 "health_online_n" = "%d 个在线";
 "health_offline_n" = "%d 个失效";
+
+/* Hide dead channels toggle */
+"hide_dead_channels" = "隐藏离线频道";

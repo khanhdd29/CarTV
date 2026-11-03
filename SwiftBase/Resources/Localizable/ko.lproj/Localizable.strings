@@ -139,3 +139,6 @@
 "health_checking" = "링크 확인 중…";
 "health_online_n" = "%d개 정상";
 "health_offline_n" = "%d개 끊김";
+
+/* Hide dead channels toggle */
+"hide_dead_channels" = "오프라인 채널 숨기기";

@@ -139,3 +139,6 @@
 "health_checking" = "Bağlantılar denetleniyor…";
 "health_online_n" = "%d çalışıyor";
 "health_offline_n" = "%d çalışmıyor";
+
+/* Hide dead channels toggle */
+"hide_dead_channels" = "Çevrimdışı kanalları gizle";

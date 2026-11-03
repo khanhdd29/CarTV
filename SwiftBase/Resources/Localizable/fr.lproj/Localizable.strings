@@ -139,3 +139,6 @@
 "health_checking" = "Vérification des liens…";
 "health_online_n" = "%d actives";
 "health_offline_n" = "%d inactives";
+
+/* Hide dead channels toggle */
+"hide_dead_channels" = "Masquer les chaînes hors ligne";

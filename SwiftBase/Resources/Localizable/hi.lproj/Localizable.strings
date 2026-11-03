@@ -139,3 +139,6 @@
 "health_checking" = "लिंक जाँचे जा रहे हैं…";
 "health_online_n" = "%d चालू";
 "health_offline_n" = "%d बंद";
+
+/* Hide dead channels toggle */
+"hide_dead_channels" = "ऑफ़लाइन चैनल छिपाएँ";
