@@ -37,6 +37,10 @@ protocol PlaylistRepository {
 
     func playlists() async throws -> [PlaylistRef]
     func deletePlaylist(id: String) async throws
+    func renamePlaylist(id: String, name: String) async throws
+
+    /// Every channel of one playlist (for export / backup).
+    func channels(playlistId: String) async throws -> [Channel]
 
     // MARK: Channel queries (paged — never load the whole list into memory)
 

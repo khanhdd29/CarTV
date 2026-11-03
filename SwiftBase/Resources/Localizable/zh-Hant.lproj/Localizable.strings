@@ -173,3 +173,7 @@
 "guide_more_body" = "Tap the screen for controls. From the ••• menu: subtitles, audio track, playback speed and a sleep timer. Use Picture-in-Picture, turn on Car mode for big buttons, or tap the now/next bar to see the full schedule.";
 "guide_health_title" = "頻道狀態";
 "guide_health_body" = "Green/red dots show which links are alive. In Manage playlists, tap the pulse icon to check a whole playlist; turn on 'Hide offline channels' in Settings to clean up dead ones.";
+
+/* Playlist management */
+"rename_playlist" = "重新命名";
+"export_m3u" = "匯出 .m3u";

@@ -5,9 +5,27 @@
 
 import SwiftUI
 
+/// Identifiable wrapper so a URL can drive a `.sheet(item:)`.
+struct ShareItem: Identifiable {
+    let id = UUID()
+    let url: URL
+}
+
+/// UIActivityViewController bridge for the share sheet.
+struct ActivityView: UIViewControllerRepresentable {
+    let items: [Any]
+    func makeUIViewController(context: Context) -> UIActivityViewController {
+        UIActivityViewController(activityItems: items, applicationActivities: nil)
+    }
+    func updateUIViewController(_ vc: UIActivityViewController, context: Context) {}
+}
+
 struct ManagePlaylistsScreen: View {
     @StateObject private var viewModel = ManagePlaylistsViewModel()
     @State private var pendingDelete: PlaylistRef?
+    @State private var renameTarget: PlaylistRef?
+    @State private var renameText = ""
+    @State private var shareItem: ShareItem?
 
     var body: some View {
         VStack(spacing: 16) {
@@ -42,6 +60,17 @@ struct ManagePlaylistsScreen: View {
         } message: {
             Text("delete_playlist_msg".localized)
         }
+        .alert("rename_playlist".localized, isPresented: Binding(
+            get: { renameTarget != nil }, set: { if !$0 { renameTarget = nil } }
+        )) {
+            TextField("playlist_name".localized, text: $renameText)
+            Button("cancel".localized, role: .cancel) { renameTarget = nil }
+            Button("save".localized) {
+                if let t = renameTarget { viewModel.rename(t, to: renameText) }
+                renameTarget = nil
+            }
+        }
+        .sheet(item: $shareItem) { item in ActivityView(items: [item.url]) }
         .trackScreen(.managePlaylists)
     }
 
@@ -117,6 +146,14 @@ struct ManagePlaylistsScreen: View {
                 .fill(AppColors.surface.opacity(0.75))
                 .overlay(RoundedRectangle(cornerRadius: 16, style: .continuous).stroke(AppColors.border, lineWidth: 1))
         )
+        .contextMenu {
+            Button {
+                renameText = playlist.name; renameTarget = playlist
+            } label: { Label("rename_playlist".localized, systemImage: "pencil") }
+            Button {
+                Task { if let url = await viewModel.exportM3U(playlist) { shareItem = ShareItem(url: url) } }
+            } label: { Label("export_m3u".localized, systemImage: "square.and.arrow.up") }
+        }
     }
 
     private func healthSummaryRow(_ s: (online: Int, offline: Int)) -> some View {

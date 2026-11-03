@@ -136,6 +136,10 @@ actor IPTVStore {
         try db.run("UPDATE playlists SET channel_count = ? WHERE id = ?;", [.int(Int64(count)), .text(playlistId)])
     }
 
+    func renamePlaylist(id: String, name: String) throws {
+        try db.run("UPDATE playlists SET name = ? WHERE id = ?;", [.text(name), .text(id)])
+    }
+
     func playlists() throws -> [PlaylistRef] {
         let stmt = try db.prepare("SELECT id, name, source_url, type, added_at, channel_count FROM playlists ORDER BY added_at DESC;")
         defer { stmt.finalize() }

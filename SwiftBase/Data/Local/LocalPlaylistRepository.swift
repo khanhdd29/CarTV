@@ -152,6 +152,14 @@ final class LocalPlaylistRepository: PlaylistRepository {
         KeychainStore.delete("xtream.\(id).pass")
         try await store.deletePlaylist(id: id)
     }
+    func renamePlaylist(id: String, name: String) async throws {
+        try await store.renamePlaylist(id: id, name: name)
+    }
+
+    func channels(playlistId: String) async throws -> [Channel] {
+        try await store.channels(playlistId: playlistId)
+    }
+
     func groups() async throws -> [String] { try await store.groups() }
 
     func channels(group: String?, limit: Int, offset: Int) async throws -> [Channel] {

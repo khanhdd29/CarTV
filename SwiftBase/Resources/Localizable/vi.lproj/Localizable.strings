@@ -173,3 +173,7 @@
 "guide_more_body" = "Chạm màn hình để hiện điều khiển. Trong menu •••: phụ đề, âm thanh, tốc độ phát và hẹn giờ tắt. Dùng Picture-in-Picture, bật Car mode để có nút to, hoặc chạm dải Đang phát/Tiếp theo để xem cả lịch.";
 "guide_health_title" = "Sức khỏe kênh";
 "guide_health_body" = "Chấm xanh/đỏ cho biết link nào còn sống. Trong Quản lý danh sách phát, chạm biểu tượng nhịp tim để kiểm tra cả playlist; bật 'Ẩn kênh lỗi' trong Cài đặt để dọn kênh chết.";
+
+/* Playlist management */
+"rename_playlist" = "Đổi tên";
+"export_m3u" = "Xuất .m3u";
