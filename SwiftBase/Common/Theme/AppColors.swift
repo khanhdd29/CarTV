@@ -3,7 +3,7 @@
 //  SwiftBase
 //
 //  ─────────────────────────────────────────────────────────────
-//  CarTV COLOR SYSTEM — cinematic, dark-first. Single source of truth.
+//  KLYRA COLOR SYSTEM — cinematic, dark-first. Single source of truth.
 //
 //  The app runs dark-first (a TV/IPTV player should let the video own the
 //  screen). Values are fixed hex (not system dynamic) so the look is consistent.

@@ -48,7 +48,7 @@ struct ContainerView: View {
         // (and re-read `.localized`) when the language changes at runtime — no
         // destructive `.id(...)` rebuild that would reset state or close sheets.
         .animation(.easeInOut(duration: 0.35), value: coordinator.phase)
-        // CarTV is dark-first (a TV player lets the video own the screen).
+        // Klyra is dark-first (a TV player lets the video own the screen).
         .preferredColorScheme(.dark)
     }
 }

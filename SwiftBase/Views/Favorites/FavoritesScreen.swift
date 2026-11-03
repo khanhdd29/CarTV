@@ -13,7 +13,7 @@ struct FavoritesScreen: View {
 
     var body: some View {
         VStack(spacing: 14) {
-            CinematicHeader("favorites".localized, eyebrow: "CARTV")
+            CinematicHeader("favorites".localized, eyebrow: "KLYRA")
                 .padding(.top, 10)
 
             if viewModel.favourites.isEmpty {

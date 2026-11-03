@@ -120,7 +120,7 @@
 /* EPG (program guide) */
 "epg_title" = "Panduan acara";
 "epg_what_title" = "Apa ini?";
-"epg_what_body" = "Tambahkan tautan XMLTV (dari penyedia IPTV Anda atau sumber publik) dan CarTV menampilkan acara yang sedang dan akan tayang untuk setiap saluran, dicocokkan berdasarkan tvg-id-nya.";
+"epg_what_body" = "Tambahkan tautan XMLTV (dari penyedia IPTV Anda atau sumber publik) dan Klyra menampilkan acara yang sedang dan akan tayang untuk setiap saluran, dicocokkan berdasarkan tvg-id-nya.";
 "epg_url_label" = "Tautan XMLTV";
 "epg_load" = "Muat panduan";
 "epg_loading" = "Memuat panduan…";
@@ -133,7 +133,7 @@
 /* Guide — Xtream */
 "guide_src_xtream" = "Xtream Codes — masuk dengan server + nama pengguna + kata sandi (tanpa tautan M3U).";
 "guide_xtream_title" = "Akun Xtream Codes";
-"guide_xtream_body" = "Jika penyedia Anda memberi server, nama pengguna, dan kata sandi alih-alih tautan M3U, gunakan Xtream. CarTV mengambil daftar saluran Anda dan menyimpan info masuk dengan aman di perangkat (Keychain) — tidak pernah diunggah ke mana pun.";
+"guide_xtream_body" = "Jika penyedia Anda memberi server, nama pengguna, dan kata sandi alih-alih tautan M3U, gunakan Xtream. Klyra mengambil daftar saluran Anda dan menyimpan info masuk dengan aman di perangkat (Keychain) — tidak pernah diunggah ke mana pun.";
 
 /* Playlist health */
 "health_checking" = "Memeriksa tautan…";

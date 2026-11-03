@@ -9,7 +9,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.vtn.SwiftBase.dev</string>
+	<string>com.klyra.iptv.player.dev</string>
 	<key>PROJECT_ID</key>
 	<string>swir-d6317</string>
 	<key>STORAGE_BUCKET</key>

@@ -78,7 +78,7 @@ struct ManagePlaylistsScreen: View {
         HStack(spacing: 12) {
             CircleIconButton(systemName: "chevron.left") { viewModel.back() }
             VStack(alignment: .leading, spacing: 2) {
-                Text("CARTV").font(.caption.weight(.heavy)).tracking(2).foregroundStyle(AppColors.secondary)
+                Text("KLYRA").font(.caption.weight(.heavy)).tracking(2).foregroundStyle(AppColors.secondary)
                 Text("manage_playlists".localized)
                     .font(.title2.weight(.bold)).foregroundStyle(AppColors.textPrimary)
             }

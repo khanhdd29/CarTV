@@ -14,7 +14,7 @@ struct SearchScreen: View {
 
     var body: some View {
         VStack(spacing: 16) {
-            CinematicHeader("search".localized, eyebrow: "CARTV")
+            CinematicHeader("search".localized, eyebrow: "KLYRA")
                 .padding(.top, 10)
 
             searchField.padding(.horizontal, 16)

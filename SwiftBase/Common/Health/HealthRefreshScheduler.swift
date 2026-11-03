@@ -11,7 +11,7 @@ import BackgroundTasks
 import Factory
 
 enum HealthRefreshScheduler {
-    static let taskID = "com.vtn.SwiftBase.health"
+    static let taskID = "com.klyra.iptv.player.health"
 
     /// Register the handler — must run before the app finishes launching.
     static func register() {

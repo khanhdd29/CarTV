@@ -120,7 +120,7 @@
 /* EPG (program guide) */
 "epg_title" = "节目指南";
 "epg_what_title" = "这是什么？";
-"epg_what_body" = "添加一个 XMLTV 链接（来自你的 IPTV 提供商或公开来源），CarTV 会根据每个频道的 tvg-id 进行匹配，显示正在播出和即将播出的节目。";
+"epg_what_body" = "添加一个 XMLTV 链接（来自你的 IPTV 提供商或公开来源），Klyra 会根据每个频道的 tvg-id 进行匹配，显示正在播出和即将播出的节目。";
 "epg_url_label" = "XMLTV 链接";
 "epg_load" = "加载指南";
 "epg_loading" = "正在加载指南…";
@@ -133,7 +133,7 @@
 /* Guide — Xtream */
 "guide_src_xtream" = "Xtream Codes — 使用服务器 + 用户名 + 密码登录（无需 M3U 链接）。";
 "guide_xtream_title" = "Xtream Codes 账户";
-"guide_xtream_body" = "如果你的提供商给你的是服务器、用户名和密码，而不是 M3U 链接，请使用 Xtream。CarTV 会获取你的频道列表，并将登录信息安全地保存在设备上（Keychain），绝不会上传到任何地方。";
+"guide_xtream_body" = "如果你的提供商给你的是服务器、用户名和密码，而不是 M3U 链接，请使用 Xtream。Klyra 会获取你的频道列表，并将登录信息安全地保存在设备上（Keychain），绝不会上传到任何地方。";
 
 /* Playlist health */
 "health_checking" = "正在检查链接…";

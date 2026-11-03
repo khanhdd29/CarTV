@@ -120,7 +120,7 @@
 /* EPG (program guide) */
 "epg_title" = "편성표";
 "epg_what_title" = "이게 뭔가요?";
-"epg_what_body" = "XMLTV 링크(IPTV 공급자 또는 공개 소스에서 제공)를 추가하면 CarTV가 각 채널을 tvg-id로 매칭해 지금 방송 중인 프로그램과 다음 프로그램을 보여줍니다.";
+"epg_what_body" = "XMLTV 링크(IPTV 공급자 또는 공개 소스에서 제공)를 추가하면 Klyra가 각 채널을 tvg-id로 매칭해 지금 방송 중인 프로그램과 다음 프로그램을 보여줍니다.";
 "epg_url_label" = "XMLTV 링크";
 "epg_load" = "편성표 불러오기";
 "epg_loading" = "편성표 불러오는 중…";
@@ -133,7 +133,7 @@
 /* Guide — Xtream */
 "guide_src_xtream" = "Xtream Codes — 서버 + 사용자 이름 + 비밀번호로 로그인(M3U 링크 불필요).";
 "guide_xtream_title" = "Xtream Codes 계정";
-"guide_xtream_body" = "공급자가 M3U 링크 대신 서버, 사용자 이름, 비밀번호를 제공한다면 Xtream을 사용하세요. CarTV가 채널 목록을 가져오고 로그인 정보는 기기 내(Keychain)에 안전하게 저장되며, 어디에도 업로드되지 않습니다.";
+"guide_xtream_body" = "공급자가 M3U 링크 대신 서버, 사용자 이름, 비밀번호를 제공한다면 Xtream을 사용하세요. Klyra가 채널 목록을 가져오고 로그인 정보는 기기 내(Keychain)에 안전하게 저장되며, 어디에도 업로드되지 않습니다.";
 
 /* Playlist health */
 "health_checking" = "링크 확인 중…";

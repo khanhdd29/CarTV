@@ -193,7 +193,7 @@ struct SplashView: View {
                 .foregroundStyle(AppColors.primary)
                 .scaleEffect(appeared ? 1 : 0.7)
                 .opacity(appeared ? 1 : 0)
-            Text("CarTV")
+            Text("Klyra")
                 .font(.largeTitle.bold())
                 .opacity(appeared ? 1 : 0)
             Spacer()

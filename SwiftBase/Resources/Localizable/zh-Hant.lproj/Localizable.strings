@@ -120,7 +120,7 @@
 /* EPG (program guide) */
 "epg_title" = "節目指南";
 "epg_what_title" = "這是什麼？";
-"epg_what_body" = "新增一個 XMLTV 連結（來自你的 IPTV 供應商或公開來源），CarTV 會依據每個頻道的 tvg-id 進行比對，顯示正在播出與即將播出的節目。";
+"epg_what_body" = "新增一個 XMLTV 連結（來自你的 IPTV 供應商或公開來源），Klyra 會依據每個頻道的 tvg-id 進行比對，顯示正在播出與即將播出的節目。";
 "epg_url_label" = "XMLTV 連結";
 "epg_load" = "載入指南";
 "epg_loading" = "正在載入指南…";
@@ -133,7 +133,7 @@
 /* Guide — Xtream */
 "guide_src_xtream" = "Xtream Codes — 使用伺服器 + 使用者名稱 + 密碼登入（不需要 M3U 連結）。";
 "guide_xtream_title" = "Xtream Codes 帳戶";
-"guide_xtream_body" = "如果你的供應商提供的是伺服器、使用者名稱和密碼，而不是 M3U 連結，請使用 Xtream。CarTV 會取得你的頻道清單，並將登入資訊安全地保存在裝置上（Keychain），絕不會上傳到任何地方。";
+"guide_xtream_body" = "如果你的供應商提供的是伺服器、使用者名稱和密碼，而不是 M3U 連結，請使用 Xtream。Klyra 會取得你的頻道清單，並將登入資訊安全地保存在裝置上（Keychain），絕不會上傳到任何地方。";
 
 /* Playlist health */
 "health_checking" = "正在檢查連結…";

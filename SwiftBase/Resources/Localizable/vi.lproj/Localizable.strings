@@ -120,7 +120,7 @@
 /* EPG (lịch phát sóng) */
 "epg_title" = "Lịch phát sóng";
 "epg_what_title" = "Đây là gì?";
-"epg_what_body" = "Thêm một liên kết XMLTV (từ nhà cung cấp IPTV hoặc nguồn công khai) và CarTV sẽ hiện chương trình đang phát và tiếp theo cho mỗi kênh, ghép theo tvg-id.";
+"epg_what_body" = "Thêm một liên kết XMLTV (từ nhà cung cấp IPTV hoặc nguồn công khai) và Klyra sẽ hiện chương trình đang phát và tiếp theo cho mỗi kênh, ghép theo tvg-id.";
 "epg_url_label" = "Liên kết XMLTV";
 "epg_load" = "Tải lịch";
 "epg_loading" = "Đang tải lịch…";
@@ -133,7 +133,7 @@
 /* Guide — Xtream */
 "guide_src_xtream" = "Xtream Codes — đăng nhập bằng máy chủ + tên đăng nhập + mật khẩu (không cần link M3U).";
 "guide_xtream_title" = "Tài khoản Xtream Codes";
-"guide_xtream_body" = "Nếu nhà cung cấp đưa bạn máy chủ, tên đăng nhập và mật khẩu thay vì link M3U, hãy dùng Xtream. CarTV tải danh sách kênh và lưu thông tin đăng nhập an toàn ngay trên máy (Keychain) — không gửi lên bất cứ đâu.";
+"guide_xtream_body" = "Nếu nhà cung cấp đưa bạn máy chủ, tên đăng nhập và mật khẩu thay vì link M3U, hãy dùng Xtream. Klyra tải danh sách kênh và lưu thông tin đăng nhập an toàn ngay trên máy (Keychain) — không gửi lên bất cứ đâu.";
 
 /* Playlist health */
 "health_checking" = "Đang kiểm tra kênh…";

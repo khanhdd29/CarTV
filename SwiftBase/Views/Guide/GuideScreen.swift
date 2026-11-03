@@ -2,7 +2,7 @@
 //  GuideScreen.swift
 //  SwiftBase
 //
-//  A short "how to use CarTV" guide for new users — tied to the app's own flow
+//  A short "how to use Klyra" guide for new users — tied to the app's own flow
 //  (add sources → browse/save → watch). Opened from Settings and the empty state.
 //
 
@@ -47,7 +47,7 @@ struct GuideScreen: View {
         HStack(spacing: 12) {
             CircleIconButton(systemName: "chevron.left") { app.navi.pop() }
             VStack(alignment: .leading, spacing: 2) {
-                Text("CARTV").font(.caption.weight(.heavy)).tracking(2).foregroundStyle(AppColors.secondary)
+                Text("KLYRA").font(.caption.weight(.heavy)).tracking(2).foregroundStyle(AppColors.secondary)
                 Text("guide".localized).font(.title2.weight(.bold)).foregroundStyle(AppColors.textPrimary)
             }
             Spacer()

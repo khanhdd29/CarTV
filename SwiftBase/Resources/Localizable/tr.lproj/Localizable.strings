@@ -120,7 +120,7 @@
 /* EPG (program guide) */
 "epg_title" = "Yayın rehberi";
 "epg_what_title" = "Bu nedir?";
-"epg_what_body" = "Bir XMLTV bağlantısı ekleyin (IPTV sağlayıcınızdan veya genel bir kaynaktan) ve CarTV, tvg-id ile eşleştirerek her kanalda şu an ve sırada ne olduğunu gösterir.";
+"epg_what_body" = "Bir XMLTV bağlantısı ekleyin (IPTV sağlayıcınızdan veya genel bir kaynaktan) ve Klyra, tvg-id ile eşleştirerek her kanalda şu an ve sırada ne olduğunu gösterir.";
 "epg_url_label" = "XMLTV bağlantısı";
 "epg_load" = "Rehberi yükle";
 "epg_loading" = "Rehber yükleniyor…";
@@ -133,7 +133,7 @@
 /* Guide — Xtream */
 "guide_src_xtream" = "Xtream Codes — sunucu + kullanıcı adı + parola ile oturum açın (M3U bağlantısı gerekmez).";
 "guide_xtream_title" = "Xtream Codes hesabı";
-"guide_xtream_body" = "Sağlayıcınız M3U bağlantısı yerine sunucu, kullanıcı adı ve parola veriyorsa Xtream'i kullanın. CarTV kanal listenizi alır ve oturum bilgilerinizi cihazda güvenle saklar (Keychain) — hiçbir yere yüklenmez.";
+"guide_xtream_body" = "Sağlayıcınız M3U bağlantısı yerine sunucu, kullanıcı adı ve parola veriyorsa Xtream'i kullanın. Klyra kanal listenizi alır ve oturum bilgilerinizi cihazda güvenle saklar (Keychain) — hiçbir yere yüklenmez.";
 
 /* Playlist health */
 "health_checking" = "Bağlantılar denetleniyor…";

@@ -14,7 +14,7 @@ struct RecentsScreen: View {
 
     var body: some View {
         VStack(spacing: 14) {
-            CinematicHeader("recents".localized, eyebrow: "CARTV") {
+            CinematicHeader("recents".localized, eyebrow: "KLYRA") {
                 if !viewModel.recents.isEmpty {
                     CircleIconButton(systemName: "trash") { showClearConfirm = true }
                 }

@@ -120,7 +120,7 @@
 /* EPG (program guide) */
 "epg_title" = "Program guide";
 "epg_what_title" = "What is this?";
-"epg_what_body" = "Add an XMLTV link (from your IPTV provider or a public source) and CarTV shows what's on now and next for each channel, matched by its tvg-id.";
+"epg_what_body" = "Add an XMLTV link (from your IPTV provider or a public source) and Klyra shows what's on now and next for each channel, matched by its tvg-id.";
 "epg_url_label" = "XMLTV link";
 "epg_load" = "Load guide";
 "epg_loading" = "Loading guide…";
@@ -133,7 +133,7 @@
 /* Guide — Xtream */
 "guide_src_xtream" = "Xtream Codes — sign in with server + username + password (no M3U link needed).";
 "guide_xtream_title" = "Xtream Codes account";
-"guide_xtream_body" = "If your provider gives you a server, username and password instead of an M3U link, use Xtream. CarTV fetches your channel list and keeps the login securely on-device (Keychain) — never uploaded anywhere.";
+"guide_xtream_body" = "If your provider gives you a server, username and password instead of an M3U link, use Xtream. Klyra fetches your channel list and keeps the login securely on-device (Keychain) — never uploaded anywhere.";
 
 /* Playlist health */
 "health_checking" = "Checking links…";

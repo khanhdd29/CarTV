@@ -25,7 +25,7 @@
 	</array>
 	<key>BGTaskSchedulerPermittedIdentifiers</key>
 	<array>
-		<string>com.vtn.SwiftBase.health</string>
+		<string>com.klyra.iptv.player.health</string>
 	</array>
 	<key>CFBundleURLTypes</key>
 	<array>
@@ -34,7 +34,7 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.football.falconscore</string>
+				<string>klyra</string>
 			</array>
 		</dict>
 	</array>

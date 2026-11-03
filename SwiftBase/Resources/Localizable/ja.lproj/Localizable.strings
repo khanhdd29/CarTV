@@ -120,7 +120,7 @@
 /* EPG (program guide) */
 "epg_title" = "番組表";
 "epg_what_title" = "これは何ですか？";
-"epg_what_body" = "XMLTVのリンク（ご利用のIPTVプロバイダーまたは公開ソースのもの）を追加すると、CarTVが各チャンネルをtvg-idで照合して、現在と次の番組を表示します。";
+"epg_what_body" = "XMLTVのリンク（ご利用のIPTVプロバイダーまたは公開ソースのもの）を追加すると、Klyraが各チャンネルをtvg-idで照合して、現在と次の番組を表示します。";
 "epg_url_label" = "XMLTVのリンク";
 "epg_load" = "番組表を読み込む";
 "epg_loading" = "番組表を読み込み中…";
@@ -133,7 +133,7 @@
 /* Guide — Xtream */
 "guide_src_xtream" = "Xtream Codes — サーバー＋ユーザー名＋パスワードでサインイン（M3Uのリンクは不要）。";
 "guide_xtream_title" = "Xtream Codes アカウント";
-"guide_xtream_body" = "プロバイダーからM3Uのリンクではなくサーバー、ユーザー名、パスワードが提供されている場合は、Xtreamをお使いください。CarTVがチャンネルリストを取得し、ログイン情報は端末内（Keychain）に安全に保存され、どこにもアップロードされません。";
+"guide_xtream_body" = "プロバイダーからM3Uのリンクではなくサーバー、ユーザー名、パスワードが提供されている場合は、Xtreamをお使いください。Klyraがチャンネルリストを取得し、ログイン情報は端末内（Keychain）に安全に保存され、どこにもアップロードされません。";
 
 /* Playlist health */
 "health_checking" = "リンクを確認中…";
