@@ -148,3 +148,4 @@
 "player_sleep" = "취침 타이머";
 "player_off" = "끄기";
 "player_minutes" = "%d분";
+"player_pip" = "PIP 모드";

@@ -148,3 +148,4 @@
 "player_sleep" = "Sleep-Timer";
 "player_off" = "Aus";
 "player_minutes" = "%d Min.";
+"player_pip" = "Bild im Bild";

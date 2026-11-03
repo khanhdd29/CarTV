@@ -14,6 +14,7 @@ struct PlayerScreen: View {
     @InjectedObject(\.playerController) private var controller: PlayerController
     @InjectedObject(\.app) private var app: AppManager
 
+    @StateObject private var pip = PiPManager()
     @State private var controlsShown = true
     @State private var hideWorkItem: DispatchWorkItem?
     @State private var scrub: Double = 0
@@ -50,10 +51,10 @@ struct PlayerScreen: View {
         if controller.usingFallback {
             VLCVideoSurface(engine: controller.vlcEngine)
         } else {
-            PlayerLayerView(player: engine.player)
+            PlayerLayerView(player: engine.player, pip: pip)
         }
         #else
-        PlayerLayerView(player: engine.player)
+        PlayerLayerView(player: engine.player, pip: pip)
         #endif
     }
 
@@ -148,6 +149,11 @@ struct PlayerScreen: View {
 
     private var optionsMenu: some View {
         Menu {
+            if pip.isPossible {
+                Button {
+                    pip.toggle(); scheduleHide()
+                } label: { Label("player_pip".localized, systemImage: "pip.enter") }
+            }
             if !controller.isLive {
                 Menu("player_speed".localized) {
                     ForEach(Self.speeds, id: \.1) { rate, label in

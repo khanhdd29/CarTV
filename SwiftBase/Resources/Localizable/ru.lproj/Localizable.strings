@@ -148,3 +148,4 @@
 "player_sleep" = "Таймер сна";
 "player_off" = "Выкл.";
 "player_minutes" = "%d мин";
+"player_pip" = "Картинка в картинке";

@@ -148,3 +148,4 @@
 "player_sleep" = "Timer tidur";
 "player_off" = "Mati";
 "player_minutes" = "%d mnt";
+"player_pip" = "Picture in Picture";

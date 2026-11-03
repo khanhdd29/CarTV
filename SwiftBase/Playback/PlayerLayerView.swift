@@ -11,16 +11,19 @@ import AVFoundation
 
 struct PlayerLayerView: UIViewRepresentable {
     let player: AVPlayer
+    var pip: PiPManager? = nil
 
     func makeUIView(context: Context) -> PlayerContainerView {
         let view = PlayerContainerView()
         view.playerLayer.player = player
         view.playerLayer.videoGravity = .resizeAspect
+        if let pip { Task { @MainActor in pip.setup(with: view.playerLayer) } }
         return view
     }
 
     func updateUIView(_ uiView: PlayerContainerView, context: Context) {
         uiView.playerLayer.player = player
+        if let pip { Task { @MainActor in pip.setup(with: uiView.playerLayer) } }
     }
 }
 

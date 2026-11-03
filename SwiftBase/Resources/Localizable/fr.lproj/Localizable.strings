@@ -148,3 +148,4 @@
 "player_sleep" = "Minuteur de veille";
 "player_off" = "Désactivé";
 "player_minutes" = "%d min";
+"player_pip" = "Image dans l'image";

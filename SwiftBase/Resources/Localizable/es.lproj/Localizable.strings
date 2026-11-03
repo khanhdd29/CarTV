@@ -148,3 +148,4 @@
 "player_sleep" = "Temporizador";
 "player_off" = "Desactivado";
 "player_minutes" = "%d min";
+"player_pip" = "Imagen en imagen";
