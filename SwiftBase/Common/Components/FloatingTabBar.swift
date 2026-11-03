@@ -10,9 +10,14 @@ import SwiftUI
 
 struct FloatingTabBar: View {
     @Binding var selection: HomeTab
+    // Observe the language so the tab titles re-read `.localized` when it
+    // changes (without this, SwiftUI skips re-rendering the bar since its only
+    // input is `selection`).
+    @EnvironmentObject private var coordinator: AppFlowCoordinator
 
     var body: some View {
-        HStack(spacing: 2) {
+        let _ = coordinator.language
+        return HStack(spacing: 2) {
             ForEach(HomeTab.allCases, id: \.self) { tab in
                 item(tab)
             }
