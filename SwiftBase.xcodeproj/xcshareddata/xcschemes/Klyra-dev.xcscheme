@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3A1F00010000000000000050"
                BuildableName = "Klyra.app"
-               BlueprintName = "SwiftBase-dev"
+               BlueprintName = "Klyra-dev"
                ReferencedContainer = "container:SwiftBase.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -46,7 +46,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3A1F00010000000000000050"
             BuildableName = "Klyra.app"
-            BlueprintName = "SwiftBase-dev"
+            BlueprintName = "Klyra-dev"
             ReferencedContainer = "container:SwiftBase.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -63,7 +63,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3A1F00010000000000000050"
             BuildableName = "Klyra.app"
-            BlueprintName = "SwiftBase-dev"
+            BlueprintName = "Klyra-dev"
             ReferencedContainer = "container:SwiftBase.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

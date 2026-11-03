@@ -110,11 +110,11 @@
 			fileSystemSynchronizedGroups = (
 				5F246F362FE3A1E300F2A107 /* SwiftBase */,
 			);
-			name = SwiftBase;
+			name = Klyra;
 			packageProductDependencies = (
 				3A1F00010000000000000021 /* Factory */,
 			);
-			productName = SwiftBase;
+			productName = Klyra;
 			productReference = 3A1F00010000000000000001 /* Klyra.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -133,11 +133,11 @@
 			fileSystemSynchronizedGroups = (
 				5F246F362FE3A1E300F2A107 /* SwiftBase */,
 			);
-			name = "SwiftBase-dev";
+			name = "Klyra-dev";
 			packageProductDependencies = (
 				3A1F00010000000000000059 /* Factory */,
 			);
-			productName = "SwiftBase-dev";
+			productName = "Klyra-dev";
 			productReference = 3A1F00010000000000000002 /* Klyra.app */;
 			productType = "com.apple.product-type.application";
 		};
