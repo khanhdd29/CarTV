@@ -260,6 +260,7 @@ struct PlayerScreen: View {
                     in: 0...max(engine.duration, 1),
                     onEditingChanged: { editing in
                         isScrubbing = editing
+                        engine.isScrubbing = editing   // pause time publishing so the drag isn't interrupted
                         if editing { cancelHide() }
                         else { engine.seek(to: scrub); scheduleHide() }
                     }

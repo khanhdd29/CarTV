@@ -30,6 +30,12 @@ final class AVPlayerEngine: ObservableObject, PlayerEngine {
 
     let player = AVPlayer()
 
+    /// Set by the player UI while the user drags the scrubber. While `true` the
+    /// periodic observer stops publishing time, so the 2×/sec view updates don't
+    /// interrupt the Slider drag (which otherwise swallows its end-edit callback,
+    /// leaving the scrubber stuck at the dragged position).
+    var isScrubbing = false
+
     private var statusObservation: NSKeyValueObservation?
     private var failureObserver: NSObjectProtocol?
     private var timeoutTask: Task<Void, Never>?
@@ -44,7 +50,7 @@ final class AVPlayerEngine: ObservableObject, PlayerEngine {
         timeObserver = player.addPeriodicTimeObserver(
             forInterval: CMTime(seconds: 0.5, preferredTimescale: 600), queue: .main
         ) { [weak self] time in
-            guard let self else { return }
+            guard let self, !self.isScrubbing else { return }
             self.currentTime = time.seconds.isFinite ? time.seconds : 0
             let d = self.player.currentItem?.duration.seconds ?? 0
             self.duration = (d.isFinite && d > 0) ? d : 0
@@ -160,6 +166,9 @@ final class AVPlayerEngine: ObservableObject, PlayerEngine {
 
     /// Seek to a position (used to resume Continue Watching).
     func seek(to seconds: Double) {
+        // Show the target immediately so the scrubber doesn't snap back to the
+        // old position before the first post-seek observer tick arrives.
+        currentTime = seconds
         player.seek(to: CMTime(seconds: seconds, preferredTimescale: 600))
     }
 
