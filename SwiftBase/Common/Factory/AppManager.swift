@@ -40,5 +40,10 @@ final class AppManager: ObservableObject {
         didSet { UserDefaults.standard.set(sortAZ, forKey: "settings.sortAZ") }
     }
 
+    /// Data saver: cap the stream's peak bitrate to use less bandwidth.
+    @Published var dataSaver: Bool = UserDefaults.standard.bool(forKey: "settings.dataSaver") {
+        didSet { UserDefaults.standard.set(dataSaver, forKey: "settings.dataSaver") }
+    }
+
     func bumpData() { dataVersion += 1 }
 }

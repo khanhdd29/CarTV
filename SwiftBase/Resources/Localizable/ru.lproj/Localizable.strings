@@ -179,3 +179,4 @@
 "export_m3u" = "Экспорт .m3u";
 "sort_az" = "Сортировка А–Я";
 "epg_reminder_body" = "Скоро: %@";
+"data_saver" = "Экономия трафика";

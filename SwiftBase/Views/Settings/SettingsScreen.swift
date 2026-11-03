@@ -36,6 +36,8 @@ struct SettingsScreen: View {
                               tint: AppColors.secondary, isOn: Binding(
                                 get: { app.sortAZ },
                                 set: { app.sortAZ = $0; app.bumpData() }))
+                    toggleRow("data_saver".localized, icon: "speedometer",
+                              tint: AppColors.success, isOn: $app.dataSaver)
                     Button {
                         pinMode = appLock.isEnabled ? .disable : .set
                     } label: {

@@ -115,6 +115,11 @@ final class AVPlayerEngine: ObservableObject, PlayerEngine {
         subtitleGroup = nil; audioGroup = nil
 
         let item = AVPlayerItem(url: url)
+        // Adaptive buffering: let the system pick the forward buffer and wait to
+        // minimise stalls; cap the peak bitrate when Data saver is on.
+        item.preferredForwardBufferDuration = 0
+        item.preferredPeakBitRate = UserDefaults.standard.bool(forKey: "settings.dataSaver") ? 1_500_000 : 0
+        player.automaticallyWaitsToMinimizeStalling = true
         statusObservation = item.observe(\.status, options: [.new]) { [weak self] item, _ in
             Task { @MainActor in
                 guard let self else { return }
