@@ -29,5 +29,11 @@ final class AppManager: ObservableObject {
         didSet { UserDefaults.standard.set(hideDeadChannels, forKey: "settings.hideDeadChannels") }
     }
 
+    /// Car mode: a simplified, large-button player layout for use while driving.
+    /// Persisted so it stays on across sessions.
+    @Published var carMode: Bool = UserDefaults.standard.bool(forKey: "settings.carMode") {
+        didSet { UserDefaults.standard.set(carMode, forKey: "settings.carMode") }
+    }
+
     func bumpData() { dataVersion += 1 }
 }

@@ -62,13 +62,59 @@ struct PlayerScreen: View {
     private var controls: some View {
         VStack(spacing: 0) {
             topBar
-            if let now = controller.nowNext.now { epgStrip(now) }
+            if let now = controller.nowNext.now, !app.carMode { epgStrip(now) }
             Spacer()
-            if !controller.usingFallback { centerControls }
-            Spacer()
-            bottomBar
+            if app.carMode {
+                carControls
+            } else {
+                if !controller.usingFallback { centerControls }
+                Spacer()
+                bottomBar
+            }
         }
         .padding(.vertical, 10)
+    }
+
+    // MARK: Car mode — oversized, glance-and-tap controls for driving.
+
+    private var carControls: some View {
+        VStack(spacing: 22) {
+            Text(controller.current?.name ?? "")
+                .font(.system(size: 30, weight: .heavy))
+                .foregroundStyle(.white)
+                .lineLimit(2).multilineTextAlignment(.center)
+                .minimumScaleFactor(0.6)
+                .padding(.horizontal, 24)
+
+            HStack(spacing: 48) {
+                carButton("backward.end.fill", enabled: controller.hasPrevious) { controller.previous() }
+                Button {
+                    engine.togglePlayPause(); scheduleHide()
+                } label: {
+                    Image(systemName: engine.isPlaying ? "pause.fill" : "play.fill")
+                        .font(.system(size: 60, weight: .bold))
+                        .foregroundStyle(.white)
+                        .frame(width: 150, height: 150)
+                        .background(AppColors.brandGradient, in: Circle())
+                        .shadow(color: AppColors.primary.opacity(0.6), radius: 20, y: 8)
+                }
+                .buttonStyle(.plain)
+                carButton("forward.end.fill", enabled: controller.hasNext) { controller.next() }
+            }
+            Spacer().frame(height: 0)
+        }
+    }
+
+    private func carButton(_ name: String, enabled: Bool, action: @escaping () -> Void) -> some View {
+        Button { if enabled { action(); scheduleHide() } } label: {
+            Image(systemName: name)
+                .font(.system(size: 34, weight: .bold))
+                .foregroundStyle(.white.opacity(enabled ? 1 : 0.25))
+                .frame(width: 96, height: 96)
+                .background(.white.opacity(enabled ? 0.14 : 0.05), in: Circle())
+        }
+        .buttonStyle(.plain)
+        .disabled(!enabled)
     }
 
     private var topBar: some View {
@@ -80,6 +126,16 @@ struct PlayerScreen: View {
                 .foregroundStyle(.white).lineLimit(1)
             if controller.isLive { LiveBadge() }
             Spacer(minLength: 8)
+            Button {
+                withAnimation(.easeInOut(duration: 0.2)) { app.carMode.toggle() }
+                scheduleHide()
+            } label: {
+                Image(systemName: app.carMode ? "car.fill" : "car")
+                    .font(.body.weight(.semibold))
+                    .foregroundStyle(app.carMode ? AppColors.secondary : .white)
+                    .frame(width: 44, height: 44)
+            }
+            .buttonStyle(.plain)
             AirPlayButton().frame(width: 44, height: 44)
         }
         .padding(.horizontal, 16)
