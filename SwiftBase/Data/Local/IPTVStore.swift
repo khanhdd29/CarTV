@@ -30,6 +30,16 @@ actor IPTVStore {
         try Self.migrate(db)
     }
 
+    /// Whether `column` already exists on `table` (via PRAGMA table_info).
+    private static func columnExists(_ db: SQLiteDatabase, table: String, column: String) throws -> Bool {
+        let stmt = try db.prepare("PRAGMA table_info(\(table));")
+        defer { stmt.finalize() }
+        while stmt.stepRow() {
+            if stmt.string(1) == column { return true }   // column 1 = name
+        }
+        return false
+    }
+
     private static func migrate(_ db: SQLiteDatabase) throws {
         try db.run("""
         CREATE TABLE IF NOT EXISTS playlists (
@@ -98,8 +108,11 @@ actor IPTVStore {
         );
         """)
         try db.run("CREATE INDEX IF NOT EXISTS idx_recents_watched ON recents(watched_at DESC);")
-        // Upgrade older installs: add the resume column if missing (no-op otherwise).
-        db.exec("ALTER TABLE recents ADD COLUMN position REAL NOT NULL DEFAULT 0;")
+        // Upgrade older installs: add the resume column only if it's missing
+        // (the CREATE above already includes it for fresh installs).
+        if try !columnExists(db, table: "recents", column: "position") {
+            try db.run("ALTER TABLE recents ADD COLUMN position REAL NOT NULL DEFAULT 0;")
+        }
 
         // EPG (electronic program guide), matched to channels by tvg-id.
         try db.run("""

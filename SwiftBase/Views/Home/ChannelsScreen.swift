@@ -80,7 +80,7 @@ struct ChannelsScreen: View {
                     .padding(.horizontal, 16)
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 14) {
-                        ForEach(channels) { channel in
+                        ForEach(channels, id: \.streamURL) { channel in
                             ChannelCard(
                                 channel: channel,
                                 isFavourite: viewModel.isFavourite(channel),
