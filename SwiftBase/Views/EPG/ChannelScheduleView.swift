@@ -16,6 +16,7 @@ struct ChannelScheduleView: View {
     @Injected(\.epgRepository) private var epg: EPGRepository
     @State private var items: [EPGEntry] = []
     @State private var loaded = false
+    @State private var reminders: Set<String> = []
 
     var body: some View {
         VStack(spacing: 0) {
@@ -36,6 +37,29 @@ struct ChannelScheduleView: View {
         .cinematicBackground()
         .onAppear {
             Task { items = await epg.schedule(for: channel); loaded = true }
+            Task { reminders = await ReminderManager.pendingIDs() }
+        }
+    }
+
+    private func reminderID(_ entry: EPGEntry) -> String {
+        "epg.\(channel.streamURL).\(Int(entry.start.timeIntervalSince1970))"
+    }
+
+    private func toggleReminder(_ entry: EPGEntry) {
+        let id = reminderID(entry)
+        if reminders.contains(id) {
+            ReminderManager.cancel(id: id)
+            reminders.remove(id)
+        } else {
+            Task {
+                guard await ReminderManager.requestAuth() else { return }
+                let fire = entry.start.addingTimeInterval(-120)
+                ReminderManager.schedule(
+                    id: id, title: channel.name,
+                    body: String(format: "epg_reminder_body".localized, entry.title),
+                    at: fire > Date() ? fire : entry.start)
+                reminders.insert(id)
+            }
         }
     }
 
@@ -77,6 +101,16 @@ struct ChannelScheduleView: View {
                 }
             }
             Spacer(minLength: 0)
+            if entry.start > Date() {
+                Button { toggleReminder(entry) } label: {
+                    let on = reminders.contains(reminderID(entry))
+                    Image(systemName: on ? "bell.fill" : "bell")
+                        .font(.subheadline)
+                        .foregroundStyle(on ? AppColors.secondary : AppColors.textTertiary)
+                        .frame(width: 32, height: 32)
+                }
+                .buttonStyle(.plain)
+            }
         }
         .padding(12)
         .background(

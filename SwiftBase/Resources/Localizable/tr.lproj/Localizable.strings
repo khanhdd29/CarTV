@@ -178,3 +178,4 @@
 "rename_playlist" = "Yeniden adlandır";
 "export_m3u" = ".m3u dışa aktar";
 "sort_az" = "A–Z sırala";
+"epg_reminder_body" = "Birazdan: %@";

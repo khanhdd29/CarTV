@@ -178,3 +178,4 @@
 "rename_playlist" = "নাম পরিবর্তন";
 "export_m3u" = ".m3u এক্সপোর্ট";
 "sort_az" = "A–Z সাজান";
+"epg_reminder_body" = "শীঘ্রই শুরু: %@";

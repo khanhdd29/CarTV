@@ -178,3 +178,4 @@
 "rename_playlist" = "重命名";
 "export_m3u" = "导出 .m3u";
 "sort_az" = "按 A–Z 排序";
+"epg_reminder_body" = "即将开始：%@";

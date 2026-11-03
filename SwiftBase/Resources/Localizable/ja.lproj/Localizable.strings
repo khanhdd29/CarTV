@@ -178,3 +178,4 @@
 "rename_playlist" = "名前を変更";
 "export_m3u" = ".m3uを書き出す";
 "sort_az" = "A–Z順に並べ替え";
+"epg_reminder_body" = "まもなく放送: %@";

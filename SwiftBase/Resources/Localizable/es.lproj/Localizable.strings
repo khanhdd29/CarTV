@@ -178,3 +178,4 @@
 "rename_playlist" = "Cambiar nombre";
 "export_m3u" = "Exportar .m3u";
 "sort_az" = "Ordenar A–Z";
+"epg_reminder_body" = "Comienza pronto: %@";
