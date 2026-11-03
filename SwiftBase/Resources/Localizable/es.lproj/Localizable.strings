@@ -149,3 +149,5 @@
 "player_off" = "Desactivado";
 "player_minutes" = "%d min";
 "player_pip" = "Imagen en imagen";
+"player_subtitles" = "Subtítulos";
+"player_audio" = "Audio";

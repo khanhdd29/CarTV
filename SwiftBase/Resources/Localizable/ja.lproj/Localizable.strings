@@ -149,3 +149,5 @@
 "player_off" = "オフ";
 "player_minutes" = "%d分";
 "player_pip" = "ピクチャ・イン・ピクチャ";
+"player_subtitles" = "字幕";
+"player_audio" = "音声";

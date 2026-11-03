@@ -149,3 +149,5 @@
 "player_off" = "Выкл.";
 "player_minutes" = "%d мин";
 "player_pip" = "Картинка в картинке";
+"player_subtitles" = "Субтитры";
+"player_audio" = "Звук";

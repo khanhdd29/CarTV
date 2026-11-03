@@ -149,3 +149,5 @@
 "player_off" = "Desligado";
 "player_minutes" = "%d min";
 "player_pip" = "Picture in Picture";
+"player_subtitles" = "Legendas";
+"player_audio" = "Áudio";

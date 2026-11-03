@@ -149,3 +149,5 @@
 "player_off" = "Kapalı";
 "player_minutes" = "%d dk";
 "player_pip" = "Resim içinde resim";
+"player_subtitles" = "Altyazılar";
+"player_audio" = "Ses";

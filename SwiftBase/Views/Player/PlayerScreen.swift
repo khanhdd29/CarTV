@@ -144,6 +144,12 @@ struct PlayerScreen: View {
         .padding(.horizontal, 16)
     }
 
+    private func trackButton(label: String, selected: Bool, action: @escaping () -> Void) -> some View {
+        Button { action(); scheduleHide() } label: {
+            if selected { Label(label, systemImage: "checkmark") } else { Text(label) }
+        }
+    }
+
     private static let speeds: [(Float, String)] =
         [(0.5, "0.5x"), (0.75, "0.75x"), (1.0, "1x"), (1.25, "1.25x"), (1.5, "1.5x"), (2.0, "2x")]
 
@@ -153,6 +159,27 @@ struct PlayerScreen: View {
                 Button {
                     pip.toggle(); scheduleHide()
                 } label: { Label("player_pip".localized, systemImage: "pip.enter") }
+            }
+            if !engine.subtitleOptions.isEmpty {
+                Menu("player_subtitles".localized) {
+                    trackButton(label: "player_off".localized, selected: engine.selectedSubtitle() == nil) {
+                        engine.selectSubtitle(nil)
+                    }
+                    ForEach(engine.subtitleOptions, id: \.self) { opt in
+                        trackButton(label: opt.displayName, selected: engine.selectedSubtitle() == opt) {
+                            engine.selectSubtitle(opt)
+                        }
+                    }
+                }
+            }
+            if engine.audioOptions.count > 1 {
+                Menu("player_audio".localized) {
+                    ForEach(engine.audioOptions, id: \.self) { opt in
+                        trackButton(label: opt.displayName, selected: engine.selectedAudio() == opt) {
+                            engine.selectAudio(opt)
+                        }
+                    }
+                }
             }
             if !controller.isLive {
                 Menu("player_speed".localized) {

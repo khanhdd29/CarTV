@@ -149,3 +149,5 @@
 "player_off" = "Aus";
 "player_minutes" = "%d Min.";
 "player_pip" = "Bild im Bild";
+"player_subtitles" = "Untertitel";
+"player_audio" = "Audio";

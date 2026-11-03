@@ -22,6 +22,11 @@ final class AVPlayerEngine: ObservableObject, PlayerEngine {
     @Published private(set) var duration: Double = 0
     /// Chosen playback speed (applies to on-demand content, not live).
     @Published private(set) var playbackRate: Float = 1.0
+    /// Available subtitle / audio tracks of the current item (empty if none).
+    @Published private(set) var subtitleOptions: [AVMediaSelectionOption] = []
+    @Published private(set) var audioOptions: [AVMediaSelectionOption] = []
+    private var subtitleGroup: AVMediaSelectionGroup?
+    private var audioGroup: AVMediaSelectionGroup?
 
     let player = AVPlayer()
 
@@ -66,11 +71,48 @@ final class AVPlayerEngine: ObservableObject, PlayerEngine {
         seek(to: max(0, currentSeconds + delta))
     }
 
+    // MARK: Subtitles / audio tracks (media selection)
+
+    private func loadMediaOptions(_ item: AVPlayerItem) {
+        let asset = item.asset
+        Task { [weak self] in
+            let subs = try? await asset.loadMediaSelectionGroup(for: .legible)
+            let auds = try? await asset.loadMediaSelectionGroup(for: .audible)
+            await MainActor.run {
+                guard let self, self.player.currentItem === item else { return }
+                self.subtitleGroup = subs
+                self.audioGroup = auds
+                self.subtitleOptions = subs?.options ?? []
+                self.audioOptions = auds?.options ?? []
+            }
+        }
+    }
+
+    func selectedSubtitle() -> AVMediaSelectionOption? { selected(in: subtitleGroup) }
+    func selectedAudio() -> AVMediaSelectionOption? { selected(in: audioGroup) }
+
+    private func selected(in group: AVMediaSelectionGroup?) -> AVMediaSelectionOption? {
+        guard let group, let item = player.currentItem else { return nil }
+        return item.currentMediaSelection.selectedMediaOption(in: group)
+    }
+
+    /// Pass `nil` to turn subtitles off.
+    func selectSubtitle(_ option: AVMediaSelectionOption?) { select(option, in: subtitleGroup) }
+    func selectAudio(_ option: AVMediaSelectionOption?) { select(option, in: audioGroup) }
+
+    private func select(_ option: AVMediaSelectionOption?, in group: AVMediaSelectionGroup?) {
+        guard let group, let item = player.currentItem else { return }
+        item.select(option, in: group)
+        objectWillChange.send()
+    }
+
     func load(_ url: URL) {
         teardownObservers()
         timeoutTask?.cancel()
         state = .loading
         isLive = false
+        subtitleOptions = []; audioOptions = []
+        subtitleGroup = nil; audioGroup = nil
 
         let item = AVPlayerItem(url: url)
         statusObservation = item.observe(\.status, options: [.new]) { [weak self] item, _ in
@@ -81,6 +123,7 @@ final class AVPlayerEngine: ObservableObject, PlayerEngine {
                     self.timeoutTask?.cancel()
                     self.isLive = item.duration.isIndefinite
                     self.state = .playing
+                    self.loadMediaOptions(item)
                 case .failed:
                     self.timeoutTask?.cancel()
                     self.state = .failed(item.error?.localizedDescription ?? "playback_error".localized)

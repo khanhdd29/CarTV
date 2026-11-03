@@ -149,3 +149,5 @@
 "player_off" = "關閉";
 "player_minutes" = "%d 分鐘";
 "player_pip" = "子母畫面";
+"player_subtitles" = "字幕";
+"player_audio" = "音軌";

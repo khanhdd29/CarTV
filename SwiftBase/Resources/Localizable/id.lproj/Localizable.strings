@@ -149,3 +149,5 @@
 "player_off" = "Mati";
 "player_minutes" = "%d mnt";
 "player_pip" = "Picture in Picture";
+"player_subtitles" = "Subtitel";
+"player_audio" = "Audio";

@@ -149,3 +149,5 @@
 "player_off" = "끄기";
 "player_minutes" = "%d분";
 "player_pip" = "PIP 모드";
+"player_subtitles" = "자막";
+"player_audio" = "오디오";
