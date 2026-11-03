@@ -249,14 +249,15 @@ actor IPTVStore {
         return result
     }
 
-    func channels(group: String?, limit: Int, offset: Int) throws -> [Channel] {
+    func channels(group: String?, limit: Int, offset: Int, sortByName: Bool = false) throws -> [Channel] {
+        let order = sortByName ? "name COLLATE NOCASE" : "sort_order"
         let sql: String
         var binds: [SQLValue] = []
         if let group {
-            sql = "SELECT id, playlist_id, name, stream_url, logo_url, group_title, tvg_id FROM channels WHERE group_title = ? ORDER BY sort_order LIMIT ? OFFSET ?;"
+            sql = "SELECT id, playlist_id, name, stream_url, logo_url, group_title, tvg_id FROM channels WHERE group_title = ? ORDER BY \(order) LIMIT ? OFFSET ?;"
             binds = [.text(group), .int(Int64(limit)), .int(Int64(offset))]
         } else {
-            sql = "SELECT id, playlist_id, name, stream_url, logo_url, group_title, tvg_id FROM channels ORDER BY sort_order LIMIT ? OFFSET ?;"
+            sql = "SELECT id, playlist_id, name, stream_url, logo_url, group_title, tvg_id FROM channels ORDER BY \(order) LIMIT ? OFFSET ?;"
             binds = [.int(Int64(limit)), .int(Int64(offset))]
         }
         let stmt = try db.prepare(sql)

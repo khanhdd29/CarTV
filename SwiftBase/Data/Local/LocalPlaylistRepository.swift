@@ -162,8 +162,8 @@ final class LocalPlaylistRepository: PlaylistRepository {
 
     func groups() async throws -> [String] { try await store.groups() }
 
-    func channels(group: String?, limit: Int, offset: Int) async throws -> [Channel] {
-        try await store.channels(group: group, limit: limit, offset: offset)
+    func channels(group: String?, limit: Int, offset: Int, sortByName: Bool) async throws -> [Channel] {
+        try await store.channels(group: group, limit: limit, offset: offset, sortByName: sortByName)
     }
 
     func search(_ query: String, limit: Int) async throws -> [Channel] {

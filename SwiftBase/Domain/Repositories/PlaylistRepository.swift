@@ -47,8 +47,9 @@ protocol PlaylistRepository {
     /// Distinct `group-title` values across all channels, for the category chips.
     func groups() async throws -> [String]
 
-    /// A page of channels, optionally filtered by group, ordered by playlist order.
-    func channels(group: String?, limit: Int, offset: Int) async throws -> [Channel]
+    /// A page of channels, optionally filtered by group. `sortByName` orders A–Z
+    /// instead of the playlist's own order.
+    func channels(group: String?, limit: Int, offset: Int, sortByName: Bool) async throws -> [Channel]
 
     /// Full-text (FTS5) search over channel name + group.
     func search(_ query: String, limit: Int) async throws -> [Channel]
@@ -60,5 +61,10 @@ extension PlaylistRepository {
     @discardableResult
     func addPlaylist(name: String, url: URL) async throws -> PlaylistRef {
         try await addPlaylist(name: name, url: url, onProgress: nil)
+    }
+
+    /// Convenience: playlist-order channels (no alphabetical sort).
+    func channels(group: String?, limit: Int, offset: Int) async throws -> [Channel] {
+        try await channels(group: group, limit: limit, offset: offset, sortByName: false)
     }
 }

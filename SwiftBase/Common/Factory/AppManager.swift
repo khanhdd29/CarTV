@@ -35,5 +35,10 @@ final class AppManager: ObservableObject {
         didSet { UserDefaults.standard.set(carMode, forKey: "settings.carMode") }
     }
 
+    /// Sort channels alphabetically (A–Z) instead of the playlist's own order.
+    @Published var sortAZ: Bool = UserDefaults.standard.bool(forKey: "settings.sortAZ") {
+        didSet { UserDefaults.standard.set(sortAZ, forKey: "settings.sortAZ") }
+    }
+
     func bumpData() { dataVersion += 1 }
 }

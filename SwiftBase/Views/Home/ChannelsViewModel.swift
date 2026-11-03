@@ -55,8 +55,9 @@ final class ChannelsViewModel: ObservableObject {
             let groups = try await playlistRepo.groups()
             var built: [ChannelRail] = []
             var loaded: [Channel] = recentsRail + favouritesRail
+            let az = app.sortAZ
             for group in groups.prefix(maxGroups) {
-                let channels = try await playlistRepo.channels(group: group, limit: perRail, offset: 0)
+                let channels = try await playlistRepo.channels(group: group, limit: perRail, offset: 0, sortByName: az)
                 loaded += channels
                 let shown = keepLive(channels)
                 if !shown.isEmpty {
@@ -64,7 +65,7 @@ final class ChannelsViewModel: ObservableObject {
                 }
             }
             if built.isEmpty {
-                let all = try await playlistRepo.channels(group: nil, limit: 30, offset: 0)
+                let all = try await playlistRepo.channels(group: nil, limit: 30, offset: 0, sortByName: az)
                 loaded += all
                 built = [ChannelRail(id: "all", title: "all".localized, channels: keepLive(all))]
             }

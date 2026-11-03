@@ -177,3 +177,4 @@
 /* Playlist management */
 "rename_playlist" = "Renomear";
 "export_m3u" = "Exportar .m3u";
+"sort_az" = "Ordenar A–Z";

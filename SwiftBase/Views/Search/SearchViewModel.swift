@@ -31,7 +31,10 @@ final class SearchViewModel: ObservableObject {
         guard !trimmed.isEmpty else { results = []; return }
         isSearching = true
         defer { isSearching = false }
-        let found = (try? await playlistRepo.search(trimmed, limit: 200)) ?? []
+        var found = (try? await playlistRepo.search(trimmed, limit: 200)) ?? []
+        if app.sortAZ {
+            found.sort { $0.name.localizedCaseInsensitiveCompare($1.name) == .orderedAscending }
+        }
         results = app.hideDeadChannels
             ? found.filter { health.status(for: $0.streamURL) != .offline }
             : found

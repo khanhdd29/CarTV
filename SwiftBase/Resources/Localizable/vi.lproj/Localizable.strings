@@ -177,3 +177,4 @@
 /* Playlist management */
 "rename_playlist" = "Đổi tên";
 "export_m3u" = "Xuất .m3u";
+"sort_az" = "Sắp xếp A-Z";

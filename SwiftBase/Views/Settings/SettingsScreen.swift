@@ -32,6 +32,10 @@ struct SettingsScreen: View {
                     }
                     toggleRow("hide_dead_channels".localized, icon: "eye.slash.fill",
                               tint: AppColors.favorite, isOn: $app.hideDeadChannels)
+                    toggleRow("sort_az".localized, icon: "textformat.abc",
+                              tint: AppColors.secondary, isOn: Binding(
+                                get: { app.sortAZ },
+                                set: { app.sortAZ = $0; app.bumpData() }))
                     Button {
                         pinMode = appLock.isEnabled ? .disable : .set
                     } label: {
