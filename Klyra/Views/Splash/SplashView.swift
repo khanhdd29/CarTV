@@ -196,7 +196,7 @@ struct SplashView: View {
                 .shadow(color: AppColors.primary.opacity(0.45), radius: 22, y: 10)
                 .scaleEffect(appeared ? 1 : 0.7)
                 .opacity(appeared ? 1 : 0)
-            Text("Klyra")
+            Text("Klyra IPTV")
                 .font(.largeTitle.bold())
                 .opacity(appeared ? 1 : 0)
             Spacer()

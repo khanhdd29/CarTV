@@ -15,7 +15,7 @@ final class SettingsViewModel: ObservableObject {
     @Injected(\.appFlow) private var flow
     @Injected(\.app) private var app
 
-    let appName = "Klyra"
+    let appName = "Klyra IPTV"
     // TODO: RELEASE — keep in sync with MARKETING_VERSION in the project settings on each release.
     let appVersion = "1.0.0"
 
