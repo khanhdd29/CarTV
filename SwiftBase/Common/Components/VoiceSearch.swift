@@ -39,7 +39,10 @@ final class VoiceSearch: ObservableObject {
         transcript = ""
         do {
             let session = AVAudioSession.sharedInstance()
-            try session.setCategory(.record, mode: .measurement, options: .duckOthers)
+            // `.playAndRecord`/`.default` keeps the mic input valid; `.record`+`.measurement`
+            // could hand back a 0 Hz / 0-channel format on some devices and crash the tap.
+            try session.setCategory(.playAndRecord, mode: .default,
+                                    options: [.duckOthers, .defaultToSpeaker, .allowBluetooth])
             try session.setActive(true, options: .notifyOthersOnDeactivation)
 
             let req = SFSpeechAudioBufferRecognitionRequest()
@@ -47,7 +50,11 @@ final class VoiceSearch: ObservableObject {
             request = req
 
             let input = engine.inputNode
-            input.installTap(onBus: 0, bufferSize: 1024, format: input.outputFormat(forBus: 0)) { buffer, _ in
+            input.removeTap(onBus: 0)                     // never install a second tap on the bus
+            let format = input.inputFormat(forBus: 0)     // hardware format, valid once the session is active
+            // Guard against an invalid format instead of crashing in CreateRecordingTap.
+            guard format.sampleRate > 0, format.channelCount > 0 else { stop(); return }
+            input.installTap(onBus: 0, bufferSize: 1024, format: format) { buffer, _ in
                 req.append(buffer)
             }
             engine.prepare()
