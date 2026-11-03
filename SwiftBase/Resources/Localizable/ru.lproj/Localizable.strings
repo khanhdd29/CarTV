@@ -62,7 +62,7 @@
 "source_url" = "URL";
 "source_file" = "Файл";
 "source_stream" = "Поток";
-"source_device" = "Устройство";
+"source_device" = "Мои видео";
 "source_file_hint" = "Выберите файл .m3u или .m3u8 в приложении «Файлы».";
 "source_device_hint" = "Выберите видео из медиатеки для воспроизведения в приложении.";
 "stream_url" = "URL потока";
@@ -96,11 +96,11 @@
 /* Guide */
 "guide" = "Guide";
 "guide_add_title" = "Add a source";
-"guide_add_body" = "Four ways to add content with the + button:";
+"guide_add_body" = "Способы добавить контент кнопкой +:";
 "guide_src_url" = "URL — paste an M3U playlist link (many channels).";
 "guide_src_file" = "File — pick an .m3u/.m3u8 file from the Files app.";
 "guide_src_stream" = "Stream — paste a single stream link to play now or save.";
-"guide_src_device" = "Device — pick a video from Photos to play offline.";
+"guide_src_device" = "Мои видео — выберите видео из «Фото» для просмотра офлайн.";
 "guide_links_title" = "Where to find M3U links";
 "guide_links_body" = "Use links from your IPTV provider, or public sources (e.g. iptv-org).";
 "guide_browse_title" = "Browse & save";
@@ -109,3 +109,33 @@
 "guide_watch_body" = "Tap to show controls: skip 10s, switch channels, AirPlay. Rotate to landscape for full screen. Regular videos resume where you left off.";
 "guide_tip_title" = "Tip";
 "guide_tip_body" = "Free streams often die or lag — if a channel won't play, try another link or source.";
+/* Xtream */
+"source_xtream" = "Xtream";
+"xtream_server" = "Server URL";
+"xtream_username" = "Username";
+"xtream_password" = "Password";
+"xtream_hint" = "Enter your Xtream Codes server, username and password. Credentials are stored securely on-device.";
+"xtream_auth_failed" = "Login failed — check your username and password.";
+
+/* EPG (program guide) */
+"epg_title" = "Программа передач";
+"epg_what_title" = "Что это?";
+"epg_what_body" = "Добавьте ссылку XMLTV (от вашего IPTV-провайдера или из открытого источника), и CarTV покажет, что идёт сейчас и далее на каждом канале, сопоставив их по tvg-id.";
+"epg_url_label" = "Ссылка XMLTV";
+"epg_load" = "Загрузить программу";
+"epg_loading" = "Загрузка программы…";
+"epg_loaded" = "Загружено передач: %d";
+"epg_clear" = "Удалить программу";
+"epg_invalid_url" = "Введите корректную ссылку XMLTV";
+"epg_now" = "СЕЙЧАС";
+"epg_next" = "ДАЛЕЕ";
+
+/* Guide — Xtream */
+"guide_src_xtream" = "Xtream Codes — вход по серверу, имени пользователя и паролю (ссылка M3U не нужна).";
+"guide_xtream_title" = "Учётная запись Xtream Codes";
+"guide_xtream_body" = "Если провайдер даёт сервер, имя пользователя и пароль вместо ссылки M3U, используйте Xtream. CarTV загрузит список каналов и надёжно сохранит данные входа на устройстве (Keychain) — они никуда не отправляются.";
+
+/* Playlist health */
+"health_checking" = "Проверка ссылок…";
+"health_online_n" = "%d работают";
+"health_offline_n" = "%d не работают";

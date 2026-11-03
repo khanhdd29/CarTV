@@ -62,7 +62,7 @@
 "source_url" = "URL";
 "source_file" = "ফাইল";
 "source_stream" = "স্ট্রিম";
-"source_device" = "ডিভাইস";
+"source_device" = "আমার ভিডিও";
 "source_file_hint" = "Files অ্যাপ থেকে একটি .m3u বা .m3u8 ফাইল বেছে নিন।";
 "source_device_hint" = "অ্যাপে চালানোর জন্য আপনার লাইব্রেরি থেকে ভিডিও বেছে নিন।";
 "stream_url" = "স্ট্রিম URL";
@@ -96,11 +96,11 @@
 /* Guide */
 "guide" = "Guide";
 "guide_add_title" = "Add a source";
-"guide_add_body" = "Four ways to add content with the + button:";
+"guide_add_body" = "+ বোতাম দিয়ে কনটেন্ট যোগ করার উপায়:";
 "guide_src_url" = "URL — paste an M3U playlist link (many channels).";
 "guide_src_file" = "File — pick an .m3u/.m3u8 file from the Files app.";
 "guide_src_stream" = "Stream — paste a single stream link to play now or save.";
-"guide_src_device" = "Device — pick a video from Photos to play offline.";
+"guide_src_device" = "আমার ভিডিও — অফলাইনে চালাতে Photos থেকে একটি ভিডিও বেছে নিন।";
 "guide_links_title" = "Where to find M3U links";
 "guide_links_body" = "Use links from your IPTV provider, or public sources (e.g. iptv-org).";
 "guide_browse_title" = "Browse & save";
@@ -109,3 +109,33 @@
 "guide_watch_body" = "Tap to show controls: skip 10s, switch channels, AirPlay. Rotate to landscape for full screen. Regular videos resume where you left off.";
 "guide_tip_title" = "Tip";
 "guide_tip_body" = "Free streams often die or lag — if a channel won't play, try another link or source.";
+/* Xtream */
+"source_xtream" = "Xtream";
+"xtream_server" = "Server URL";
+"xtream_username" = "Username";
+"xtream_password" = "Password";
+"xtream_hint" = "Enter your Xtream Codes server, username and password. Credentials are stored securely on-device.";
+"xtream_auth_failed" = "Login failed — check your username and password.";
+
+/* EPG (program guide) */
+"epg_title" = "প্রোগ্রাম গাইড";
+"epg_what_title" = "এটি কী?";
+"epg_what_body" = "একটি XMLTV লিঙ্ক যোগ করুন (আপনার IPTV প্রদানকারী বা কোনো সর্বজনীন উৎস থেকে), আর CarTV প্রতিটি চ্যানেলে এখন ও পরবর্তীতে কী চলছে তা দেখায়, এর tvg-id অনুযায়ী মিলিয়ে।";
+"epg_url_label" = "XMLTV লিঙ্ক";
+"epg_load" = "গাইড লোড করুন";
+"epg_loading" = "গাইড লোড হচ্ছে…";
+"epg_loaded" = "%d টি প্রোগ্রাম লোড হয়েছে";
+"epg_clear" = "গাইড সরান";
+"epg_invalid_url" = "একটি বৈধ XMLTV লিঙ্ক লিখুন";
+"epg_now" = "এখন";
+"epg_next" = "পরবর্তী";
+
+/* Guide — Xtream */
+"guide_src_xtream" = "Xtream Codes — সার্ভার + ব্যবহারকারীর নাম + পাসওয়ার্ড দিয়ে সাইন ইন করুন (কোনো M3U লিঙ্ক লাগবে না)।";
+"guide_xtream_title" = "Xtream Codes অ্যাকাউন্ট";
+"guide_xtream_body" = "আপনার প্রদানকারী যদি M3U লিঙ্কের বদলে সার্ভার, ব্যবহারকারীর নাম ও পাসওয়ার্ড দেয়, তাহলে Xtream ব্যবহার করুন। CarTV আপনার চ্যানেল তালিকা নিয়ে আসে এবং লগইন তথ্য ডিভাইসে নিরাপদে (Keychain) রাখে — কোথাও আপলোড করা হয় না।";
+
+/* Playlist health */
+"health_checking" = "লিঙ্ক যাচাই করা হচ্ছে…";
+"health_online_n" = "%d টি সচল";
+"health_offline_n" = "%d টি অচল";

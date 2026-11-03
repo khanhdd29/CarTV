@@ -46,8 +46,8 @@ Chúng chỉ **cùng dòng** (M3U IPTV player + cast). CarTV là app của Lyntr
 ### ❌ CHƯA LÀM (docs xếp v1/v2 — differentiators)
 | Docs | Phase |
 |---|---|
-| **A1. Playlist Health Engine / auto-failover** (probe nền, đổi nguồn) (Driver 3) | v2 |
-| **A2. EPG** (parse XMLTV, "đang phát", catch-up) (Driver 5, §5.5) | v2 |
+| ~~**A1. Playlist Health Engine / auto-failover** (probe nền, đổi nguồn) (Driver 3)~~ → **ĐÃ LÀM**: probe link (GET Range, timeout 8s, 6 luồng song song) → lưu trạng thái local (bảng `stream_health`); chấm xanh/đỏ trên card kênh; nút "Kiểm tra" trong Quản lý danh sách phát (đếm hoạt động/lỗi); Player tự failover sang nguồn cùng tên khi link chết + đánh dấu online khi phát được. Probe tự động nền theo lịch chưa làm. | v2 |
+| ~~**A2. EPG** (parse XMLTV, "đang phát", catch-up) (Driver 5, §5.5)~~ → **ĐÃ LÀM**: nhập link XMLTV ở Cài đặt → Lịch phát sóng, parse nền (SAX, cửa sổ −6h…+48h), lưu local (SQLite), hiện "Đang phát / Tiếp theo" trên Player (ghép theo tvg-id, có fallback theo stream URL). Catch-up chưa làm. | v2 |
 | **B1. Cloud sync** (Firestore favourites/history/settings) (Driver 4) | v1 (kiến trúc đã sẵn qua `UserDataRepository`) |
 | **Xtream Codes** login + **Keychain** cho credential (§4, §6, §8) | v1 |
 | **Auth** (Sign in with Apple + Anonymous) (§9 v1) | v1 |

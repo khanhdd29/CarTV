@@ -62,7 +62,7 @@
 "source_url" = "URL";
 "source_file" = "Fichier";
 "source_stream" = "Flux";
-"source_device" = "Appareil";
+"source_device" = "Mes vidéos";
 "source_file_hint" = "Choisissez un fichier .m3u ou .m3u8 dans l'app Fichiers.";
 "source_device_hint" = "Choisissez des vidéos de votre bibliothèque à lire dans l'app.";
 "stream_url" = "URL du flux";
@@ -96,11 +96,11 @@
 /* Guide */
 "guide" = "Guide";
 "guide_add_title" = "Add a source";
-"guide_add_body" = "Four ways to add content with the + button:";
+"guide_add_body" = "Façons d'ajouter du contenu avec le bouton + :";
 "guide_src_url" = "URL — paste an M3U playlist link (many channels).";
 "guide_src_file" = "File — pick an .m3u/.m3u8 file from the Files app.";
 "guide_src_stream" = "Stream — paste a single stream link to play now or save.";
-"guide_src_device" = "Device — pick a video from Photos to play offline.";
+"guide_src_device" = "Mes vidéos — choisissez une vidéo dans Photos pour la lire hors ligne.";
 "guide_links_title" = "Where to find M3U links";
 "guide_links_body" = "Use links from your IPTV provider, or public sources (e.g. iptv-org).";
 "guide_browse_title" = "Browse & save";
@@ -109,3 +109,33 @@
 "guide_watch_body" = "Tap to show controls: skip 10s, switch channels, AirPlay. Rotate to landscape for full screen. Regular videos resume where you left off.";
 "guide_tip_title" = "Tip";
 "guide_tip_body" = "Free streams often die or lag — if a channel won't play, try another link or source.";
+/* Xtream */
+"source_xtream" = "Xtream";
+"xtream_server" = "Server URL";
+"xtream_username" = "Username";
+"xtream_password" = "Password";
+"xtream_hint" = "Enter your Xtream Codes server, username and password. Credentials are stored securely on-device.";
+"xtream_auth_failed" = "Login failed — check your username and password.";
+
+/* EPG (program guide) */
+"epg_title" = "Guide des programmes";
+"epg_what_title" = "Qu'est-ce que c'est ?";
+"epg_what_body" = "Ajoutez un lien XMLTV (de votre fournisseur IPTV ou d'une source publique) et CarTV affiche ce qui passe maintenant et ensuite pour chaque chaîne, selon son tvg-id.";
+"epg_url_label" = "Lien XMLTV";
+"epg_load" = "Charger le guide";
+"epg_loading" = "Chargement du guide…";
+"epg_loaded" = "%d programmes chargés";
+"epg_clear" = "Supprimer le guide";
+"epg_invalid_url" = "Saisissez un lien XMLTV valide";
+"epg_now" = "EN COURS";
+"epg_next" = "À SUIVRE";
+
+/* Guide — Xtream */
+"guide_src_xtream" = "Xtream Codes — connectez-vous avec serveur + nom d'utilisateur + mot de passe (aucun lien M3U requis).";
+"guide_xtream_title" = "Compte Xtream Codes";
+"guide_xtream_body" = "Si votre fournisseur vous donne un serveur, un nom d'utilisateur et un mot de passe au lieu d'un lien M3U, utilisez Xtream. CarTV récupère votre liste de chaînes et conserve les identifiants en sécurité sur l'appareil (Keychain) — jamais envoyés ailleurs.";
+
+/* Playlist health */
+"health_checking" = "Vérification des liens…";
+"health_online_n" = "%d actives";
+"health_offline_n" = "%d inactives";

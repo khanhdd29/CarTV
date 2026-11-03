@@ -62,7 +62,7 @@
 "source_url" = "URL";
 "source_file" = "文件";
 "source_stream" = "直播流";
-"source_device" = "设备";
+"source_device" = "我的视频";
 "source_file_hint" = "从“文件”应用中选择 .m3u 或 .m3u8 文件。";
 "source_device_hint" = "从你的媒体库中选择视频，在应用内播放。";
 "stream_url" = "直播流 URL";
@@ -96,11 +96,11 @@
 /* Guide */
 "guide" = "Guide";
 "guide_add_title" = "Add a source";
-"guide_add_body" = "Four ways to add content with the + button:";
+"guide_add_body" = "使用 + 按钮添加内容的方式：";
 "guide_src_url" = "URL — paste an M3U playlist link (many channels).";
 "guide_src_file" = "File — pick an .m3u/.m3u8 file from the Files app.";
 "guide_src_stream" = "Stream — paste a single stream link to play now or save.";
-"guide_src_device" = "Device — pick a video from Photos to play offline.";
+"guide_src_device" = "我的视频 — 从“照片”中选择视频离线播放。";
 "guide_links_title" = "Where to find M3U links";
 "guide_links_body" = "Use links from your IPTV provider, or public sources (e.g. iptv-org).";
 "guide_browse_title" = "Browse & save";
@@ -109,3 +109,33 @@
 "guide_watch_body" = "Tap to show controls: skip 10s, switch channels, AirPlay. Rotate to landscape for full screen. Regular videos resume where you left off.";
 "guide_tip_title" = "Tip";
 "guide_tip_body" = "Free streams often die or lag — if a channel won't play, try another link or source.";
+/* Xtream */
+"source_xtream" = "Xtream";
+"xtream_server" = "Server URL";
+"xtream_username" = "Username";
+"xtream_password" = "Password";
+"xtream_hint" = "Enter your Xtream Codes server, username and password. Credentials are stored securely on-device.";
+"xtream_auth_failed" = "Login failed — check your username and password.";
+
+/* EPG (program guide) */
+"epg_title" = "节目指南";
+"epg_what_title" = "这是什么？";
+"epg_what_body" = "添加一个 XMLTV 链接（来自你的 IPTV 提供商或公开来源），CarTV 会根据每个频道的 tvg-id 进行匹配，显示正在播出和即将播出的节目。";
+"epg_url_label" = "XMLTV 链接";
+"epg_load" = "加载指南";
+"epg_loading" = "正在加载指南…";
+"epg_loaded" = "已加载 %d 个节目";
+"epg_clear" = "移除指南";
+"epg_invalid_url" = "请输入有效的 XMLTV 链接";
+"epg_now" = "正在播出";
+"epg_next" = "即将播出";
+
+/* Guide — Xtream */
+"guide_src_xtream" = "Xtream Codes — 使用服务器 + 用户名 + 密码登录（无需 M3U 链接）。";
+"guide_xtream_title" = "Xtream Codes 账户";
+"guide_xtream_body" = "如果你的提供商给你的是服务器、用户名和密码，而不是 M3U 链接，请使用 Xtream。CarTV 会获取你的频道列表，并将登录信息安全地保存在设备上（Keychain），绝不会上传到任何地方。";
+
+/* Playlist health */
+"health_checking" = "正在检查链接…";
+"health_online_n" = "%d 个在线";
+"health_offline_n" = "%d 个失效";

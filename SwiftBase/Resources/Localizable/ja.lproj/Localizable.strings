@@ -62,7 +62,7 @@
 "source_url" = "URL";
 "source_file" = "ファイル";
 "source_stream" = "ストリーム";
-"source_device" = "デバイス";
+"source_device" = "自分の動画";
 "source_file_hint" = "ファイルアプリから .m3u または .m3u8 ファイルを選択してください。";
 "source_device_hint" = "ライブラリから動画を選んでアプリ内で再生します。";
 "stream_url" = "ストリームURL";
@@ -96,11 +96,11 @@
 /* Guide */
 "guide" = "Guide";
 "guide_add_title" = "Add a source";
-"guide_add_body" = "Four ways to add content with the + button:";
+"guide_add_body" = "＋ボタンでコンテンツを追加する方法：";
 "guide_src_url" = "URL — paste an M3U playlist link (many channels).";
 "guide_src_file" = "File — pick an .m3u/.m3u8 file from the Files app.";
 "guide_src_stream" = "Stream — paste a single stream link to play now or save.";
-"guide_src_device" = "Device — pick a video from Photos to play offline.";
+"guide_src_device" = "自分の動画 — 写真から動画を選んでオフラインで再生します。";
 "guide_links_title" = "Where to find M3U links";
 "guide_links_body" = "Use links from your IPTV provider, or public sources (e.g. iptv-org).";
 "guide_browse_title" = "Browse & save";
@@ -109,3 +109,33 @@
 "guide_watch_body" = "Tap to show controls: skip 10s, switch channels, AirPlay. Rotate to landscape for full screen. Regular videos resume where you left off.";
 "guide_tip_title" = "Tip";
 "guide_tip_body" = "Free streams often die or lag — if a channel won't play, try another link or source.";
+/* Xtream */
+"source_xtream" = "Xtream";
+"xtream_server" = "Server URL";
+"xtream_username" = "Username";
+"xtream_password" = "Password";
+"xtream_hint" = "Enter your Xtream Codes server, username and password. Credentials are stored securely on-device.";
+"xtream_auth_failed" = "Login failed — check your username and password.";
+
+/* EPG (program guide) */
+"epg_title" = "番組表";
+"epg_what_title" = "これは何ですか？";
+"epg_what_body" = "XMLTVのリンク（ご利用のIPTVプロバイダーまたは公開ソースのもの）を追加すると、CarTVが各チャンネルをtvg-idで照合して、現在と次の番組を表示します。";
+"epg_url_label" = "XMLTVのリンク";
+"epg_load" = "番組表を読み込む";
+"epg_loading" = "番組表を読み込み中…";
+"epg_loaded" = "%d 件の番組を読み込みました";
+"epg_clear" = "番組表を削除";
+"epg_invalid_url" = "有効なXMLTVのリンクを入力してください";
+"epg_now" = "放送中";
+"epg_next" = "この後";
+
+/* Guide — Xtream */
+"guide_src_xtream" = "Xtream Codes — サーバー＋ユーザー名＋パスワードでサインイン（M3Uのリンクは不要）。";
+"guide_xtream_title" = "Xtream Codes アカウント";
+"guide_xtream_body" = "プロバイダーからM3Uのリンクではなくサーバー、ユーザー名、パスワードが提供されている場合は、Xtreamをお使いください。CarTVがチャンネルリストを取得し、ログイン情報は端末内（Keychain）に安全に保存され、どこにもアップロードされません。";
+
+/* Playlist health */
+"health_checking" = "リンクを確認中…";
+"health_online_n" = "%d 件が有効";
+"health_offline_n" = "%d 件が無効";

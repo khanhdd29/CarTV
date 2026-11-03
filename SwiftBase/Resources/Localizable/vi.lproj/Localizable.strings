@@ -62,7 +62,7 @@
 "source_url" = "URL";
 "source_file" = "Tệp";
 "source_stream" = "Luồng";
-"source_device" = "Thiết bị";
+"source_device" = "Video máy";
 "source_file_hint" = "Chọn tệp .m3u hoặc .m3u8 từ ứng dụng Tệp.";
 "source_device_hint" = "Chọn video từ thư viện để phát trong ứng dụng.";
 "stream_url" = "Đường dẫn luồng";
@@ -96,11 +96,11 @@
 /* Guide */
 "guide" = "Hướng dẫn";
 "guide_add_title" = "Thêm nguồn xem";
-"guide_add_body" = "Có 4 cách thêm nội dung qua nút +:";
+"guide_add_body" = "Các cách thêm nội dung qua nút +:";
 "guide_src_url" = "URL — dán link danh sách phát M3U (nhiều kênh).";
 "guide_src_file" = "Tệp — chọn file .m3u/.m3u8 từ ứng dụng Tệp.";
 "guide_src_stream" = "Luồng — dán 1 link stream lẻ để phát ngay hoặc lưu.";
-"guide_src_device" = "Thiết bị — chọn video từ thư viện Ảnh để phát offline.";
+"guide_src_device" = "Video máy — chọn video từ thư viện Ảnh để phát offline.";
 "guide_links_title" = "Tìm link M3U ở đâu?";
 "guide_links_body" = "Dùng link từ nhà cung cấp IPTV của bạn, hoặc nguồn công khai (vd iptv-org).";
 "guide_browse_title" = "Duyệt & lưu";
@@ -109,3 +109,33 @@
 "guide_watch_body" = "Chạm để hiện điều khiển: tua 10 giây, chuyển kênh, AirPlay. Xoay ngang để xem toàn màn hình. Video thường được nhớ vị trí.";
 "guide_tip_title" = "Mẹo";
 "guide_tip_body" = "Link miễn phí hay chết/lag — nếu kênh không phát, thử link hoặc nguồn khác.";
+/* Xtream */
+"source_xtream" = "Xtream";
+"xtream_server" = "Địa chỉ server";
+"xtream_username" = "Tên đăng nhập";
+"xtream_password" = "Mật khẩu";
+"xtream_hint" = "Nhập server Xtream Codes, tên đăng nhập và mật khẩu. Thông tin đăng nhập được lưu an toàn trên máy.";
+"xtream_auth_failed" = "Đăng nhập thất bại — kiểm tra tên đăng nhập và mật khẩu.";
+
+/* EPG (lịch phát sóng) */
+"epg_title" = "Lịch phát sóng";
+"epg_what_title" = "Đây là gì?";
+"epg_what_body" = "Thêm một liên kết XMLTV (từ nhà cung cấp IPTV hoặc nguồn công khai) và CarTV sẽ hiện chương trình đang phát và tiếp theo cho mỗi kênh, ghép theo tvg-id.";
+"epg_url_label" = "Liên kết XMLTV";
+"epg_load" = "Tải lịch";
+"epg_loading" = "Đang tải lịch…";
+"epg_loaded" = "Đã tải %d chương trình";
+"epg_clear" = "Xoá lịch";
+"epg_invalid_url" = "Nhập liên kết XMLTV hợp lệ";
+"epg_now" = "ĐANG PHÁT";
+"epg_next" = "TIẾP THEO";
+
+/* Guide — Xtream */
+"guide_src_xtream" = "Xtream Codes — đăng nhập bằng máy chủ + tên đăng nhập + mật khẩu (không cần link M3U).";
+"guide_xtream_title" = "Tài khoản Xtream Codes";
+"guide_xtream_body" = "Nếu nhà cung cấp đưa bạn máy chủ, tên đăng nhập và mật khẩu thay vì link M3U, hãy dùng Xtream. CarTV tải danh sách kênh và lưu thông tin đăng nhập an toàn ngay trên máy (Keychain) — không gửi lên bất cứ đâu.";
+
+/* Playlist health */
+"health_checking" = "Đang kiểm tra kênh…";
+"health_online_n" = "%d hoạt động";
+"health_offline_n" = "%d lỗi";

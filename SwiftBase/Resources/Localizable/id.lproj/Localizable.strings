@@ -62,7 +62,7 @@
 "source_url" = "URL";
 "source_file" = "File";
 "source_stream" = "Stream";
-"source_device" = "Perangkat";
+"source_device" = "Video saya";
 "source_file_hint" = "Pilih file .m3u atau .m3u8 dari aplikasi Files.";
 "source_device_hint" = "Pilih video dari galeri Anda untuk diputar di aplikasi.";
 "stream_url" = "URL stream";
@@ -96,11 +96,11 @@
 /* Guide */
 "guide" = "Guide";
 "guide_add_title" = "Add a source";
-"guide_add_body" = "Four ways to add content with the + button:";
+"guide_add_body" = "Cara menambahkan konten dengan tombol +:";
 "guide_src_url" = "URL — paste an M3U playlist link (many channels).";
 "guide_src_file" = "File — pick an .m3u/.m3u8 file from the Files app.";
 "guide_src_stream" = "Stream — paste a single stream link to play now or save.";
-"guide_src_device" = "Device — pick a video from Photos to play offline.";
+"guide_src_device" = "Video saya — pilih video dari Foto untuk diputar offline.";
 "guide_links_title" = "Where to find M3U links";
 "guide_links_body" = "Use links from your IPTV provider, or public sources (e.g. iptv-org).";
 "guide_browse_title" = "Browse & save";
@@ -109,3 +109,33 @@
 "guide_watch_body" = "Tap to show controls: skip 10s, switch channels, AirPlay. Rotate to landscape for full screen. Regular videos resume where you left off.";
 "guide_tip_title" = "Tip";
 "guide_tip_body" = "Free streams often die or lag — if a channel won't play, try another link or source.";
+/* Xtream */
+"source_xtream" = "Xtream";
+"xtream_server" = "Server URL";
+"xtream_username" = "Username";
+"xtream_password" = "Password";
+"xtream_hint" = "Enter your Xtream Codes server, username and password. Credentials are stored securely on-device.";
+"xtream_auth_failed" = "Login failed — check your username and password.";
+
+/* EPG (program guide) */
+"epg_title" = "Panduan acara";
+"epg_what_title" = "Apa ini?";
+"epg_what_body" = "Tambahkan tautan XMLTV (dari penyedia IPTV Anda atau sumber publik) dan CarTV menampilkan acara yang sedang dan akan tayang untuk setiap saluran, dicocokkan berdasarkan tvg-id-nya.";
+"epg_url_label" = "Tautan XMLTV";
+"epg_load" = "Muat panduan";
+"epg_loading" = "Memuat panduan…";
+"epg_loaded" = "%d acara dimuat";
+"epg_clear" = "Hapus panduan";
+"epg_invalid_url" = "Masukkan tautan XMLTV yang valid";
+"epg_now" = "SEKARANG";
+"epg_next" = "BERIKUTNYA";
+
+/* Guide — Xtream */
+"guide_src_xtream" = "Xtream Codes — masuk dengan server + nama pengguna + kata sandi (tanpa tautan M3U).";
+"guide_xtream_title" = "Akun Xtream Codes";
+"guide_xtream_body" = "Jika penyedia Anda memberi server, nama pengguna, dan kata sandi alih-alih tautan M3U, gunakan Xtream. CarTV mengambil daftar saluran Anda dan menyimpan info masuk dengan aman di perangkat (Keychain) — tidak pernah diunggah ke mana pun.";
+
+/* Playlist health */
+"health_checking" = "Memeriksa tautan…";
+"health_online_n" = "%d aktif";
+"health_offline_n" = "%d mati";

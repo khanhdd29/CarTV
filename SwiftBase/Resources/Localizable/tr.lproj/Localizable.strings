@@ -62,7 +62,7 @@
 "source_url" = "URL";
 "source_file" = "Dosya";
 "source_stream" = "Yayın";
-"source_device" = "Cihaz";
+"source_device" = "Videolarım";
 "source_file_hint" = "Dosyalar uygulamasından bir .m3u veya .m3u8 dosyası seçin.";
 "source_device_hint" = "Uygulamada oynatmak için kitaplığınızdan video seçin.";
 "stream_url" = "Yayın URL'si";
@@ -96,11 +96,11 @@
 /* Guide */
 "guide" = "Guide";
 "guide_add_title" = "Add a source";
-"guide_add_body" = "Four ways to add content with the + button:";
+"guide_add_body" = "+ düğmesiyle içerik ekleme yolları:";
 "guide_src_url" = "URL — paste an M3U playlist link (many channels).";
 "guide_src_file" = "File — pick an .m3u/.m3u8 file from the Files app.";
 "guide_src_stream" = "Stream — paste a single stream link to play now or save.";
-"guide_src_device" = "Device — pick a video from Photos to play offline.";
+"guide_src_device" = "Videolarım — çevrimdışı oynatmak için Fotoğraflar'dan bir video seçin.";
 "guide_links_title" = "Where to find M3U links";
 "guide_links_body" = "Use links from your IPTV provider, or public sources (e.g. iptv-org).";
 "guide_browse_title" = "Browse & save";
@@ -109,3 +109,33 @@
 "guide_watch_body" = "Tap to show controls: skip 10s, switch channels, AirPlay. Rotate to landscape for full screen. Regular videos resume where you left off.";
 "guide_tip_title" = "Tip";
 "guide_tip_body" = "Free streams often die or lag — if a channel won't play, try another link or source.";
+/* Xtream */
+"source_xtream" = "Xtream";
+"xtream_server" = "Server URL";
+"xtream_username" = "Username";
+"xtream_password" = "Password";
+"xtream_hint" = "Enter your Xtream Codes server, username and password. Credentials are stored securely on-device.";
+"xtream_auth_failed" = "Login failed — check your username and password.";
+
+/* EPG (program guide) */
+"epg_title" = "Yayın rehberi";
+"epg_what_title" = "Bu nedir?";
+"epg_what_body" = "Bir XMLTV bağlantısı ekleyin (IPTV sağlayıcınızdan veya genel bir kaynaktan) ve CarTV, tvg-id ile eşleştirerek her kanalda şu an ve sırada ne olduğunu gösterir.";
+"epg_url_label" = "XMLTV bağlantısı";
+"epg_load" = "Rehberi yükle";
+"epg_loading" = "Rehber yükleniyor…";
+"epg_loaded" = "%d program yüklendi";
+"epg_clear" = "Rehberi kaldır";
+"epg_invalid_url" = "Geçerli bir XMLTV bağlantısı girin";
+"epg_now" = "ŞİMDİ";
+"epg_next" = "SIRADAKİ";
+
+/* Guide — Xtream */
+"guide_src_xtream" = "Xtream Codes — sunucu + kullanıcı adı + parola ile oturum açın (M3U bağlantısı gerekmez).";
+"guide_xtream_title" = "Xtream Codes hesabı";
+"guide_xtream_body" = "Sağlayıcınız M3U bağlantısı yerine sunucu, kullanıcı adı ve parola veriyorsa Xtream'i kullanın. CarTV kanal listenizi alır ve oturum bilgilerinizi cihazda güvenle saklar (Keychain) — hiçbir yere yüklenmez.";
+
+/* Playlist health */
+"health_checking" = "Bağlantılar denetleniyor…";
+"health_online_n" = "%d çalışıyor";
+"health_offline_n" = "%d çalışmıyor";

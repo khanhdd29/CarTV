@@ -62,7 +62,7 @@
 "source_url" = "URL";
 "source_file" = "File";
 "source_stream" = "Stream";
-"source_device" = "Device";
+"source_device" = "My videos";
 "source_file_hint" = "Choose an .m3u or .m3u8 file from the Files app.";
 "source_device_hint" = "Pick videos from your library to play in the app.";
 "stream_url" = "Stream URL";
@@ -96,11 +96,11 @@
 /* Guide */
 "guide" = "Guide";
 "guide_add_title" = "Add a source";
-"guide_add_body" = "Four ways to add content with the + button:";
+"guide_add_body" = "Ways to add content with the + button:";
 "guide_src_url" = "URL — paste an M3U playlist link (many channels).";
 "guide_src_file" = "File — pick an .m3u/.m3u8 file from the Files app.";
 "guide_src_stream" = "Stream — paste a single stream link to play now or save.";
-"guide_src_device" = "Device — pick a video from Photos to play offline.";
+"guide_src_device" = "My videos — pick a video from Photos to play offline.";
 "guide_links_title" = "Where to find M3U links";
 "guide_links_body" = "Use links from your IPTV provider, or public sources (e.g. iptv-org).";
 "guide_browse_title" = "Browse & save";
@@ -109,3 +109,33 @@
 "guide_watch_body" = "Tap to show controls: skip 10s, switch channels, AirPlay. Rotate to landscape for full screen. Regular videos resume where you left off.";
 "guide_tip_title" = "Tip";
 "guide_tip_body" = "Free streams often die or lag — if a channel won't play, try another link or source.";
+/* Xtream */
+"source_xtream" = "Xtream";
+"xtream_server" = "Server URL";
+"xtream_username" = "Username";
+"xtream_password" = "Password";
+"xtream_hint" = "Enter your Xtream Codes server, username and password. Credentials are stored securely on-device.";
+"xtream_auth_failed" = "Login failed — check your username and password.";
+
+/* EPG (program guide) */
+"epg_title" = "Program guide";
+"epg_what_title" = "What is this?";
+"epg_what_body" = "Add an XMLTV link (from your IPTV provider or a public source) and CarTV shows what's on now and next for each channel, matched by its tvg-id.";
+"epg_url_label" = "XMLTV link";
+"epg_load" = "Load guide";
+"epg_loading" = "Loading guide…";
+"epg_loaded" = "%d programmes loaded";
+"epg_clear" = "Remove guide";
+"epg_invalid_url" = "Enter a valid XMLTV link";
+"epg_now" = "NOW";
+"epg_next" = "NEXT";
+
+/* Guide — Xtream */
+"guide_src_xtream" = "Xtream Codes — sign in with server + username + password (no M3U link needed).";
+"guide_xtream_title" = "Xtream Codes account";
+"guide_xtream_body" = "If your provider gives you a server, username and password instead of an M3U link, use Xtream. CarTV fetches your channel list and keeps the login securely on-device (Keychain) — never uploaded anywhere.";
+
+/* Playlist health */
+"health_checking" = "Checking links…";
+"health_online_n" = "%d live";
+"health_offline_n" = "%d dead";
