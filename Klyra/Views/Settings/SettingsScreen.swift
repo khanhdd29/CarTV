@@ -17,7 +17,7 @@ struct SettingsScreen: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 22) {
-                CinematicHeader("settings".localized, eyebrow: "KLYRA")
+                CinematicHeader("settings".localized, eyebrow: "KLYRA IPTV")
                     .padding(.top, 10)
 
                 VStack(spacing: 10) {

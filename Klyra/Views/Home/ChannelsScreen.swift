@@ -48,7 +48,7 @@ struct ChannelsScreen: View {
     private var topBar: some View {
         HStack(alignment: .center) {
             VStack(alignment: .leading, spacing: 2) {
-                Text("Klyra")
+                Text("Klyra IPTV")
                     .font(.caption.weight(.heavy))
                     .tracking(2)
                     .foregroundStyle(AppColors.secondary)

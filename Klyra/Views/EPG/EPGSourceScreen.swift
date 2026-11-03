@@ -72,7 +72,7 @@ struct EPGSourceScreen: View {
         HStack(spacing: 12) {
             CircleIconButton(systemName: "chevron.left") { app.navi.pop() }
             VStack(alignment: .leading, spacing: 2) {
-                Text("KLYRA").font(.caption.weight(.heavy)).tracking(2).foregroundStyle(AppColors.secondary)
+                Text("KLYRA IPTV").font(.caption.weight(.heavy)).tracking(2).foregroundStyle(AppColors.secondary)
                 Text("epg_title".localized).font(.title2.weight(.bold)).foregroundStyle(AppColors.textPrimary)
             }
             Spacer()
