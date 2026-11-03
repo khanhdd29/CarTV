@@ -28,6 +28,7 @@ struct AddPlaylistScreen: View {
                 VStack(alignment: .leading, spacing: 16) {
                     switch viewModel.mode {
                     case .url:    urlSection
+                    case .xtream: xtreamSection
                     case .file:   fileSection
                     case .stream: streamSection
                     case .device: deviceSection
@@ -91,24 +92,26 @@ struct AddPlaylistScreen: View {
     }
 
     private var modePills: some View {
-        HStack(spacing: 8) {
-            ForEach(AddPlaylistViewModel.Mode.allCases) { mode in
-                let active = viewModel.mode == mode
-                Button { withAnimation(.easeInOut(duration: 0.2)) { viewModel.mode = mode } } label: {
-                    Text(mode.title)
-                        .font(.subheadline.weight(.semibold))
-                        .foregroundStyle(active ? .white : AppColors.textSecondary)
-                        .frame(maxWidth: .infinity)
-                        .padding(.vertical, 10)
-                        .background {
-                            if active {
-                                Capsule().fill(AppColors.brandGradient)
-                            } else {
-                                Capsule().fill(AppColors.surface).overlay(Capsule().stroke(AppColors.border, lineWidth: 1))
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack(spacing: 8) {
+                ForEach(AddPlaylistViewModel.Mode.allCases) { mode in
+                    let active = viewModel.mode == mode
+                    Button { withAnimation(.easeInOut(duration: 0.2)) { viewModel.mode = mode } } label: {
+                        Text(mode.title)
+                            .font(.subheadline.weight(.semibold))
+                            .foregroundStyle(active ? .white : AppColors.textSecondary)
+                            .padding(.horizontal, 18)
+                            .padding(.vertical, 10)
+                            .background {
+                                if active {
+                                    Capsule().fill(AppColors.brandGradient)
+                                } else {
+                                    Capsule().fill(AppColors.surface).overlay(Capsule().stroke(AppColors.border, lineWidth: 1))
+                                }
                             }
-                        }
+                    }
+                    .buttonStyle(.plain)
                 }
-                .buttonStyle(.plain)
             }
         }
     }
@@ -124,6 +127,22 @@ struct AddPlaylistScreen: View {
             GradientButton("add", systemImage: "arrow.down.circle.fill") { viewModel.addURL() }
                 .opacity(viewModel.canSubmitURL ? 1 : 0.5)
                 .disabled(!viewModel.canSubmitURL)
+                .padding(.top, 4)
+        }
+    }
+
+    private var xtreamSection: some View {
+        VStack(alignment: .leading, spacing: 16) {
+            fieldLabel("xtream_server".localized)
+            darkField("http://host:port", text: $viewModel.xtreamURL, axis: true)
+            fieldLabel("xtream_username".localized)
+            plainField("xtream_username".localized, text: $viewModel.xtreamUser)
+            fieldLabel("xtream_password".localized)
+            secureField("xtream_password".localized, text: $viewModel.xtreamPass)
+            Text("xtream_hint".localized).font(.footnote).foregroundStyle(AppColors.textTertiary)
+            GradientButton("add", systemImage: "arrow.down.circle.fill") { viewModel.addXtream() }
+                .opacity(viewModel.canSubmitXtream ? 1 : 0.5)
+                .disabled(!viewModel.canSubmitXtream)
                 .padding(.top, 4)
         }
     }
@@ -201,5 +220,23 @@ struct AddPlaylistScreen: View {
         .padding(14)
         .background(AppColors.surface, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
         .overlay(RoundedRectangle(cornerRadius: 14, style: .continuous).stroke(AppColors.border, lineWidth: 1))
+    }
+
+    private func plainField(_ placeholder: String, text: Binding<String>) -> some View {
+        TextField(placeholder, text: text)
+            .textInputAutocapitalization(.never).autocorrectionDisabled()
+            .foregroundStyle(AppColors.textPrimary)
+            .padding(14)
+            .background(AppColors.surface, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+            .overlay(RoundedRectangle(cornerRadius: 14, style: .continuous).stroke(AppColors.border, lineWidth: 1))
+    }
+
+    private func secureField(_ placeholder: String, text: Binding<String>) -> some View {
+        SecureField(placeholder, text: text)
+            .textInputAutocapitalization(.never)
+            .foregroundStyle(AppColors.textPrimary)
+            .padding(14)
+            .background(AppColors.surface, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+            .overlay(RoundedRectangle(cornerRadius: 14, style: .continuous).stroke(AppColors.border, lineWidth: 1))
     }
 }

@@ -19,6 +19,8 @@ struct GuideScreen: View {
             ScrollView {
                 VStack(spacing: 14) {
                     addSourcesCard
+                    card(icon: "key.fill", tint: AppColors.violet,
+                         title: "guide_xtream_title".localized, body: "guide_xtream_body".localized)
                     card(icon: "magnifyingglass", tint: AppColors.secondary,
                          title: "guide_links_title".localized, body: "guide_links_body".localized)
                     card(icon: "heart.fill", tint: AppColors.favorite,
@@ -56,6 +58,7 @@ struct GuideScreen: View {
             Text("guide_add_body".localized)
                 .font(.subheadline).foregroundStyle(AppColors.textSecondary)
             sourceRow("link", "guide_src_url".localized)
+            sourceRow("person.badge.key.fill", "guide_src_xtream".localized)
             sourceRow("folder.fill", "guide_src_file".localized)
             sourceRow("dot.radiowaves.left.and.right", "guide_src_stream".localized)
             sourceRow("photo.stack.fill", "guide_src_device".localized)

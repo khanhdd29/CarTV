@@ -16,11 +16,12 @@ import Factory
 @MainActor
 final class AddPlaylistViewModel: ObservableObject {
     enum Mode: CaseIterable, Identifiable {
-        case url, file, stream, device
+        case url, xtream, file, stream, device
         var id: Self { self }
         var title: String {
             switch self {
             case .url:    return "source_url".localized
+            case .xtream: return "source_xtream".localized
             case .file:   return "source_file".localized
             case .stream: return "source_stream".localized
             case .device: return "source_device".localized
@@ -37,6 +38,9 @@ final class AddPlaylistViewModel: ObservableObject {
     @Published var nameText = ""
     @Published var streamText = ""
     @Published var streamNameText = ""
+    @Published var xtreamURL = ""
+    @Published var xtreamUser = ""
+    @Published var xtreamPass = ""
     @Published var isWorking = false
     @Published var importedCount = 0
     @Published var errorMessage: String?
@@ -46,6 +50,33 @@ final class AddPlaylistViewModel: ObservableObject {
 
     var canSubmitURL: Bool { !trimmedURL.isEmpty && !isWorking }
     var canSubmitStream: Bool { !trimmedStream.isEmpty && !isWorking }
+    var canSubmitXtream: Bool {
+        !xtreamURL.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+            && !xtreamUser.isEmpty && !xtreamPass.isEmpty && !isWorking
+    }
+
+    // MARK: Xtream Codes
+
+    func addXtream() {
+        guard canSubmitXtream else { return }
+        let urlStr = xtreamURL.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard let url = URL(string: urlStr), let scheme = url.scheme,
+              scheme == "http" || scheme == "https", url.host != nil else {
+            errorMessage = AppError.invalidURL.localizedDescription
+            return
+        }
+        begin()
+        let user = xtreamUser, pass = xtreamPass
+        let name = "Xtream · \(url.host ?? "server")"
+        Task {
+            do {
+                try await playlistRepo.addXtreamPlaylist(name: name, serverURL: url, username: user, password: pass) { [weak self] count in
+                    Task { @MainActor in self?.importedCount = count }
+                }
+                finishSuccess()
+            } catch { fail(error) }
+        }
+    }
 
     // MARK: URL
 

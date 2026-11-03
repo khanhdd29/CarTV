@@ -25,6 +25,12 @@ protocol PlaylistRepository {
     @discardableResult
     func createManualPlaylist(name: String, type: PlaylistType, channels: [ChannelInput]) async throws -> PlaylistRef
 
+    /// Log in to an Xtream Codes server and import its live channels. Credentials
+    /// are stored securely (Keychain), never with the channel data.
+    @discardableResult
+    func addXtreamPlaylist(name: String, serverURL: URL, username: String, password: String,
+                           onProgress: (@Sendable (Int) -> Void)?) async throws -> PlaylistRef
+
     /// Re-parse an existing playlist from its stored `sourceURL`.
     @discardableResult
     func refreshPlaylist(id: String, onProgress: (@Sendable (Int) -> Void)?) async throws -> PlaylistRef
