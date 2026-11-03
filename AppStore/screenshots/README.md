@@ -25,7 +25,7 @@
    ```
 
    ⚠️ For the **player** shot the controls auto-hide after 4s. Temporarily raise the
-   delay in `SwiftBase/Views/Player/PlayerScreen.swift` → `scheduleHide()`
+   delay in `Klyra/Views/Player/PlayerScreen.swift` → `scheduleHide()`
    (`.now() + 4` → `.now() + 600`), rebuild, capture, then **revert to 4**.
 
 4. **Frame them**

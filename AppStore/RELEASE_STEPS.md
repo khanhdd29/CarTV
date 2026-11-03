@@ -13,7 +13,7 @@ Làm tới bước nào thì chép khối nội dung ở bước đó. Các kh�
 | Ngôn ngữ trang store | Chỉ **English (U.S.)** |
 
 > 🔎 **Hai constant trong code phải điền** (grep `TODO: RELEASE`):
-> [`SwiftBase/Common/AppConstant/AppConstant.swift`](../SwiftBase/Common/AppConstant/AppConstant.swift) → `appId` (bước 1.3) và `policyLink` (bước 4).
+> [`Klyra/Common/AppConstant/AppConstant.swift`](../Klyra/Common/AppConstant/AppConstant.swift) → `appId` (bước 1.3) và `policyLink` (bước 4).
 
 ---
 
@@ -54,7 +54,7 @@ Làm tới bước nào thì chép khối nội dung ở bước đó. Các kh�
 **1.3** Vào **General › App Information**, chép số **Apple ID** của app (~10 chữ số) và điền vào code **trước khi build** (bước 7):
 
 ```swift
-// SwiftBase/Common/AppConstant/AppConstant.swift
+// Klyra/Common/AppConstant/AppConstant.swift
 static let appId = "<số Apple ID>"   // TODO: RELEASE — nút Share dùng số này
 ```
 
@@ -162,7 +162,7 @@ Bấm **Save**.
 
 1. [ ] `AppConstants.appId` đã điền (bước 1.3) — grep `TODO: RELEASE` để chắc không còn placeholder.
 2. [ ] `AppConstants.policyLink` đã điền (bước 4).
-3. [ ] Target **SwiftBase** › **Signing & Capabilities**: tích *Automatically manage signing*, chọn **Team** trả phí.
+3. [ ] Target **Klyra** › **Signing & Capabilities**: tích *Automatically manage signing*, chọn **Team** trả phí.
 4. [ ] Xác nhận `TARGETED_DEVICE_FAMILY = 1` (chỉ iPhone — **không thể bỏ iPad sau khi đã phát hành kèm iPad**).
 5. [ ] Xác nhận `PrivacyInfo.xcprivacy` **nằm trong app bundle**: Target › Build Phases › Copy Bundle Resources (hoặc kiểm tra trong .app sau khi archive).
 6. [ ] `ITSAppUsesNonExemptEncryption = NO` đã có trong Info.plist (đã thêm) → không bị hỏi Export Compliance.

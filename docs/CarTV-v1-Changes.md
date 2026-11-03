@@ -45,7 +45,7 @@ en, vi, fr, pt-BR, pt-PT, es, de, it?→(không), ru, tr, id, hi, bn, ko, ja, zh
    tự chuyển sang VLC. **Chưa bật** (chưa link package); build không cần nó.
 
 ## ⚠️ Build & bật tuỳ chọn
-- Mở `SwiftBase.xcodeproj` (Xcode 26), để SPM resolve (lần trước đã resolve OK) rồi Run.
+- Mở `Klyra.xcodeproj` (Xcode 26), để SPM resolve (lần trước đã resolve OK) rồi Run.
   File mới tự vào build (synchronized group) — không cần sửa `project.pbxproj`.
 - **Bật VLCKit fallback**: File → Add Package Dependencies → `https://github.com/videolan/VLCKit`
   → product **MobileVLCKit**. Xong là tự hoạt động, không cần sửa code.
@@ -54,7 +54,7 @@ en, vi, fr, pt-BR, pt-PT, es, de, it?→(không), ru, tr, id, hi, bn, ko, ja, zh
 ## Ads / Firebase / Adjust — GIỮ code, chỉ TẮT (không xoá)
 Toàn bộ code monetization/analytics được **bảo toàn**, gói trong cờ biên dịch
 `MONETIZATION_ENABLED` (không định nghĩa = tắt ở v1), nên build không cần package:
-- `SwiftBase/Core/Ads/` (15 file) — khôi phục nguyên vẹn, mỗi file bọc `#if MONETIZATION_ENABLED … #endif`.
+- `Klyra/Core/Ads/` (15 file) — khôi phục nguyên vẹn, mỗi file bọc `#if MONETIZATION_ENABLED … #endif`.
 - 7 call-site (`SwiftBaseApp`, `AppDelegate`, `SplashView`, `IntroView`, `LanguageView`,
   `AnalyticsTracker`, `LottieTapView`) — nhánh ads/Firebase dưới `#if MONETIZATION_ENABLED`,
   nhánh v1 local-only chạy mặc định (`#else`).

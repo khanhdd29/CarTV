@@ -12,7 +12,7 @@ Tài liệu này mô tả kiến trúc, cách wiring ads, và **các bước cop
 ## 1. Kiến trúc thư mục
 
 ```
-SwiftBase/
+Klyra/
 ├── App/                     # Điểm vào + điều phối luồng
 │   ├── SwiftBaseApp.swift       # @main, hook openURL (chống app-open khi quay lại)
 │   ├── AppDelegate.swift        # Firebase configure (prod/dev plist)
@@ -175,7 +175,7 @@ vào `AnalyticsScreen` (`Core/Firebase/AnalyticsScreen.swift`).
 ## 7. Copy sang app mới — checklist
 
 **A. Tạo project & SPM**
-1. Tạo app SwiftUI (iOS 16+), copy thư mục `SwiftBase/` vào.
+1. Tạo app SwiftUI (iOS 16+), copy thư mục `Klyra/` vào.
 2. Thêm các SPM package ở mục 1.
 3. Thêm `GoogleService-Info.plist` (+ `GoogleService-Info-dev.plist` nếu có target dev).
 

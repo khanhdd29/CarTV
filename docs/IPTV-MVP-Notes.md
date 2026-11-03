@@ -12,7 +12,7 @@ EPG. App **không** cung cấp nội dung. Giá trị nằm ở player + xử l�
 định, không phải CRUD. "Car mode" chỉ là vỏ marketing. → Ta làm app mới cùng dòng,
 khác biệt ở chất lượng kỹ thuật (spec §0–§2).
 
-## Kiến trúc & file mới (đều nằm trong `SwiftBase/`, auto-build nhờ synchronized group)
+## Kiến trúc & file mới (đều nằm trong `Klyra/`, auto-build nhờ synchronized group)
 
 ```
 Domain/                         ★ thuần Swift, không import SDK/SQLite
@@ -55,7 +55,7 @@ Nguyên tắc đã tuân thủ (spec §7, §10):
 ## ⚠️ Build
 **Chưa build/verify được trong môi trường này**: SPM `ads-swift` là repo **private
 trên bitbucket** → `xcodebuild` treo ở bước resolve (cần credential + mạng của bạn).
-Mở `SwiftBase.xcodeproj` trong Xcode (26.x), để nó resolve packages rồi Run. Không
+Mở `Klyra.xcodeproj` trong Xcode (26.x), để nó resolve packages rồi Run. Không
 cần sửa `project.pbxproj` — file mới tự vào build (synchronized folder group).
 
 Test nhanh: Channels → **+** → dán 1 link `.m3u`/`.m3u8` công khai → xem kênh chạy.

@@ -17,7 +17,7 @@
                BlueprintIdentifier = "3A1F00010000000000000008"
                BuildableName = "Klyra.app"
                BlueprintName = "Klyra"
-               ReferencedContainer = "container:SwiftBase.xcodeproj">
+               ReferencedContainer = "container:Klyra.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,7 +47,7 @@
             BlueprintIdentifier = "3A1F00010000000000000008"
             BuildableName = "Klyra.app"
             BlueprintName = "Klyra"
-            ReferencedContainer = "container:SwiftBase.xcodeproj">
+            ReferencedContainer = "container:Klyra.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -64,7 +64,7 @@
             BlueprintIdentifier = "3A1F00010000000000000008"
             BuildableName = "Klyra.app"
             BlueprintName = "Klyra"
-            ReferencedContainer = "container:SwiftBase.xcodeproj">
+            ReferencedContainer = "container:Klyra.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
