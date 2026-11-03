@@ -21,6 +21,7 @@ enum AnalyticsScreen: String {
     case addPlaylist = "add_playlist"
     case managePlaylists = "manage_playlists"
     case guide
+    case epg
     case player
 
     // Detail / nested

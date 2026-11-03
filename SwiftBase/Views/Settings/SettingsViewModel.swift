@@ -33,6 +33,11 @@ final class SettingsViewModel: ObservableObject {
         app.navi.push(.guide)
     }
 
+    /// Push the XMLTV program-guide (EPG) source screen.
+    func openEPG() {
+        app.navi.push(.epg)
+    }
+
     /// Text shared by the "Share app" row.
     var shareMessage: String {
         let link = AppConstants.appLi

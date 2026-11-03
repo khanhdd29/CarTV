@@ -23,6 +23,7 @@ enum Destination: Equatable {
     case addPlaylist
     case managePlaylists
     case guide
+    case epg               // XMLTV program-guide source
     case player            // reads its queue from the shared PlayerController
 
     // Shared
@@ -40,6 +41,7 @@ extension Destination {
         case .addPlaylist:     return "addPlaylist"
         case .managePlaylists: return "managePlaylists"
         case .guide:           return "guide"
+        case .epg:             return "epg"
         case .player:          return "player"
         case .language:        return "language"
         }
@@ -66,6 +68,8 @@ extension Navigation {
             ManagePlaylistsScreen()
         case .guide:
             GuideScreen()
+        case .epg:
+            EPGSourceScreen()
         case .player:
             PlayerScreen()
         case .language:

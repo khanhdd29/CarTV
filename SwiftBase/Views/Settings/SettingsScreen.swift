@@ -20,6 +20,9 @@ struct SettingsScreen: View {
                     row("manage_playlists".localized, icon: "list.and.film", tint: AppColors.primary) {
                         viewModel.openManagePlaylists()
                     }
+                    row("epg_title".localized, icon: "tv.and.hifispeaker.fill", tint: AppColors.violet) {
+                        viewModel.openEPG()
+                    }
                     row("guide".localized, icon: "questionmark.circle.fill", tint: AppColors.secondary) {
                         viewModel.openGuide()
                     }

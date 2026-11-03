@@ -62,6 +62,7 @@ struct PlayerScreen: View {
     private var controls: some View {
         VStack(spacing: 0) {
             topBar
+            if let now = controller.nowNext.now { epgStrip(now) }
             Spacer()
             if !controller.usingFallback { centerControls }
             Spacer()
@@ -140,6 +141,50 @@ struct PlayerScreen: View {
         .padding(.horizontal, 16)
         .padding(.bottom, 6)
     }
+
+    // MARK: EPG now/next strip
+
+    private func epgStrip(_ now: EPGEntry) -> some View {
+        VStack(alignment: .leading, spacing: 7) {
+            HStack(spacing: 6) {
+                Text("epg_now".localized)
+                    .font(.caption2.weight(.heavy)).tracking(0.5)
+                    .foregroundStyle(AppColors.secondary)
+                Text(now.title)
+                    .font(.caption.weight(.semibold)).foregroundStyle(.white).lineLimit(1)
+                Spacer(minLength: 8)
+                Text("\(clock(now.start))–\(clock(now.stop))")
+                    .font(.caption2.monospacedDigit()).foregroundStyle(.white.opacity(0.6))
+            }
+            ProgressView(value: now.progress())
+                .tint(AppColors.secondary)
+                .scaleEffect(x: 1, y: 0.55, anchor: .center)
+            if let next = controller.nowNext.next {
+                HStack(spacing: 6) {
+                    Text("epg_next".localized)
+                        .font(.caption2.weight(.bold)).foregroundStyle(.white.opacity(0.45))
+                    Text(next.title)
+                        .font(.caption2).foregroundStyle(.white.opacity(0.7)).lineLimit(1)
+                    Spacer(minLength: 0)
+                }
+            }
+        }
+        .padding(.horizontal, 14).padding(.vertical, 10)
+        .background(.black.opacity(0.42), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+        .padding(.horizontal, 16)
+        .padding(.top, 8)
+    }
+
+    private func clock(_ date: Date) -> String {
+        Self.clockFormatter.string(from: date)
+    }
+
+    private static let clockFormatter: DateFormatter = {
+        let f = DateFormatter()
+        f.timeStyle = .short
+        f.dateStyle = .none
+        return f
+    }()
 
     // MARK: Status overlays
 
