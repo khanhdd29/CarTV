@@ -15,8 +15,7 @@ struct AppConstants {
     /// App Store numeric id — the digits after "id" in the store URL,
     /// e.g. `apps.apple.com/app/id6701234567` → `"6701234567"`.
     /// Drives the Settings → Share link. While empty, Share sends just the name.
-    // TODO: RELEASE — paste the App Store id here after the app is created (Step 1.3).
-    static let appId = ""
+    static let appId = "6830094898"
 
     /// Published privacy-policy URL for the Settings → "Privacy Policy" row.
     /// While empty, the row still shows but tapping it does nothing.
