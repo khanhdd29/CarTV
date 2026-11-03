@@ -166,3 +166,10 @@
 "pin_set_hint" = "This PIN will be needed to open the app";
 "pin_disable_hint" = "Enter your PIN to turn off the lock";
 "epg_schedule_empty" = "이 채널의 편성표가 없습니다";
+
+/* Guide — new features */
+"guide_src_qr" = "QR — 재생목록 링크가 담긴 코드 스캔";
+"guide_more_title" = "플레이어 추가 기능";
+"guide_more_body" = "Tap the screen for controls. From the ••• menu: subtitles, audio track, playback speed and a sleep timer. Use Picture-in-Picture, turn on Car mode for big buttons, or tap the now/next bar to see the full schedule.";
+"guide_health_title" = "채널 상태";
+"guide_health_body" = "Green/red dots show which links are alive. In Manage playlists, tap the pulse icon to check a whole playlist; turn on 'Hide offline channels' in Settings to clean up dead ones.";

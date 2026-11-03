@@ -27,6 +27,10 @@ struct GuideScreen: View {
                          title: "guide_browse_title".localized, body: "guide_browse_body".localized)
                     card(icon: "play.rectangle.fill", tint: AppColors.primary,
                          title: "guide_watch_title".localized, body: "guide_watch_body".localized)
+                    card(icon: "sparkles", tint: AppColors.secondary,
+                         title: "guide_more_title".localized, body: "guide_more_body".localized)
+                    card(icon: "waveform.path.ecg", tint: AppColors.success,
+                         title: "guide_health_title".localized, body: "guide_health_body".localized)
                     card(icon: "lightbulb.fill", tint: Color(hex: 0xF5A623),
                          title: "guide_tip_title".localized, body: "guide_tip_body".localized)
                 }
@@ -58,10 +62,11 @@ struct GuideScreen: View {
             Text("guide_add_body".localized)
                 .font(.subheadline).foregroundStyle(AppColors.textSecondary)
             sourceRow("link", "guide_src_url".localized)
-            sourceRow("person.badge.key.fill", "guide_src_xtream".localized)
+            sourceRow("qrcode.viewfinder", "guide_src_qr".localized)
             sourceRow("folder.fill", "guide_src_file".localized)
             sourceRow("dot.radiowaves.left.and.right", "guide_src_stream".localized)
             sourceRow("photo.stack.fill", "guide_src_device".localized)
+            sourceRow("person.badge.key.fill", "guide_src_xtream".localized)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(16)

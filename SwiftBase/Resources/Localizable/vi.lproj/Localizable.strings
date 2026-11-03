@@ -166,3 +166,10 @@
 "pin_set_hint" = "Cần mã PIN này để mở ứng dụng";
 "pin_disable_hint" = "Nhập PIN để tắt khoá";
 "epg_schedule_empty" = "Kênh này chưa có lịch";
+
+/* Guide — new features */
+"guide_src_qr" = "QR — quét mã chứa link danh sách phát";
+"guide_more_title" = "Tiện ích khi xem";
+"guide_more_body" = "Chạm màn hình để hiện điều khiển. Trong menu •••: phụ đề, âm thanh, tốc độ phát và hẹn giờ tắt. Dùng Picture-in-Picture, bật Car mode để có nút to, hoặc chạm dải Đang phát/Tiếp theo để xem cả lịch.";
+"guide_health_title" = "Sức khỏe kênh";
+"guide_health_body" = "Chấm xanh/đỏ cho biết link nào còn sống. Trong Quản lý danh sách phát, chạm biểu tượng nhịp tim để kiểm tra cả playlist; bật 'Ẩn kênh lỗi' trong Cài đặt để dọn kênh chết.";
