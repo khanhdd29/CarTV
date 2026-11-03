@@ -16,7 +16,8 @@ import Factory
 @MainActor
 final class AddPlaylistViewModel: ObservableObject {
     enum Mode: CaseIterable, Identifiable {
-        case url, xtream, file, stream, device
+        // Ordered most-common first; Xtream (niche) last.
+        case url, file, stream, device, xtream
         var id: Self { self }
         var title: String {
             switch self {
