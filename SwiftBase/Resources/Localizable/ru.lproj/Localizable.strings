@@ -1,0 +1,111 @@
+/* Common */
+"continue" = "Продолжить";
+"save" = "Сохранить";
+"skip" = "Пропустить";
+"next" = "Далее";
+"get_started" = "Начать";
+"back" = "Назад";
+"add" = "Добавить";
+"cancel" = "Отмена";
+"delete" = "Удалить";
+
+/* Tabs */
+"channels" = "Каналы";
+"search" = "Поиск";
+"favorites" = "Избранное";
+"recents" = "Недавние";
+"settings" = "Настройки";
+
+/* Language picker */
+"choose_your_language" = "Выберите язык";
+"change_language_later" = "Вы можете изменить это позже в настройках.";
+"please_select_language" = "Пожалуйста, выберите язык";
+
+/* Settings */
+"general" = "Основные";
+"language" = "Язык";
+"about" = "О приложении";
+"app" = "Приложение";
+"version" = "Версия";
+"developer" = "Разработчик";
+"replay_onboarding" = "Повторить знакомство";
+"rate" = "Оценить приложение";
+"share" = "Поделиться приложением";
+"privacy_policy" = "Политика конфиденциальности";
+"manage_playlists" = "Управление плейлистами";
+
+/* Onboarding intro */
+"intro_title_1" = "Ваши плейлисты в одно касание";
+"intro_message_1" = "Добавьте любую ссылку или файл M3U и смотрите сразу.";
+"intro_title_2" = "Создано для больших плейлистов";
+"intro_message_2" = "Тысячи каналов работают плавно, с мгновенным поиском.";
+"intro_title_3" = "Смотрите по-своему";
+"intro_message_3" = "Избранное, недавние, AirPlay и «картинка в картинке».";
+
+/* Splash */
+"loading" = "Загрузка";
+
+/* Channels & playlists */
+"add_playlist" = "Добавить плейлист";
+"playlist_url" = "URL плейлиста M3U";
+"playlist_name" = "Название плейлиста (необязательно)";
+"parsing_channels" = "Импортировано каналов: %d…";
+"no_channels_title" = "Пока нет каналов";
+"no_channels_message" = "Добавьте ссылку на плейлист M3U, чтобы начать просмотр.";
+"all" = "Все";
+"channel_count" = "Каналов: %d";
+"search_channels" = "Поиск каналов по названию или группе";
+"search_placeholder" = "Поиск…";
+"no_results_for" = "Нет результатов для «%@»";
+
+/* Add source */
+"source_url" = "URL";
+"source_file" = "Файл";
+"source_stream" = "Поток";
+"source_device" = "Устройство";
+"source_file_hint" = "Выберите файл .m3u или .m3u8 в приложении «Файлы».";
+"source_device_hint" = "Выберите видео из медиатеки для воспроизведения в приложении.";
+"stream_url" = "URL потока";
+"choose_file" = "Выбрать файл";
+"play_now" = "Смотреть сейчас";
+"select_videos" = "Выбрать видео";
+"video_number" = "Видео %d";
+
+/* Favorites & recents */
+"nothing_saved_yet" = "Пока ничего не сохранено";
+"no_recents" = "Пока ничего не просмотрено";
+
+/* Player */
+"loading_stream" = "Загрузка…";
+"playback_error" = "Не удаётся воспроизвести этот канал. Возможно, формат не поддерживается.";
+"try_again" = "Повторить";
+"next_channel" = "Следующий канал";
+"live" = "ПРЯМОЙ ЭФИР";
+"out_of_service" = "Недоступно — поток не отвечает.";
+
+/* Errors */
+"invalid_url" = "Введите корректную ссылку http(s).";
+"empty_playlist" = "В этом плейлисте не найдено каналов.";
+
+"featured" = "Featured";
+"delete_playlist_q" = "Delete this playlist?";
+"clear_recents_q" = "Clear watch history?";
+"clear_all" = "Clear all";
+"delete_playlist_msg" = "This playlist and its channels will be removed from this device.";
+"clear_recents_msg" = "Your entire watch history will be cleared.";
+/* Guide */
+"guide" = "Guide";
+"guide_add_title" = "Add a source";
+"guide_add_body" = "Four ways to add content with the + button:";
+"guide_src_url" = "URL — paste an M3U playlist link (many channels).";
+"guide_src_file" = "File — pick an .m3u/.m3u8 file from the Files app.";
+"guide_src_stream" = "Stream — paste a single stream link to play now or save.";
+"guide_src_device" = "Device — pick a video from Photos to play offline.";
+"guide_links_title" = "Where to find M3U links";
+"guide_links_body" = "Use links from your IPTV provider, or public sources (e.g. iptv-org).";
+"guide_browse_title" = "Browse & save";
+"guide_browse_body" = "Browse channels by group, tap the heart to save Favorites, find them again in Recents, and search instantly.";
+"guide_watch_title" = "While watching";
+"guide_watch_body" = "Tap to show controls: skip 10s, switch channels, AirPlay. Rotate to landscape for full screen. Regular videos resume where you left off.";
+"guide_tip_title" = "Tip";
+"guide_tip_body" = "Free streams often die or lag — if a channel won't play, try another link or source.";

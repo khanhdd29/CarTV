@@ -1,0 +1,111 @@
+/* Common */
+"continue" = "继续";
+"save" = "保存";
+"skip" = "跳过";
+"next" = "下一步";
+"get_started" = "开始使用";
+"back" = "返回";
+"add" = "添加";
+"cancel" = "取消";
+"delete" = "删除";
+
+/* Tabs */
+"channels" = "频道";
+"search" = "搜索";
+"favorites" = "收藏";
+"recents" = "最近";
+"settings" = "设置";
+
+/* Language picker */
+"choose_your_language" = "选择你的语言";
+"change_language_later" = "你可以稍后在“设置”中更改。";
+"please_select_language" = "请选择你的语言";
+
+/* Settings */
+"general" = "通用";
+"language" = "语言";
+"about" = "关于";
+"app" = "应用";
+"version" = "版本";
+"developer" = "开发者";
+"replay_onboarding" = "重看引导";
+"rate" = "给我们评分";
+"share" = "分享应用";
+"privacy_policy" = "隐私政策";
+"manage_playlists" = "管理播放列表";
+
+/* Onboarding intro */
+"intro_title_1" = "你的播放列表，一触即达";
+"intro_message_1" = "添加任意 M3U 链接或文件，立即观看。";
+"intro_title_2" = "专为大型播放列表打造";
+"intro_message_2" = "数千个频道依然流畅，搜索即时响应。";
+"intro_title_3" = "随心所欲地观看";
+"intro_message_3" = "收藏、最近、AirPlay 和画中画。";
+
+/* Splash */
+"loading" = "加载中";
+
+/* Channels & playlists */
+"add_playlist" = "添加播放列表";
+"playlist_url" = "M3U 播放列表 URL";
+"playlist_name" = "播放列表名称（可选）";
+"parsing_channels" = "已导入 %d 个频道…";
+"no_channels_title" = "暂无频道";
+"no_channels_message" = "添加 M3U 播放列表链接即可开始观看。";
+"all" = "全部";
+"channel_count" = "%d 个频道";
+"search_channels" = "按名称或分组搜索频道";
+"search_placeholder" = "搜索…";
+"no_results_for" = "没有“%@”的结果";
+
+/* Add source */
+"source_url" = "URL";
+"source_file" = "文件";
+"source_stream" = "直播流";
+"source_device" = "设备";
+"source_file_hint" = "从“文件”应用中选择 .m3u 或 .m3u8 文件。";
+"source_device_hint" = "从你的媒体库中选择视频，在应用内播放。";
+"stream_url" = "直播流 URL";
+"choose_file" = "选择文件";
+"play_now" = "立即播放";
+"select_videos" = "选择视频";
+"video_number" = "视频 %d";
+
+/* Favorites & recents */
+"nothing_saved_yet" = "尚未保存任何内容";
+"no_recents" = "尚未观看任何内容";
+
+/* Player */
+"loading_stream" = "加载中…";
+"playback_error" = "无法播放此频道。可能不支持该格式。";
+"try_again" = "重试";
+"next_channel" = "下一个频道";
+"live" = "直播";
+"out_of_service" = "无法使用 — 直播流无响应。";
+
+/* Errors */
+"invalid_url" = "请输入有效的 http(s) 链接。";
+"empty_playlist" = "此播放列表中未找到频道。";
+
+"featured" = "Featured";
+"delete_playlist_q" = "Delete this playlist?";
+"clear_recents_q" = "Clear watch history?";
+"clear_all" = "Clear all";
+"delete_playlist_msg" = "This playlist and its channels will be removed from this device.";
+"clear_recents_msg" = "Your entire watch history will be cleared.";
+/* Guide */
+"guide" = "Guide";
+"guide_add_title" = "Add a source";
+"guide_add_body" = "Four ways to add content with the + button:";
+"guide_src_url" = "URL — paste an M3U playlist link (many channels).";
+"guide_src_file" = "File — pick an .m3u/.m3u8 file from the Files app.";
+"guide_src_stream" = "Stream — paste a single stream link to play now or save.";
+"guide_src_device" = "Device — pick a video from Photos to play offline.";
+"guide_links_title" = "Where to find M3U links";
+"guide_links_body" = "Use links from your IPTV provider, or public sources (e.g. iptv-org).";
+"guide_browse_title" = "Browse & save";
+"guide_browse_body" = "Browse channels by group, tap the heart to save Favorites, find them again in Recents, and search instantly.";
+"guide_watch_title" = "While watching";
+"guide_watch_body" = "Tap to show controls: skip 10s, switch channels, AirPlay. Rotate to landscape for full screen. Regular videos resume where you left off.";
+"guide_tip_title" = "Tip";
+"guide_tip_body" = "Free streams often die or lag — if a channel won't play, try another link or source.";

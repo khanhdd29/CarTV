@@ -1,0 +1,111 @@
+/* Common */
+"continue" = "जारी रखें";
+"save" = "सहेजें";
+"skip" = "छोड़ें";
+"next" = "आगे";
+"get_started" = "शुरू करें";
+"back" = "वापस";
+"add" = "जोड़ें";
+"cancel" = "रद्द करें";
+"delete" = "हटाएँ";
+
+/* Tabs */
+"channels" = "चैनल";
+"search" = "खोजें";
+"favorites" = "पसंदीदा";
+"recents" = "हाल के";
+"settings" = "सेटिंग्स";
+
+/* Language picker */
+"choose_your_language" = "अपनी भाषा चुनें";
+"change_language_later" = "आप इसे बाद में सेटिंग्स में बदल सकते हैं।";
+"please_select_language" = "कृपया अपनी भाषा चुनें";
+
+/* Settings */
+"general" = "सामान्य";
+"language" = "भाषा";
+"about" = "परिचय";
+"app" = "ऐप";
+"version" = "संस्करण";
+"developer" = "डेवलपर";
+"replay_onboarding" = "परिचय फिर से देखें";
+"rate" = "हमें रेट करें";
+"share" = "ऐप साझा करें";
+"privacy_policy" = "गोपनीयता नीति";
+"manage_playlists" = "प्लेलिस्ट प्रबंधित करें";
+
+/* Onboarding intro */
+"intro_title_1" = "आपकी प्लेलिस्ट, बस एक टैप दूर";
+"intro_message_1" = "कोई भी M3U लिंक या फ़ाइल जोड़ें और तुरंत देखना शुरू करें।";
+"intro_title_2" = "बड़ी प्लेलिस्ट के लिए बना";
+"intro_message_2" = "हज़ारों चैनल सहज चलते हैं, तुरंत खोज के साथ।";
+"intro_title_3" = "अपने तरीके से देखें";
+"intro_message_3" = "पसंदीदा, हाल के, AirPlay और Picture in Picture।";
+
+/* Splash */
+"loading" = "लोड हो रहा है";
+
+/* Channels & playlists */
+"add_playlist" = "प्लेलिस्ट जोड़ें";
+"playlist_url" = "M3U प्लेलिस्ट URL";
+"playlist_name" = "प्लेलिस्ट का नाम (वैकल्पिक)";
+"parsing_channels" = "%d चैनल आयात किए…";
+"no_channels_title" = "अभी कोई चैनल नहीं";
+"no_channels_message" = "देखना शुरू करने के लिए एक M3U प्लेलिस्ट लिंक जोड़ें।";
+"all" = "सभी";
+"channel_count" = "%d चैनल";
+"search_channels" = "नाम या समूह से चैनल खोजें";
+"search_placeholder" = "खोजें…";
+"no_results_for" = "“%@” के लिए कोई परिणाम नहीं";
+
+/* Add source */
+"source_url" = "URL";
+"source_file" = "फ़ाइल";
+"source_stream" = "स्ट्रीम";
+"source_device" = "डिवाइस";
+"source_file_hint" = "Files ऐप से कोई .m3u या .m3u8 फ़ाइल चुनें।";
+"source_device_hint" = "ऐप में चलाने के लिए अपनी लाइब्रेरी से वीडियो चुनें।";
+"stream_url" = "स्ट्रीम URL";
+"choose_file" = "फ़ाइल चुनें";
+"play_now" = "अभी चलाएँ";
+"select_videos" = "वीडियो चुनें";
+"video_number" = "वीडियो %d";
+
+/* Favorites & recents */
+"nothing_saved_yet" = "अभी कुछ सहेजा नहीं गया";
+"no_recents" = "अभी कुछ नहीं देखा गया";
+
+/* Player */
+"loading_stream" = "लोड हो रहा है…";
+"playback_error" = "यह चैनल नहीं चल सकता। हो सकता है यह फ़ॉर्मेट समर्थित न हो।";
+"try_again" = "फिर से प्रयास करें";
+"next_channel" = "अगला चैनल";
+"live" = "लाइव";
+"out_of_service" = "सेवा में नहीं — स्ट्रीम ने जवाब नहीं दिया।";
+
+/* Errors */
+"invalid_url" = "कृपया एक मान्य http(s) लिंक दर्ज करें।";
+"empty_playlist" = "इस प्लेलिस्ट में कोई चैनल नहीं मिला।";
+
+"featured" = "Featured";
+"delete_playlist_q" = "Delete this playlist?";
+"clear_recents_q" = "Clear watch history?";
+"clear_all" = "Clear all";
+"delete_playlist_msg" = "This playlist and its channels will be removed from this device.";
+"clear_recents_msg" = "Your entire watch history will be cleared.";
+/* Guide */
+"guide" = "Guide";
+"guide_add_title" = "Add a source";
+"guide_add_body" = "Four ways to add content with the + button:";
+"guide_src_url" = "URL — paste an M3U playlist link (many channels).";
+"guide_src_file" = "File — pick an .m3u/.m3u8 file from the Files app.";
+"guide_src_stream" = "Stream — paste a single stream link to play now or save.";
+"guide_src_device" = "Device — pick a video from Photos to play offline.";
+"guide_links_title" = "Where to find M3U links";
+"guide_links_body" = "Use links from your IPTV provider, or public sources (e.g. iptv-org).";
+"guide_browse_title" = "Browse & save";
+"guide_browse_body" = "Browse channels by group, tap the heart to save Favorites, find them again in Recents, and search instantly.";
+"guide_watch_title" = "While watching";
+"guide_watch_body" = "Tap to show controls: skip 10s, switch channels, AirPlay. Rotate to landscape for full screen. Regular videos resume where you left off.";
+"guide_tip_title" = "Tip";
+"guide_tip_body" = "Free streams often die or lag — if a channel won't play, try another link or source.";

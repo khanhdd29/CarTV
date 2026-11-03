@@ -1,0 +1,111 @@
+/* Common */
+"continue" = "চালিয়ে যান";
+"save" = "সংরক্ষণ";
+"skip" = "এড়িয়ে যান";
+"next" = "পরবর্তী";
+"get_started" = "শুরু করুন";
+"back" = "পেছনে";
+"add" = "যোগ করুন";
+"cancel" = "বাতিল";
+"delete" = "মুছুন";
+
+/* Tabs */
+"channels" = "চ্যানেল";
+"search" = "অনুসন্ধান";
+"favorites" = "পছন্দের";
+"recents" = "সাম্প্রতিক";
+"settings" = "সেটিংস";
+
+/* Language picker */
+"choose_your_language" = "আপনার ভাষা বেছে নিন";
+"change_language_later" = "আপনি পরে সেটিংসে এটি পরিবর্তন করতে পারবেন।";
+"please_select_language" = "অনুগ্রহ করে আপনার ভাষা নির্বাচন করুন";
+
+/* Settings */
+"general" = "সাধারণ";
+"language" = "ভাষা";
+"about" = "সম্পর্কে";
+"app" = "অ্যাপ";
+"version" = "সংস্করণ";
+"developer" = "ডেভেলপার";
+"replay_onboarding" = "পরিচিতি আবার দেখুন";
+"rate" = "আমাদের রেট করুন";
+"share" = "অ্যাপ শেয়ার করুন";
+"privacy_policy" = "গোপনীয়তা নীতি";
+"manage_playlists" = "প্লেলিস্ট পরিচালনা করুন";
+
+/* Onboarding intro */
+"intro_title_1" = "আপনার প্লেলিস্ট, এক ট্যাপ দূরে";
+"intro_message_1" = "যেকোনো M3U লিঙ্ক বা ফাইল যোগ করুন এবং সঙ্গে সঙ্গে দেখা শুরু করুন।";
+"intro_title_2" = "বড় প্লেলিস্টের জন্য তৈরি";
+"intro_message_2" = "হাজার হাজার চ্যানেল মসৃণ থাকে, তাৎক্ষণিক অনুসন্ধানসহ।";
+"intro_title_3" = "আপনার মতো করে দেখুন";
+"intro_message_3" = "পছন্দের, সাম্প্রতিক, AirPlay এবং Picture in Picture।";
+
+/* Splash */
+"loading" = "লোড হচ্ছে";
+
+/* Channels & playlists */
+"add_playlist" = "প্লেলিস্ট যোগ করুন";
+"playlist_url" = "M3U প্লেলিস্ট URL";
+"playlist_name" = "প্লেলিস্টের নাম (ঐচ্ছিক)";
+"parsing_channels" = "%d টি চ্যানেল ইমপোর্ট করা হয়েছে…";
+"no_channels_title" = "এখনও কোনো চ্যানেল নেই";
+"no_channels_message" = "দেখা শুরু করতে একটি M3U প্লেলিস্ট লিঙ্ক যোগ করুন।";
+"all" = "সব";
+"channel_count" = "%d টি চ্যানেল";
+"search_channels" = "নাম বা গ্রুপ অনুযায়ী চ্যানেল খুঁজুন";
+"search_placeholder" = "অনুসন্ধান…";
+"no_results_for" = "“%@” এর জন্য কোনো ফলাফল নেই";
+
+/* Add source */
+"source_url" = "URL";
+"source_file" = "ফাইল";
+"source_stream" = "স্ট্রিম";
+"source_device" = "ডিভাইস";
+"source_file_hint" = "Files অ্যাপ থেকে একটি .m3u বা .m3u8 ফাইল বেছে নিন।";
+"source_device_hint" = "অ্যাপে চালানোর জন্য আপনার লাইব্রেরি থেকে ভিডিও বেছে নিন।";
+"stream_url" = "স্ট্রিম URL";
+"choose_file" = "ফাইল বেছে নিন";
+"play_now" = "এখন চালান";
+"select_videos" = "ভিডিও নির্বাচন করুন";
+"video_number" = "ভিডিও %d";
+
+/* Favorites & recents */
+"nothing_saved_yet" = "এখনও কিছু সংরক্ষিত নেই";
+"no_recents" = "এখনও কিছু দেখা হয়নি";
+
+/* Player */
+"loading_stream" = "লোড হচ্ছে…";
+"playback_error" = "এই চ্যানেলটি চালানো যাচ্ছে না। ফরম্যাটটি সমর্থিত নাও হতে পারে।";
+"try_again" = "আবার চেষ্টা করুন";
+"next_channel" = "পরবর্তী চ্যানেল";
+"live" = "লাইভ";
+"out_of_service" = "সেবা বন্ধ — স্ট্রিম সাড়া দেয়নি।";
+
+/* Errors */
+"invalid_url" = "অনুগ্রহ করে একটি বৈধ http(s) লিঙ্ক লিখুন।";
+"empty_playlist" = "এই প্লেলিস্টে কোনো চ্যানেল পাওয়া যায়নি।";
+
+"featured" = "Featured";
+"delete_playlist_q" = "Delete this playlist?";
+"clear_recents_q" = "Clear watch history?";
+"clear_all" = "Clear all";
+"delete_playlist_msg" = "This playlist and its channels will be removed from this device.";
+"clear_recents_msg" = "Your entire watch history will be cleared.";
+/* Guide */
+"guide" = "Guide";
+"guide_add_title" = "Add a source";
+"guide_add_body" = "Four ways to add content with the + button:";
+"guide_src_url" = "URL — paste an M3U playlist link (many channels).";
+"guide_src_file" = "File — pick an .m3u/.m3u8 file from the Files app.";
+"guide_src_stream" = "Stream — paste a single stream link to play now or save.";
+"guide_src_device" = "Device — pick a video from Photos to play offline.";
+"guide_links_title" = "Where to find M3U links";
+"guide_links_body" = "Use links from your IPTV provider, or public sources (e.g. iptv-org).";
+"guide_browse_title" = "Browse & save";
+"guide_browse_body" = "Browse channels by group, tap the heart to save Favorites, find them again in Recents, and search instantly.";
+"guide_watch_title" = "While watching";
+"guide_watch_body" = "Tap to show controls: skip 10s, switch channels, AirPlay. Rotate to landscape for full screen. Regular videos resume where you left off.";
+"guide_tip_title" = "Tip";
+"guide_tip_body" = "Free streams often die or lag — if a channel won't play, try another link or source.";

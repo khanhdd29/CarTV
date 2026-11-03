@@ -1,0 +1,111 @@
+/* Common */
+"continue" = "Tiếp tục";
+"save" = "Lưu";
+"skip" = "Bỏ qua";
+"next" = "Tiếp theo";
+"get_started" = "Bắt đầu";
+"back" = "Quay lại";
+"add" = "Thêm";
+"cancel" = "Huỷ";
+"delete" = "Xoá";
+
+/* Tabs */
+"channels" = "Kênh";
+"search" = "Tìm kiếm";
+"favorites" = "Yêu thích";
+"recents" = "Gần đây";
+"settings" = "Cài đặt";
+
+/* Language picker */
+"choose_your_language" = "Chọn ngôn ngữ";
+"change_language_later" = "Bạn có thể thay đổi sau trong Cài đặt.";
+"please_select_language" = "Vui lòng chọn ngôn ngữ của bạn";
+
+/* Settings */
+"general" = "Chung";
+"language" = "Ngôn ngữ";
+"about" = "Giới thiệu";
+"app" = "Ứng dụng";
+"version" = "Phiên bản";
+"developer" = "Nhà phát triển";
+"replay_onboarding" = "Xem lại hướng dẫn";
+"rate" = "Đánh giá ứng dụng";
+"share" = "Chia sẻ ứng dụng";
+"privacy_policy" = "Chính sách bảo mật";
+"manage_playlists" = "Quản lý danh sách phát";
+
+/* Onboarding intro */
+"intro_title_1" = "Playlist của bạn, chỉ một chạm";
+"intro_message_1" = "Thêm link hoặc file M3U bất kỳ và xem ngay lập tức.";
+"intro_title_2" = "Tối ưu cho playlist lớn";
+"intro_message_2" = "Hàng nghìn kênh vẫn mượt, tìm kiếm tức thì.";
+"intro_title_3" = "Xem theo cách của bạn";
+"intro_message_3" = "Yêu thích, gần đây, AirPlay và Hình trong hình.";
+
+/* Splash */
+"loading" = "Đang tải";
+
+/* Channels & playlists */
+"add_playlist" = "Thêm danh sách phát";
+"playlist_url" = "Đường dẫn M3U";
+"playlist_name" = "Tên danh sách (tuỳ chọn)";
+"parsing_channels" = "Đã nạp %d kênh…";
+"no_channels_title" = "Chưa có kênh nào";
+"no_channels_message" = "Thêm đường dẫn M3U để bắt đầu xem.";
+"all" = "Tất cả";
+"channel_count" = "%d kênh";
+"search_channels" = "Tìm kênh theo tên hoặc nhóm";
+"search_placeholder" = "Tìm kiếm…";
+"no_results_for" = "Không có kết quả cho “%@”";
+
+/* Add source */
+"source_url" = "URL";
+"source_file" = "Tệp";
+"source_stream" = "Luồng";
+"source_device" = "Thiết bị";
+"source_file_hint" = "Chọn tệp .m3u hoặc .m3u8 từ ứng dụng Tệp.";
+"source_device_hint" = "Chọn video từ thư viện để phát trong ứng dụng.";
+"stream_url" = "Đường dẫn luồng";
+"choose_file" = "Chọn tệp";
+"play_now" = "Phát ngay";
+"select_videos" = "Chọn video";
+"video_number" = "Video %d";
+
+/* Favorites & recents */
+"nothing_saved_yet" = "Chưa lưu mục nào";
+"no_recents" = "Chưa xem mục nào";
+
+/* Player */
+"loading_stream" = "Đang tải…";
+"playback_error" = "Không phát được kênh này. Định dạng có thể không được hỗ trợ.";
+"try_again" = "Thử lại";
+"next_channel" = "Kênh kế tiếp";
+"live" = "TRỰC TIẾP";
+"out_of_service" = "Không hoạt động — luồng không phản hồi.";
+
+/* Errors */
+"invalid_url" = "Vui lòng nhập link http(s) hợp lệ.";
+"empty_playlist" = "Không tìm thấy kênh nào trong playlist này.";
+
+"featured" = "Nổi bật";
+"delete_playlist_q" = "Xoá danh sách phát này?";
+"clear_recents_q" = "Xoá lịch sử xem?";
+"clear_all" = "Xoá tất cả";
+"delete_playlist_msg" = "Danh sách phát và các kênh của nó sẽ bị xoá khỏi thiết bị này.";
+"clear_recents_msg" = "Toàn bộ lịch sử xem sẽ bị xoá.";
+/* Guide */
+"guide" = "Hướng dẫn";
+"guide_add_title" = "Thêm nguồn xem";
+"guide_add_body" = "Có 4 cách thêm nội dung qua nút +:";
+"guide_src_url" = "URL — dán link danh sách phát M3U (nhiều kênh).";
+"guide_src_file" = "Tệp — chọn file .m3u/.m3u8 từ ứng dụng Tệp.";
+"guide_src_stream" = "Luồng — dán 1 link stream lẻ để phát ngay hoặc lưu.";
+"guide_src_device" = "Thiết bị — chọn video từ thư viện Ảnh để phát offline.";
+"guide_links_title" = "Tìm link M3U ở đâu?";
+"guide_links_body" = "Dùng link từ nhà cung cấp IPTV của bạn, hoặc nguồn công khai (vd iptv-org).";
+"guide_browse_title" = "Duyệt & lưu";
+"guide_browse_body" = "Duyệt kênh theo nhóm, chạm tim để lưu Yêu thích, xem lại ở Gần đây, tìm nhanh ở Tìm kiếm.";
+"guide_watch_title" = "Khi xem";
+"guide_watch_body" = "Chạm để hiện điều khiển: tua 10 giây, chuyển kênh, AirPlay. Xoay ngang để xem toàn màn hình. Video thường được nhớ vị trí.";
+"guide_tip_title" = "Mẹo";
+"guide_tip_body" = "Link miễn phí hay chết/lag — nếu kênh không phát, thử link hoặc nguồn khác.";

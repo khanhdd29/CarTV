@@ -1,0 +1,111 @@
+/* Common */
+"continue" = "続ける";
+"save" = "保存";
+"skip" = "スキップ";
+"next" = "次へ";
+"get_started" = "はじめる";
+"back" = "戻る";
+"add" = "追加";
+"cancel" = "キャンセル";
+"delete" = "削除";
+
+/* Tabs */
+"channels" = "チャンネル";
+"search" = "検索";
+"favorites" = "お気に入り";
+"recents" = "最近";
+"settings" = "設定";
+
+/* Language picker */
+"choose_your_language" = "言語を選択";
+"change_language_later" = "後で設定から変更できます。";
+"please_select_language" = "言語を選択してください";
+
+/* Settings */
+"general" = "一般";
+"language" = "言語";
+"about" = "情報";
+"app" = "アプリ";
+"version" = "バージョン";
+"developer" = "開発者";
+"replay_onboarding" = "チュートリアルを再表示";
+"rate" = "アプリを評価";
+"share" = "アプリを共有";
+"privacy_policy" = "プライバシーポリシー";
+"manage_playlists" = "プレイリストを管理";
+
+/* Onboarding intro */
+"intro_title_1" = "プレイリストをワンタップで";
+"intro_message_1" = "M3Uのリンクやファイルを追加すれば、すぐに視聴できます。";
+"intro_title_2" = "大きなプレイリストにも対応";
+"intro_message_2" = "数千のチャンネルも快適、検索も瞬時。";
+"intro_title_3" = "自分らしく楽しむ";
+"intro_message_3" = "お気に入り、最近、AirPlay、ピクチャ・イン・ピクチャ。";
+
+/* Splash */
+"loading" = "読み込み中";
+
+/* Channels & playlists */
+"add_playlist" = "プレイリストを追加";
+"playlist_url" = "M3UプレイリストのURL";
+"playlist_name" = "プレイリスト名（任意）";
+"parsing_channels" = "%d 件のチャンネルを読み込みました…";
+"no_channels_title" = "まだチャンネルがありません";
+"no_channels_message" = "M3Uプレイリストのリンクを追加して視聴を始めましょう。";
+"all" = "すべて";
+"channel_count" = "%d 件のチャンネル";
+"search_channels" = "名前またはグループでチャンネルを検索";
+"search_placeholder" = "検索…";
+"no_results_for" = "「%@」の結果はありません";
+
+/* Add source */
+"source_url" = "URL";
+"source_file" = "ファイル";
+"source_stream" = "ストリーム";
+"source_device" = "デバイス";
+"source_file_hint" = "ファイルアプリから .m3u または .m3u8 ファイルを選択してください。";
+"source_device_hint" = "ライブラリから動画を選んでアプリ内で再生します。";
+"stream_url" = "ストリームURL";
+"choose_file" = "ファイルを選択";
+"play_now" = "今すぐ再生";
+"select_videos" = "動画を選択";
+"video_number" = "動画 %d";
+
+/* Favorites & recents */
+"nothing_saved_yet" = "保存した項目はまだありません";
+"no_recents" = "視聴した項目はまだありません";
+
+/* Player */
+"loading_stream" = "読み込み中…";
+"playback_error" = "このチャンネルを再生できません。形式が非対応の可能性があります。";
+"try_again" = "再試行";
+"next_channel" = "次のチャンネル";
+"live" = "ライブ";
+"out_of_service" = "利用できません — ストリームが応答しませんでした。";
+
+/* Errors */
+"invalid_url" = "有効な http(s) リンクを入力してください。";
+"empty_playlist" = "このプレイリストにチャンネルが見つかりません。";
+
+"featured" = "Featured";
+"delete_playlist_q" = "Delete this playlist?";
+"clear_recents_q" = "Clear watch history?";
+"clear_all" = "Clear all";
+"delete_playlist_msg" = "This playlist and its channels will be removed from this device.";
+"clear_recents_msg" = "Your entire watch history will be cleared.";
+/* Guide */
+"guide" = "Guide";
+"guide_add_title" = "Add a source";
+"guide_add_body" = "Four ways to add content with the + button:";
+"guide_src_url" = "URL — paste an M3U playlist link (many channels).";
+"guide_src_file" = "File — pick an .m3u/.m3u8 file from the Files app.";
+"guide_src_stream" = "Stream — paste a single stream link to play now or save.";
+"guide_src_device" = "Device — pick a video from Photos to play offline.";
+"guide_links_title" = "Where to find M3U links";
+"guide_links_body" = "Use links from your IPTV provider, or public sources (e.g. iptv-org).";
+"guide_browse_title" = "Browse & save";
+"guide_browse_body" = "Browse channels by group, tap the heart to save Favorites, find them again in Recents, and search instantly.";
+"guide_watch_title" = "While watching";
+"guide_watch_body" = "Tap to show controls: skip 10s, switch channels, AirPlay. Rotate to landscape for full screen. Regular videos resume where you left off.";
+"guide_tip_title" = "Tip";
+"guide_tip_body" = "Free streams often die or lag — if a channel won't play, try another link or source.";

@@ -1,0 +1,111 @@
+/* Common */
+"continue" = "Lanjutkan";
+"save" = "Simpan";
+"skip" = "Lewati";
+"next" = "Berikutnya";
+"get_started" = "Mulai";
+"back" = "Kembali";
+"add" = "Tambah";
+"cancel" = "Batal";
+"delete" = "Hapus";
+
+/* Tabs */
+"channels" = "Saluran";
+"search" = "Cari";
+"favorites" = "Favorit";
+"recents" = "Terbaru";
+"settings" = "Pengaturan";
+
+/* Language picker */
+"choose_your_language" = "Pilih bahasa Anda";
+"change_language_later" = "Anda dapat mengubahnya nanti di Pengaturan.";
+"please_select_language" = "Silakan pilih bahasa Anda";
+
+/* Settings */
+"general" = "Umum";
+"language" = "Bahasa";
+"about" = "Tentang";
+"app" = "Aplikasi";
+"version" = "Versi";
+"developer" = "Pengembang";
+"replay_onboarding" = "Putar ulang pengenalan";
+"rate" = "Beri nilai";
+"share" = "Bagikan aplikasi";
+"privacy_policy" = "Kebijakan Privasi";
+"manage_playlists" = "Kelola playlist";
+
+/* Onboarding intro */
+"intro_title_1" = "Playlist Anda, cukup satu ketukan";
+"intro_message_1" = "Tambahkan tautan atau file M3U apa pun dan tonton seketika.";
+"intro_title_2" = "Dibuat untuk playlist besar";
+"intro_message_2" = "Ribuan saluran tetap lancar, dengan pencarian instan.";
+"intro_title_3" = "Tonton sesuai cara Anda";
+"intro_message_3" = "Favorit, terbaru, AirPlay, dan Picture in Picture.";
+
+/* Splash */
+"loading" = "Memuat";
+
+/* Channels & playlists */
+"add_playlist" = "Tambah playlist";
+"playlist_url" = "URL playlist M3U";
+"playlist_name" = "Nama playlist (opsional)";
+"parsing_channels" = "%d saluran diimpor…";
+"no_channels_title" = "Belum ada saluran";
+"no_channels_message" = "Tambahkan tautan playlist M3U untuk mulai menonton.";
+"all" = "Semua";
+"channel_count" = "%d saluran";
+"search_channels" = "Cari saluran berdasarkan nama atau grup";
+"search_placeholder" = "Cari…";
+"no_results_for" = "Tidak ada hasil untuk “%@”";
+
+/* Add source */
+"source_url" = "URL";
+"source_file" = "File";
+"source_stream" = "Stream";
+"source_device" = "Perangkat";
+"source_file_hint" = "Pilih file .m3u atau .m3u8 dari aplikasi Files.";
+"source_device_hint" = "Pilih video dari galeri Anda untuk diputar di aplikasi.";
+"stream_url" = "URL stream";
+"choose_file" = "Pilih file";
+"play_now" = "Putar sekarang";
+"select_videos" = "Pilih video";
+"video_number" = "Video %d";
+
+/* Favorites & recents */
+"nothing_saved_yet" = "Belum ada yang disimpan";
+"no_recents" = "Belum ada yang ditonton";
+
+/* Player */
+"loading_stream" = "Memuat…";
+"playback_error" = "Tidak dapat memutar saluran ini. Formatnya mungkin tidak didukung.";
+"try_again" = "Coba lagi";
+"next_channel" = "Saluran berikutnya";
+"live" = "LANGSUNG";
+"out_of_service" = "Tidak tersedia — stream tidak merespons.";
+
+/* Errors */
+"invalid_url" = "Masukkan tautan http(s) yang valid.";
+"empty_playlist" = "Tidak ada saluran yang ditemukan di playlist ini.";
+
+"featured" = "Featured";
+"delete_playlist_q" = "Delete this playlist?";
+"clear_recents_q" = "Clear watch history?";
+"clear_all" = "Clear all";
+"delete_playlist_msg" = "This playlist and its channels will be removed from this device.";
+"clear_recents_msg" = "Your entire watch history will be cleared.";
+/* Guide */
+"guide" = "Guide";
+"guide_add_title" = "Add a source";
+"guide_add_body" = "Four ways to add content with the + button:";
+"guide_src_url" = "URL — paste an M3U playlist link (many channels).";
+"guide_src_file" = "File — pick an .m3u/.m3u8 file from the Files app.";
+"guide_src_stream" = "Stream — paste a single stream link to play now or save.";
+"guide_src_device" = "Device — pick a video from Photos to play offline.";
+"guide_links_title" = "Where to find M3U links";
+"guide_links_body" = "Use links from your IPTV provider, or public sources (e.g. iptv-org).";
+"guide_browse_title" = "Browse & save";
+"guide_browse_body" = "Browse channels by group, tap the heart to save Favorites, find them again in Recents, and search instantly.";
+"guide_watch_title" = "While watching";
+"guide_watch_body" = "Tap to show controls: skip 10s, switch channels, AirPlay. Rotate to landscape for full screen. Regular videos resume where you left off.";
+"guide_tip_title" = "Tip";
+"guide_tip_body" = "Free streams often die or lag — if a channel won't play, try another link or source.";

@@ -1,0 +1,111 @@
+/* Common */
+"continue" = "Continue";
+"save" = "Save";
+"skip" = "Skip";
+"next" = "Next";
+"get_started" = "Get Started";
+"back" = "Back";
+"add" = "Add";
+"cancel" = "Cancel";
+"delete" = "Delete";
+
+/* Tabs */
+"channels" = "Channels";
+"search" = "Search";
+"favorites" = "Favorites";
+"recents" = "Recents";
+"settings" = "Settings";
+
+/* Language picker */
+"choose_your_language" = "Choose your language";
+"change_language_later" = "You can change this later in Settings.";
+"please_select_language" = "Please select your language";
+
+/* Settings */
+"general" = "General";
+"language" = "Language";
+"about" = "About";
+"app" = "App";
+"version" = "Version";
+"developer" = "Developer";
+"replay_onboarding" = "Replay onboarding";
+"rate" = "Rate us";
+"share" = "Share app";
+"privacy_policy" = "Privacy Policy";
+"manage_playlists" = "Manage playlists";
+
+/* Onboarding intro */
+"intro_title_1" = "Your playlists, one tap away";
+"intro_message_1" = "Add any M3U link or file and start watching instantly.";
+"intro_title_2" = "Built for big playlists";
+"intro_message_2" = "Thousands of channels stay smooth, with instant search.";
+"intro_title_3" = "Watch your way";
+"intro_message_3" = "Favorites, recents, AirPlay and Picture in Picture.";
+
+/* Splash */
+"loading" = "Loading";
+
+/* Channels & playlists */
+"add_playlist" = "Add playlist";
+"playlist_url" = "M3U playlist URL";
+"playlist_name" = "Playlist name (optional)";
+"parsing_channels" = "Imported %d channels…";
+"no_channels_title" = "No channels yet";
+"no_channels_message" = "Add an M3U playlist link to start watching.";
+"all" = "All";
+"channel_count" = "%d channels";
+"search_channels" = "Search channels by name or group";
+"search_placeholder" = "Search…";
+"no_results_for" = "No results for “%@”";
+
+/* Add source */
+"source_url" = "URL";
+"source_file" = "File";
+"source_stream" = "Stream";
+"source_device" = "Device";
+"source_file_hint" = "Choose an .m3u or .m3u8 file from the Files app.";
+"source_device_hint" = "Pick videos from your library to play in the app.";
+"stream_url" = "Stream URL";
+"choose_file" = "Choose file";
+"play_now" = "Play now";
+"select_videos" = "Select videos";
+"video_number" = "Video %d";
+
+/* Favorites & recents */
+"nothing_saved_yet" = "Nothing saved yet";
+"no_recents" = "Nothing watched yet";
+
+/* Player */
+"loading_stream" = "Loading…";
+"playback_error" = "Can't play this channel. The format may be unsupported.";
+"try_again" = "Try again";
+"next_channel" = "Next channel";
+"live" = "LIVE";
+"out_of_service" = "Out of service — the stream didn't respond.";
+
+/* Errors */
+"invalid_url" = "Please enter a valid http(s) link.";
+"empty_playlist" = "No channels found in this playlist.";
+
+"featured" = "Featured";
+"delete_playlist_q" = "Delete this playlist?";
+"clear_recents_q" = "Clear watch history?";
+"clear_all" = "Clear all";
+"delete_playlist_msg" = "This playlist and its channels will be removed from this device.";
+"clear_recents_msg" = "Your entire watch history will be cleared.";
+/* Guide */
+"guide" = "Guide";
+"guide_add_title" = "Add a source";
+"guide_add_body" = "Four ways to add content with the + button:";
+"guide_src_url" = "URL — paste an M3U playlist link (many channels).";
+"guide_src_file" = "File — pick an .m3u/.m3u8 file from the Files app.";
+"guide_src_stream" = "Stream — paste a single stream link to play now or save.";
+"guide_src_device" = "Device — pick a video from Photos to play offline.";
+"guide_links_title" = "Where to find M3U links";
+"guide_links_body" = "Use links from your IPTV provider, or public sources (e.g. iptv-org).";
+"guide_browse_title" = "Browse & save";
+"guide_browse_body" = "Browse channels by group, tap the heart to save Favorites, find them again in Recents, and search instantly.";
+"guide_watch_title" = "While watching";
+"guide_watch_body" = "Tap to show controls: skip 10s, switch channels, AirPlay. Rotate to landscape for full screen. Regular videos resume where you left off.";
+"guide_tip_title" = "Tip";
+"guide_tip_body" = "Free streams often die or lag — if a channel won't play, try another link or source.";

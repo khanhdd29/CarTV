@@ -1,0 +1,111 @@
+/* Common */
+"continue" = "계속";
+"save" = "저장";
+"skip" = "건너뛰기";
+"next" = "다음";
+"get_started" = "시작하기";
+"back" = "뒤로";
+"add" = "추가";
+"cancel" = "취소";
+"delete" = "삭제";
+
+/* Tabs */
+"channels" = "채널";
+"search" = "검색";
+"favorites" = "즐겨찾기";
+"recents" = "최근";
+"settings" = "설정";
+
+/* Language picker */
+"choose_your_language" = "언어 선택";
+"change_language_later" = "나중에 설정에서 변경할 수 있습니다.";
+"please_select_language" = "언어를 선택하세요";
+
+/* Settings */
+"general" = "일반";
+"language" = "언어";
+"about" = "정보";
+"app" = "앱";
+"version" = "버전";
+"developer" = "개발자";
+"replay_onboarding" = "소개 다시 보기";
+"rate" = "앱 평가하기";
+"share" = "앱 공유";
+"privacy_policy" = "개인정보 처리방침";
+"manage_playlists" = "재생목록 관리";
+
+/* Onboarding intro */
+"intro_title_1" = "재생목록을 한 번의 탭으로";
+"intro_message_1" = "M3U 링크나 파일을 추가하고 바로 시청하세요.";
+"intro_title_2" = "대용량 재생목록을 위한 설계";
+"intro_message_2" = "수천 개의 채널도 부드럽게, 즉각적인 검색까지.";
+"intro_title_3" = "원하는 방식으로 시청";
+"intro_message_3" = "즐겨찾기, 최근, AirPlay, PIP(화면 속 화면).";
+
+/* Splash */
+"loading" = "불러오는 중";
+
+/* Channels & playlists */
+"add_playlist" = "재생목록 추가";
+"playlist_url" = "M3U 재생목록 URL";
+"playlist_name" = "재생목록 이름 (선택 사항)";
+"parsing_channels" = "채널 %d개를 가져왔습니다…";
+"no_channels_title" = "아직 채널이 없습니다";
+"no_channels_message" = "M3U 재생목록 링크를 추가해 시청을 시작하세요.";
+"all" = "전체";
+"channel_count" = "채널 %d개";
+"search_channels" = "이름 또는 그룹으로 채널 검색";
+"search_placeholder" = "검색…";
+"no_results_for" = "“%@”에 대한 결과가 없습니다";
+
+/* Add source */
+"source_url" = "URL";
+"source_file" = "파일";
+"source_stream" = "스트림";
+"source_device" = "기기";
+"source_file_hint" = "파일 앱에서 .m3u 또는 .m3u8 파일을 선택하세요.";
+"source_device_hint" = "라이브러리에서 영상을 선택해 앱에서 재생하세요.";
+"stream_url" = "스트림 URL";
+"choose_file" = "파일 선택";
+"play_now" = "지금 재생";
+"select_videos" = "영상 선택";
+"video_number" = "영상 %d";
+
+/* Favorites & recents */
+"nothing_saved_yet" = "아직 저장된 항목이 없습니다";
+"no_recents" = "아직 시청한 항목이 없습니다";
+
+/* Player */
+"loading_stream" = "불러오는 중…";
+"playback_error" = "이 채널을 재생할 수 없습니다. 지원되지 않는 형식일 수 있습니다.";
+"try_again" = "다시 시도";
+"next_channel" = "다음 채널";
+"live" = "LIVE";
+"out_of_service" = "서비스 불가 — 스트림이 응답하지 않습니다.";
+
+/* Errors */
+"invalid_url" = "유효한 http(s) 링크를 입력하세요.";
+"empty_playlist" = "이 재생목록에서 채널을 찾을 수 없습니다.";
+
+"featured" = "Featured";
+"delete_playlist_q" = "Delete this playlist?";
+"clear_recents_q" = "Clear watch history?";
+"clear_all" = "Clear all";
+"delete_playlist_msg" = "This playlist and its channels will be removed from this device.";
+"clear_recents_msg" = "Your entire watch history will be cleared.";
+/* Guide */
+"guide" = "Guide";
+"guide_add_title" = "Add a source";
+"guide_add_body" = "Four ways to add content with the + button:";
+"guide_src_url" = "URL — paste an M3U playlist link (many channels).";
+"guide_src_file" = "File — pick an .m3u/.m3u8 file from the Files app.";
+"guide_src_stream" = "Stream — paste a single stream link to play now or save.";
+"guide_src_device" = "Device — pick a video from Photos to play offline.";
+"guide_links_title" = "Where to find M3U links";
+"guide_links_body" = "Use links from your IPTV provider, or public sources (e.g. iptv-org).";
+"guide_browse_title" = "Browse & save";
+"guide_browse_body" = "Browse channels by group, tap the heart to save Favorites, find them again in Recents, and search instantly.";
+"guide_watch_title" = "While watching";
+"guide_watch_body" = "Tap to show controls: skip 10s, switch channels, AirPlay. Rotate to landscape for full screen. Regular videos resume where you left off.";
+"guide_tip_title" = "Tip";
+"guide_tip_body" = "Free streams often die or lag — if a channel won't play, try another link or source.";

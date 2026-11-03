@@ -1,0 +1,111 @@
+/* Common */
+"continue" = "Continuar";
+"save" = "Salvar";
+"skip" = "Pular";
+"next" = "Avançar";
+"get_started" = "Começar";
+"back" = "Voltar";
+"add" = "Adicionar";
+"cancel" = "Cancelar";
+"delete" = "Excluir";
+
+/* Tabs */
+"channels" = "Canais";
+"search" = "Buscar";
+"favorites" = "Favoritos";
+"recents" = "Recentes";
+"settings" = "Ajustes";
+
+/* Language picker */
+"choose_your_language" = "Escolha seu idioma";
+"change_language_later" = "Você pode mudar isso depois nos Ajustes.";
+"please_select_language" = "Selecione seu idioma";
+
+/* Settings */
+"general" = "Geral";
+"language" = "Idioma";
+"about" = "Sobre";
+"app" = "App";
+"version" = "Versão";
+"developer" = "Desenvolvedor";
+"replay_onboarding" = "Rever introdução";
+"rate" = "Avaliar o app";
+"share" = "Compartilhar app";
+"privacy_policy" = "Política de Privacidade";
+"manage_playlists" = "Gerenciar playlists";
+
+/* Onboarding intro */
+"intro_title_1" = "Suas playlists, a um toque";
+"intro_message_1" = "Adicione qualquer link ou arquivo M3U e assista na hora.";
+"intro_title_2" = "Feito para playlists grandes";
+"intro_message_2" = "Milhares de canais continuam fluidos, com busca instantânea.";
+"intro_title_3" = "Assista do seu jeito";
+"intro_message_3" = "Favoritos, recentes, AirPlay e Picture in Picture.";
+
+/* Splash */
+"loading" = "Carregando";
+
+/* Channels & playlists */
+"add_playlist" = "Adicionar playlist";
+"playlist_url" = "URL da playlist M3U";
+"playlist_name" = "Nome da playlist (opcional)";
+"parsing_channels" = "%d canais importados…";
+"no_channels_title" = "Nenhum canal ainda";
+"no_channels_message" = "Adicione um link de playlist M3U para começar a assistir.";
+"all" = "Todos";
+"channel_count" = "%d canais";
+"search_channels" = "Buscar canais por nome ou grupo";
+"search_placeholder" = "Buscar…";
+"no_results_for" = "Nenhum resultado para “%@”";
+
+/* Add source */
+"source_url" = "URL";
+"source_file" = "Arquivo";
+"source_stream" = "Stream";
+"source_device" = "Dispositivo";
+"source_file_hint" = "Escolha um arquivo .m3u ou .m3u8 no app Arquivos.";
+"source_device_hint" = "Escolha vídeos da sua biblioteca para reproduzir no app.";
+"stream_url" = "URL do stream";
+"choose_file" = "Escolher arquivo";
+"play_now" = "Reproduzir agora";
+"select_videos" = "Selecionar vídeos";
+"video_number" = "Vídeo %d";
+
+/* Favorites & recents */
+"nothing_saved_yet" = "Nada salvo ainda";
+"no_recents" = "Nada assistido ainda";
+
+/* Player */
+"loading_stream" = "Carregando…";
+"playback_error" = "Não é possível reproduzir este canal. O formato pode não ser compatível.";
+"try_again" = "Tentar novamente";
+"next_channel" = "Próximo canal";
+"live" = "AO VIVO";
+"out_of_service" = "Fora do ar — o stream não respondeu.";
+
+/* Errors */
+"invalid_url" = "Digite um link http(s) válido.";
+"empty_playlist" = "Nenhum canal encontrado nesta playlist.";
+
+"featured" = "Featured";
+"delete_playlist_q" = "Delete this playlist?";
+"clear_recents_q" = "Clear watch history?";
+"clear_all" = "Clear all";
+"delete_playlist_msg" = "This playlist and its channels will be removed from this device.";
+"clear_recents_msg" = "Your entire watch history will be cleared.";
+/* Guide */
+"guide" = "Guide";
+"guide_add_title" = "Add a source";
+"guide_add_body" = "Four ways to add content with the + button:";
+"guide_src_url" = "URL — paste an M3U playlist link (many channels).";
+"guide_src_file" = "File — pick an .m3u/.m3u8 file from the Files app.";
+"guide_src_stream" = "Stream — paste a single stream link to play now or save.";
+"guide_src_device" = "Device — pick a video from Photos to play offline.";
+"guide_links_title" = "Where to find M3U links";
+"guide_links_body" = "Use links from your IPTV provider, or public sources (e.g. iptv-org).";
+"guide_browse_title" = "Browse & save";
+"guide_browse_body" = "Browse channels by group, tap the heart to save Favorites, find them again in Recents, and search instantly.";
+"guide_watch_title" = "While watching";
+"guide_watch_body" = "Tap to show controls: skip 10s, switch channels, AirPlay. Rotate to landscape for full screen. Regular videos resume where you left off.";
+"guide_tip_title" = "Tip";
+"guide_tip_body" = "Free streams often die or lag — if a channel won't play, try another link or source.";

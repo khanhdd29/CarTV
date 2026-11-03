@@ -1,0 +1,111 @@
+/* Common */
+"continue" = "Devam et";
+"save" = "Kaydet";
+"skip" = "Atla";
+"next" = "İleri";
+"get_started" = "Başla";
+"back" = "Geri";
+"add" = "Ekle";
+"cancel" = "İptal";
+"delete" = "Sil";
+
+/* Tabs */
+"channels" = "Kanallar";
+"search" = "Ara";
+"favorites" = "Favoriler";
+"recents" = "Son izlenenler";
+"settings" = "Ayarlar";
+
+/* Language picker */
+"choose_your_language" = "Dilinizi seçin";
+"change_language_later" = "Bunu daha sonra Ayarlar'dan değiştirebilirsiniz.";
+"please_select_language" = "Lütfen dilinizi seçin";
+
+/* Settings */
+"general" = "Genel";
+"language" = "Dil";
+"about" = "Hakkında";
+"app" = "Uygulama";
+"version" = "Sürüm";
+"developer" = "Geliştirici";
+"replay_onboarding" = "Tanıtımı tekrar izle";
+"rate" = "Bizi değerlendir";
+"share" = "Uygulamayı paylaş";
+"privacy_policy" = "Gizlilik Politikası";
+"manage_playlists" = "Oynatma listelerini yönet";
+
+/* Onboarding intro */
+"intro_title_1" = "Oynatma listeleriniz, tek dokunuşla";
+"intro_message_1" = "Herhangi bir M3U bağlantısı veya dosyası ekleyin ve hemen izlemeye başlayın.";
+"intro_title_2" = "Büyük oynatma listeleri için tasarlandı";
+"intro_message_2" = "Binlerce kanal akıcı kalır, anında aramayla.";
+"intro_title_3" = "Dilediğiniz gibi izleyin";
+"intro_message_3" = "Favoriler, son izlenenler, AirPlay ve Resim İçinde Resim.";
+
+/* Splash */
+"loading" = "Yükleniyor";
+
+/* Channels & playlists */
+"add_playlist" = "Oynatma listesi ekle";
+"playlist_url" = "M3U oynatma listesi URL'si";
+"playlist_name" = "Oynatma listesi adı (isteğe bağlı)";
+"parsing_channels" = "%d kanal içe aktarıldı…";
+"no_channels_title" = "Henüz kanal yok";
+"no_channels_message" = "İzlemeye başlamak için bir M3U oynatma listesi bağlantısı ekleyin.";
+"all" = "Tümü";
+"channel_count" = "%d kanal";
+"search_channels" = "Kanalları ada veya gruba göre ara";
+"search_placeholder" = "Ara…";
+"no_results_for" = "“%@” için sonuç yok";
+
+/* Add source */
+"source_url" = "URL";
+"source_file" = "Dosya";
+"source_stream" = "Yayın";
+"source_device" = "Cihaz";
+"source_file_hint" = "Dosyalar uygulamasından bir .m3u veya .m3u8 dosyası seçin.";
+"source_device_hint" = "Uygulamada oynatmak için kitaplığınızdan video seçin.";
+"stream_url" = "Yayın URL'si";
+"choose_file" = "Dosya seç";
+"play_now" = "Şimdi oynat";
+"select_videos" = "Video seç";
+"video_number" = "Video %d";
+
+/* Favorites & recents */
+"nothing_saved_yet" = "Henüz kaydedilen yok";
+"no_recents" = "Henüz izlenen yok";
+
+/* Player */
+"loading_stream" = "Yükleniyor…";
+"playback_error" = "Bu kanal oynatılamıyor. Biçim desteklenmiyor olabilir.";
+"try_again" = "Tekrar dene";
+"next_channel" = "Sonraki kanal";
+"live" = "CANLI";
+"out_of_service" = "Hizmet dışı — yayın yanıt vermedi.";
+
+/* Errors */
+"invalid_url" = "Lütfen geçerli bir http(s) bağlantısı girin.";
+"empty_playlist" = "Bu oynatma listesinde kanal bulunamadı.";
+
+"featured" = "Featured";
+"delete_playlist_q" = "Delete this playlist?";
+"clear_recents_q" = "Clear watch history?";
+"clear_all" = "Clear all";
+"delete_playlist_msg" = "This playlist and its channels will be removed from this device.";
+"clear_recents_msg" = "Your entire watch history will be cleared.";
+/* Guide */
+"guide" = "Guide";
+"guide_add_title" = "Add a source";
+"guide_add_body" = "Four ways to add content with the + button:";
+"guide_src_url" = "URL — paste an M3U playlist link (many channels).";
+"guide_src_file" = "File — pick an .m3u/.m3u8 file from the Files app.";
+"guide_src_stream" = "Stream — paste a single stream link to play now or save.";
+"guide_src_device" = "Device — pick a video from Photos to play offline.";
+"guide_links_title" = "Where to find M3U links";
+"guide_links_body" = "Use links from your IPTV provider, or public sources (e.g. iptv-org).";
+"guide_browse_title" = "Browse & save";
+"guide_browse_body" = "Browse channels by group, tap the heart to save Favorites, find them again in Recents, and search instantly.";
+"guide_watch_title" = "While watching";
+"guide_watch_body" = "Tap to show controls: skip 10s, switch channels, AirPlay. Rotate to landscape for full screen. Regular videos resume where you left off.";
+"guide_tip_title" = "Tip";
+"guide_tip_body" = "Free streams often die or lag — if a channel won't play, try another link or source.";
