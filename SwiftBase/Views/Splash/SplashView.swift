@@ -188,9 +188,12 @@ struct SplashView: View {
     var body: some View {
         VStack(spacing: 20) {
             Spacer()
-            Image(systemName: "tv.fill")
-                .font(.system(size: 72, weight: .bold))
-                .foregroundStyle(AppColors.primary)
+            Image("AppLogo")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 116, height: 116)
+                .clipShape(RoundedRectangle(cornerRadius: 26, style: .continuous))
+                .shadow(color: AppColors.primary.opacity(0.45), radius: 22, y: 10)
                 .scaleEffect(appeared ? 1 : 0.7)
                 .opacity(appeared ? 1 : 0)
             Text("Klyra")
