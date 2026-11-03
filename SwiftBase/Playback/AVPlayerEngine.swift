@@ -20,6 +20,8 @@ final class AVPlayerEngine: ObservableObject, PlayerEngine {
     @Published private(set) var isPlaying = false
     @Published private(set) var currentTime: Double = 0
     @Published private(set) var duration: Double = 0
+    /// Chosen playback speed (applies to on-demand content, not live).
+    @Published private(set) var playbackRate: Float = 1.0
 
     let player = AVPlayer()
 
@@ -50,7 +52,13 @@ final class AVPlayerEngine: ObservableObject, PlayerEngine {
     }
 
     func togglePlayPause() {
-        if player.timeControlStatus == .playing { player.pause() } else { player.play() }
+        if player.timeControlStatus == .playing { player.pause() } else { player.rate = playbackRate }
+    }
+
+    /// Set playback speed (e.g. 1.0, 1.5). Applies immediately if playing.
+    func setRate(_ rate: Float) {
+        playbackRate = rate
+        if player.timeControlStatus != .paused { player.rate = rate }
     }
 
     /// Skip forward/back by `delta` seconds.
@@ -93,7 +101,7 @@ final class AVPlayerEngine: ObservableObject, PlayerEngine {
         startLoadTimeout()
     }
 
-    func play() { player.play() }
+    func play() { player.rate = playbackRate }
     func pause() { player.pause() }
 
     /// Current playback position in seconds (0 if unknown / live).

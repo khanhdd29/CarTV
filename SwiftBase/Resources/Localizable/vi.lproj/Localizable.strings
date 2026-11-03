@@ -142,3 +142,9 @@
 
 /* Hide dead channels toggle */
 "hide_dead_channels" = "Ẩn kênh lỗi";
+
+/* Player: speed + sleep timer */
+"player_speed" = "Tốc độ phát";
+"player_sleep" = "Hẹn giờ tắt";
+"player_off" = "Tắt";
+"player_minutes" = "%d phút";

@@ -142,3 +142,9 @@
 
 /* Hide dead channels toggle */
 "hide_dead_channels" = "Çevrimdışı kanalları gizle";
+
+/* Player: speed + sleep timer */
+"player_speed" = "Hız";
+"player_sleep" = "Uyku zamanlayıcısı";
+"player_off" = "Kapalı";
+"player_minutes" = "%d dk";

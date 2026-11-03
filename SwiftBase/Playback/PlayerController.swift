@@ -34,6 +34,10 @@ final class PlayerController: ObservableObject {
     /// Links that have already failed this session — not retried by auto-failover.
     private var failedURLs = Set<String>()
 
+    /// Seconds left on the sleep timer, or nil when it's off.
+    @Published private(set) var sleepRemaining: Int?
+    private var sleepTask: Task<Void, Never>?
+
     // Resume (Continue Watching) state for the current channel.
     private var resumeTarget: Double = 0
     private var didSeekForCurrent = false
@@ -91,6 +95,24 @@ final class PlayerController: ObservableObject {
         triedFallbackForCurrent = false; usingFallback = false; playCurrent()
     }
 
+    // MARK: Sleep timer
+
+    /// Pause playback after `minutes` (nil / 0 cancels). Counts down live.
+    func setSleepTimer(minutes: Int?) {
+        sleepTask?.cancel()
+        guard let minutes, minutes > 0 else { sleepRemaining = nil; sleepTask = nil; return }
+        sleepRemaining = minutes * 60
+        sleepTask = Task { [weak self] in
+            while let remaining = self?.sleepRemaining, remaining > 0 {
+                try? await Task.sleep(nanoseconds: 1_000_000_000)
+                if Task.isCancelled { return }
+                self?.sleepRemaining = (self?.sleepRemaining ?? 1) - 1
+            }
+            self?.avEngine.pause()
+            self?.sleepRemaining = nil
+        }
+    }
+
     // MARK: Auto-failover (Playlist Health, Driver 3)
 
     /// A dead link just surfaced: flag it and jump to a backup source — another
@@ -111,6 +133,7 @@ final class PlayerController: ObservableObject {
     }
 
     func stop() {
+        sleepTask?.cancel(); sleepTask = nil; sleepRemaining = nil
         saveCurrentPosition()
         avEngine.teardown()
         teardownFallback()

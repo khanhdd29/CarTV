@@ -142,3 +142,9 @@
 
 /* Hide dead channels toggle */
 "hide_dead_channels" = "অফলাইন চ্যানেল লুকান";
+
+/* Player: speed + sleep timer */
+"player_speed" = "গতি";
+"player_sleep" = "স্লিপ টাইমার";
+"player_off" = "বন্ধ";
+"player_minutes" = "%d মিনিট";

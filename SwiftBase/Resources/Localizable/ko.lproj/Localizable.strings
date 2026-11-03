@@ -142,3 +142,9 @@
 
 /* Hide dead channels toggle */
 "hide_dead_channels" = "오프라인 채널 숨기기";
+
+/* Player: speed + sleep timer */
+"player_speed" = "재생 속도";
+"player_sleep" = "취침 타이머";
+"player_off" = "끄기";
+"player_minutes" = "%d분";

@@ -142,3 +142,9 @@
 
 /* Hide dead channels toggle */
 "hide_dead_channels" = "隱藏離線頻道";
+
+/* Player: speed + sleep timer */
+"player_speed" = "播放速度";
+"player_sleep" = "睡眠計時器";
+"player_off" = "關閉";
+"player_minutes" = "%d 分鐘";

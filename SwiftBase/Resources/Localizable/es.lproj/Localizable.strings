@@ -142,3 +142,9 @@
 
 /* Hide dead channels toggle */
 "hide_dead_channels" = "Ocultar canales sin conexión";
+
+/* Player: speed + sleep timer */
+"player_speed" = "Velocidad";
+"player_sleep" = "Temporizador";
+"player_off" = "Desactivado";
+"player_minutes" = "%d min";

@@ -142,3 +142,9 @@
 
 /* Hide dead channels toggle */
 "hide_dead_channels" = "Sembunyikan saluran mati";
+
+/* Player: speed + sleep timer */
+"player_speed" = "Kecepatan";
+"player_sleep" = "Timer tidur";
+"player_off" = "Mati";
+"player_minutes" = "%d mnt";

@@ -62,6 +62,7 @@ struct PlayerScreen: View {
     private var controls: some View {
         VStack(spacing: 0) {
             topBar
+            if let remaining = controller.sleepRemaining { sleepBadge(remaining) }
             if let now = controller.nowNext.now, !app.carMode { epgStrip(now) }
             Spacer()
             if app.carMode {
@@ -126,6 +127,7 @@ struct PlayerScreen: View {
                 .foregroundStyle(.white).lineLimit(1)
             if controller.isLive { LiveBadge() }
             Spacer(minLength: 8)
+            optionsMenu
             Button {
                 withAnimation(.easeInOut(duration: 0.2)) { app.carMode.toggle() }
                 scheduleHide()
@@ -139,6 +141,43 @@ struct PlayerScreen: View {
             AirPlayButton().frame(width: 44, height: 44)
         }
         .padding(.horizontal, 16)
+    }
+
+    private static let speeds: [(Float, String)] =
+        [(0.5, "0.5x"), (0.75, "0.75x"), (1.0, "1x"), (1.25, "1.25x"), (1.5, "1.5x"), (2.0, "2x")]
+
+    private var optionsMenu: some View {
+        Menu {
+            if !controller.isLive {
+                Menu("player_speed".localized) {
+                    ForEach(Self.speeds, id: \.1) { rate, label in
+                        Button {
+                            engine.setRate(rate); scheduleHide()
+                        } label: {
+                            if engine.playbackRate == rate { Label(label, systemImage: "checkmark") }
+                            else { Text(label) }
+                        }
+                    }
+                }
+            }
+            Menu("player_sleep".localized) {
+                Button {
+                    controller.setSleepTimer(minutes: nil); scheduleHide()
+                } label: {
+                    if controller.sleepRemaining == nil { Label("player_off".localized, systemImage: "checkmark") }
+                    else { Text("player_off".localized) }
+                }
+                ForEach([15, 30, 45, 60], id: \.self) { m in
+                    Button {
+                        controller.setSleepTimer(minutes: m); scheduleHide()
+                    } label: { Text(String(format: "player_minutes".localized, m)) }
+                }
+            }
+        } label: {
+            Image(systemName: "ellipsis.circle")
+                .font(.body.weight(.semibold)).foregroundStyle(.white)
+                .frame(width: 44, height: 44)
+        }
     }
 
     private var centerControls: some View {
@@ -228,6 +267,18 @@ struct PlayerScreen: View {
         .padding(.horizontal, 14).padding(.vertical, 10)
         .background(.black.opacity(0.42), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
         .padding(.horizontal, 16)
+        .padding(.top, 8)
+    }
+
+    private func sleepBadge(_ seconds: Int) -> some View {
+        HStack(spacing: 6) {
+            Image(systemName: "moon.zzz.fill").font(.caption2)
+            Text(String(format: "%d:%02d", seconds / 60, seconds % 60))
+                .font(.caption2.monospacedDigit().weight(.semibold))
+        }
+        .foregroundStyle(AppColors.secondary)
+        .padding(.horizontal, 10).padding(.vertical, 5)
+        .background(.black.opacity(0.42), in: Capsule())
         .padding(.top, 8)
     }
 
