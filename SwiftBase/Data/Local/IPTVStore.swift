@@ -100,6 +100,26 @@ actor IPTVStore {
         try db.run("CREATE INDEX IF NOT EXISTS idx_recents_watched ON recents(watched_at DESC);")
         // Upgrade older installs: add the resume column if missing (no-op otherwise).
         db.exec("ALTER TABLE recents ADD COLUMN position REAL NOT NULL DEFAULT 0;")
+
+        // EPG (electronic program guide), matched to channels by tvg-id.
+        try db.run("""
+        CREATE TABLE IF NOT EXISTS epg (
+            tvg_id TEXT NOT NULL,
+            start REAL NOT NULL,
+            stop REAL NOT NULL,
+            title TEXT NOT NULL
+        );
+        """)
+        try db.run("CREATE INDEX IF NOT EXISTS idx_epg_channel ON epg(tvg_id, start);")
+
+        // Playlist health — last-known reachability per stream link (Driver 3).
+        try db.run("""
+        CREATE TABLE IF NOT EXISTS stream_health (
+            stream_url TEXT PRIMARY KEY,
+            status INTEGER NOT NULL,
+            checked_at REAL NOT NULL
+        );
+        """)
     }
 
     // MARK: - Playlists
@@ -241,6 +261,17 @@ actor IPTVStore {
         return readChannels(stmt)
     }
 
+    /// Every channel of one playlist (used by the health sweep).
+    func channels(playlistId: String) throws -> [Channel] {
+        let stmt = try db.prepare("""
+        SELECT id, playlist_id, name, stream_url, logo_url, group_title, tvg_id
+        FROM channels WHERE playlist_id = ? ORDER BY sort_order;
+        """)
+        defer { stmt.finalize() }
+        stmt.bind([.text(playlistId)])
+        return readChannels(stmt)
+    }
+
     func search(_ query: String, limit: Int) throws -> [Channel] {
         guard let match = Self.ftsQuery(from: query) else { return [] }
         // Use the table name directly (FTS5 MATCH + rank don't accept an alias here).
@@ -371,6 +402,98 @@ actor IPTVStore {
 
     func clearRecents() throws {
         try db.run("DELETE FROM recents;")
+    }
+
+    // MARK: - EPG
+
+    func replaceEPG(_ programmes: [ParsedProgramme]) throws {
+        try db.run("DELETE FROM epg;")
+        guard !programmes.isEmpty else { return }
+        try db.beginTransaction()
+        do {
+            let stmt = try db.prepare("INSERT INTO epg (tvg_id, start, stop, title) VALUES (?, ?, ?, ?);")
+            defer { stmt.finalize() }
+            for p in programmes {
+                stmt.reset()
+                stmt.bind([.text(p.channelId), .double(p.start.timeIntervalSince1970),
+                           .double(p.stop.timeIntervalSince1970), .text(p.title)])
+                try stmt.stepDone()
+            }
+            try db.commit()
+        } catch {
+            db.rollback(); throw error
+        }
+    }
+
+    func epgCount() throws -> Int {
+        let stmt = try db.prepare("SELECT COUNT(*) FROM epg;")
+        defer { stmt.finalize() }
+        return stmt.stepRow() ? Int(stmt.int(0)) : 0
+    }
+
+    func clearEPG() throws { try db.run("DELETE FROM epg;") }
+
+    // MARK: - Stream health
+
+    func allHealth() throws -> [String: StreamStatus] {
+        let stmt = try db.prepare("SELECT stream_url, status FROM stream_health;")
+        defer { stmt.finalize() }
+        var result: [String: StreamStatus] = [:]
+        while stmt.stepRow() {
+            if let url = stmt.string(0) {
+                result[url] = StreamStatus(rawValue: Int(stmt.int(1))) ?? .unknown
+            }
+        }
+        return result
+    }
+
+    func setHealth(streamURL: String, status: StreamStatus, at: Double) throws {
+        try db.run("""
+        INSERT INTO stream_health (stream_url, status, checked_at) VALUES (?, ?, ?)
+        ON CONFLICT(stream_url) DO UPDATE SET status = excluded.status, checked_at = excluded.checked_at;
+        """, [.text(streamURL), .int(Int64(status.rawValue)), .double(at)])
+    }
+
+    /// Resolve a channel's `tvg-id` from its stream URL (for channels rebuilt
+    /// from Favorites/Recents, which don't carry the id).
+    func tvgId(forStreamURL url: String) throws -> String? {
+        let stmt = try db.prepare("""
+        SELECT tvg_id FROM channels
+        WHERE stream_url = ? AND tvg_id IS NOT NULL AND tvg_id <> '' LIMIT 1;
+        """)
+        defer { stmt.finalize() }
+        stmt.bind([.text(url)])
+        guard stmt.stepRow() else { return nil }
+        return stmt.string(0)
+    }
+
+    func nowNext(tvgId: String, at now: Double) throws -> EPGNowNext {
+        let nowStmt = try db.prepare("""
+        SELECT title, start, stop FROM epg
+        WHERE tvg_id = ? AND start <= ? AND stop > ? ORDER BY start DESC LIMIT 1;
+        """)
+        defer { nowStmt.finalize() }
+        nowStmt.bind([.text(tvgId), .double(now), .double(now)])
+        let nowEntry = readEntry(nowStmt)
+
+        let nextStmt = try db.prepare("""
+        SELECT title, start, stop FROM epg
+        WHERE tvg_id = ? AND start > ? ORDER BY start ASC LIMIT 1;
+        """)
+        defer { nextStmt.finalize() }
+        nextStmt.bind([.text(tvgId), .double(now)])
+        let nextEntry = readEntry(nextStmt)
+
+        return EPGNowNext(now: nowEntry, next: nextEntry)
+    }
+
+    private func readEntry(_ stmt: Statement) -> EPGEntry? {
+        guard stmt.stepRow() else { return nil }
+        return EPGEntry(
+            title: stmt.string(0) ?? "",
+            start: Date(timeIntervalSince1970: stmt.double(1)),
+            stop: Date(timeIntervalSince1970: stmt.double(2))
+        )
     }
 
     // MARK: Resume position

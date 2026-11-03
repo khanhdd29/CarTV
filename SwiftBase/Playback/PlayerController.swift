@@ -15,6 +15,8 @@ import Factory
 @MainActor
 final class PlayerController: ObservableObject {
     @Injected(\.userDataRepository) private var userRepo: UserDataRepository
+    @Injected(\.epgRepository) private var epgRepo: EPGRepository
+    @Injected(\.healthCenter) private var healthCenter: HealthCenter
     @Injected(\.app) private var app: AppManager
 
     /// Primary engine (AVPlayer). The view reads `avEngine.player`.
@@ -24,9 +26,13 @@ final class PlayerController: ObservableObject {
     @Published private(set) var index = 0
     /// True while the fallback (VLCKit) engine is driving playback.
     @Published private(set) var usingFallback = false
+    /// Now/next programme for the current channel (empty when no EPG match).
+    @Published private(set) var nowNext = EPGNowNext(now: nil, next: nil)
 
     private var cancellables = Set<AnyCancellable>()
     private var triedFallbackForCurrent = false
+    /// Links that have already failed this session — not retried by auto-failover.
+    private var failedURLs = Set<String>()
 
     // Resume (Continue Watching) state for the current channel.
     private var resumeTarget: Double = 0
@@ -41,11 +47,17 @@ final class PlayerController: ObservableObject {
         avEngine.$state
             .sink { [weak self] state in
                 guard let self else { return }
-                // Resume to the saved position once the stream is ready.
-                if case .playing = state { self.attemptResume() }
-                // Auto-fallback to VLCKit when AVPlayer fails (no-op if not installed).
+                if case .playing = state {
+                    // Resume to the saved position once the stream is ready, and
+                    // record the link as healthy.
+                    self.attemptResume()
+                    if let url = self.current?.streamURL { self.healthCenter.markOnline(url) }
+                }
+                // On failure: try VLCKit (no-op if not installed); if nothing can
+                // take over, mark the link dead and auto-failover to a backup.
                 if case .failed = state, !self.usingFallback, !self.triedFallbackForCurrent {
                     self.tryFallback()
+                    if !self.usingFallback { self.failover() }
                 }
             }
             .store(in: &cancellables)
@@ -64,6 +76,7 @@ final class PlayerController: ObservableObject {
     /// Begin a session with a queue (e.g. a channel list) starting at `startIndex`.
     func start(_ channels: [Channel], at startIndex: Int) {
         guard !channels.isEmpty else { return }
+        failedURLs.removeAll()
         queue = channels
         index = min(max(0, startIndex), channels.count - 1)
         playCurrent()
@@ -73,13 +86,36 @@ final class PlayerController: ObservableObject {
 
     func next() { guard hasNext else { return }; saveCurrentPosition(); index += 1; playCurrent() }
     func previous() { guard hasPrevious else { return }; saveCurrentPosition(); index -= 1; playCurrent() }
-    func retry() { triedFallbackForCurrent = false; usingFallback = false; playCurrent() }
+    func retry() {
+        if let url = current?.streamURL { failedURLs.remove(url) }
+        triedFallbackForCurrent = false; usingFallback = false; playCurrent()
+    }
+
+    // MARK: Auto-failover (Playlist Health, Driver 3)
+
+    /// A dead link just surfaced: flag it and jump to a backup source — another
+    /// channel with the same name that we haven't already failed on.
+    private func failover() {
+        guard let channel = current else { return }
+        healthCenter.markOffline(channel.streamURL)
+        failedURLs.insert(channel.streamURL)
+        guard let alt = alternativeIndex(for: channel) else { return }
+        index = alt
+        playCurrent()
+    }
+
+    /// Index of an untried channel sharing this one's name (a mirror source).
+    private func alternativeIndex(for channel: Channel) -> Int? {
+        let name = channel.name.lowercased()
+        return queue.firstIndex { $0.name.lowercased() == name && !failedURLs.contains($0.streamURL) }
+    }
 
     func stop() {
         saveCurrentPosition()
         avEngine.teardown()
         teardownFallback()
         usingFallback = false
+        nowNext = EPGNowNext(now: nil, next: nil)
         queue = []
         index = 0
     }
@@ -94,6 +130,19 @@ final class PlayerController: ObservableObject {
         avEngine.load(url)
         recordWatch(channel)
         loadResumeTarget(for: channel)
+        loadNowNext(for: channel)
+    }
+
+    /// Look up the current channel's program guide (matched by `tvg-id`).
+    private func loadNowNext(for channel: Channel) {
+        nowNext = EPGNowNext(now: nil, next: nil)
+        let streamURL = channel.streamURL
+        Task {
+            let result = await epgRepo.nowNext(for: channel)
+            // Guard against a late response after the user moved to another channel.
+            guard self.current?.streamURL == streamURL else { return }
+            self.nowNext = result
+        }
     }
 
     private func recordWatch(_ channel: Channel) {

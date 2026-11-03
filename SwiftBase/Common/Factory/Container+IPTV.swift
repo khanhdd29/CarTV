@@ -27,6 +27,19 @@ extension Container {
         Factory(self) { LocalUserDataRepository(store: self.iptvStore()) }.singleton
     }
 
+    var epgRepository: Factory<EPGRepository> {
+        Factory(self) { LocalEPGRepository(store: self.iptvStore()) }.singleton
+    }
+
+    var healthRepository: Factory<HealthRepository> {
+        Factory(self) { LocalHealthRepository(store: self.iptvStore()) }.singleton
+    }
+
+    /// Shared, observable stream-health cache for channel cards + the player.
+    var healthCenter: Factory<HealthCenter> {
+        Factory(self) { @MainActor in HealthCenter() }.singleton
+    }
+
     /// Shared playback session (queue + engine) used by the Player screen.
     var playerController: Factory<PlayerController> {
         Factory(self) { @MainActor in PlayerController() }.singleton
