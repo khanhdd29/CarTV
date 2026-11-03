@@ -9,8 +9,10 @@ import Factory
 struct SettingsScreen: View {
     @StateObject private var viewModel = SettingsViewModel()
     @InjectedObject(\.app) private var app: AppManager
+    @InjectedObject(\.appLock) private var appLock: AppLock
     @EnvironmentObject private var coordinator: AppFlowCoordinator
     @Environment(\.openURL) private var openURL
+    @State private var pinMode: ParentalPinSheet.Mode?
 
     var body: some View {
         ScrollView {
@@ -30,6 +32,18 @@ struct SettingsScreen: View {
                     }
                     toggleRow("hide_dead_channels".localized, icon: "eye.slash.fill",
                               tint: AppColors.favorite, isOn: $app.hideDeadChannels)
+                    Button {
+                        pinMode = appLock.isEnabled ? .disable : .set
+                    } label: {
+                        rowContent("parental_lock".localized, icon: "lock.shield.fill", tint: AppColors.violet) {
+                            HStack(spacing: 6) {
+                                Text((appLock.isEnabled ? "pin_on" : "pin_off").localized)
+                                    .font(.subheadline).foregroundStyle(AppColors.textSecondary)
+                                chevron
+                            }
+                        }
+                    }
+                    .buttonStyle(.plain)
                 }
                 .padding(.horizontal, 16)
 
@@ -68,6 +82,9 @@ struct SettingsScreen: View {
         }
         .scrollIndicators(.hidden)
         .cinematicBackground()
+        .sheet(item: $pinMode) { mode in
+            ParentalPinSheet(mode: mode) { pinMode = nil }
+        }
         .trackScreen(.settings)
     }
 

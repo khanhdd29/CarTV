@@ -155,3 +155,13 @@
 /* QR scanner */
 "scan_qr" = "Quét mã QR";
 "scan_qr_hint" = "Hướng camera vào mã QR chứa liên kết danh sách phát";
+
+/* Parental PIN lock */
+"parental_lock" = "Khoá PIN trẻ em";
+"pin_enter" = "Nhập mã PIN";
+"pin_set" = "Đặt mã PIN";
+"pin_confirm" = "Nhập lại mã PIN";
+"pin_on" = "Bật";
+"pin_off" = "Tắt";
+"pin_set_hint" = "Cần mã PIN này để mở ứng dụng";
+"pin_disable_hint" = "Nhập PIN để tắt khoá";

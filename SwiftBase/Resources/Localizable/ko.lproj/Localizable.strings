@@ -155,3 +155,13 @@
 /* QR scanner */
 "scan_qr" = "QR 코드 스캔";
 "scan_qr_hint" = "재생목록 링크가 담긴 QR 코드에 카메라를 비추세요";
+
+/* Parental PIN lock */
+"parental_lock" = "자녀 보호 잠금";
+"pin_enter" = "PIN 입력";
+"pin_set" = "PIN 설정";
+"pin_confirm" = "PIN 확인";
+"pin_on" = "켜짐";
+"pin_off" = "꺼짐";
+"pin_set_hint" = "This PIN will be needed to open the app";
+"pin_disable_hint" = "Enter your PIN to turn off the lock";

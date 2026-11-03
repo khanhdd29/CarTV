@@ -155,3 +155,13 @@
 /* QR scanner */
 "scan_qr" = "QR कोड स्कैन करें";
 "scan_qr_hint" = "कैमरे को प्लेलिस्ट लिंक वाले QR कोड पर रखें";
+
+/* Parental PIN lock */
+"parental_lock" = "पैरेंटल लॉक";
+"pin_enter" = "पिन दर्ज करें";
+"pin_set" = "पिन सेट करें";
+"pin_confirm" = "पिन की पुष्टि करें";
+"pin_on" = "चालू";
+"pin_off" = "बंद";
+"pin_set_hint" = "This PIN will be needed to open the app";
+"pin_disable_hint" = "Enter your PIN to turn off the lock";

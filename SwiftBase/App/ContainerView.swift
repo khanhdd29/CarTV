@@ -10,6 +10,8 @@ import Factory
 
 struct ContainerView: View {
     @InjectedObject(\.appFlow) private var coordinator: AppFlowCoordinator
+    @InjectedObject(\.appLock) private var appLock: AppLock
+    @Environment(\.scenePhase) private var scenePhase
 
     var body: some View {
         ZStack {
@@ -27,6 +29,14 @@ struct ContainerView: View {
                 HomeTabView()
                     .transition(.opacity)
             }
+
+            if appLock.isLocked {
+                AppLockGate().transition(.opacity).zIndex(10)
+            }
+        }
+        .onChange(of: scenePhase) { phase in
+            // Re-lock when leaving the app so returning needs the PIN.
+            if phase == .background { appLock.lockIfEnabled() }
         }
         .background(AppColors.background.ignoresSafeArea())
         .environmentObject(coordinator)

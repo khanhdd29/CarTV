@@ -40,6 +40,11 @@ extension Container {
         Factory(self) { @MainActor in HealthCenter() }.singleton
     }
 
+    /// Parental PIN lock state.
+    var appLock: Factory<AppLock> {
+        Factory(self) { @MainActor in AppLock() }.singleton
+    }
+
     /// Shared playback session (queue + engine) used by the Player screen.
     var playerController: Factory<PlayerController> {
         Factory(self) { @MainActor in PlayerController() }.singleton

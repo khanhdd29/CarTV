@@ -155,3 +155,13 @@
 /* QR scanner */
 "scan_qr" = "Pindai kode QR";
 "scan_qr_hint" = "Arahkan kamera ke kode QR berisi tautan daftar putar";
+
+/* Parental PIN lock */
+"parental_lock" = "Kunci anak";
+"pin_enter" = "Masukkan PIN";
+"pin_set" = "Buat PIN";
+"pin_confirm" = "Konfirmasi PIN";
+"pin_on" = "Aktif";
+"pin_off" = "Mati";
+"pin_set_hint" = "This PIN will be needed to open the app";
+"pin_disable_hint" = "Enter your PIN to turn off the lock";

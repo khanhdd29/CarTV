@@ -155,3 +155,13 @@
 /* QR scanner */
 "scan_qr" = "QR কোড স্ক্যান করুন";
 "scan_qr_hint" = "প্লেলিস্ট লিঙ্কযুক্ত QR কোডে ক্যামেরা তাক করুন";
+
+/* Parental PIN lock */
+"parental_lock" = "প্যারেন্টাল লক";
+"pin_enter" = "পিন লিখুন";
+"pin_set" = "পিন সেট করুন";
+"pin_confirm" = "পিন নিশ্চিত করুন";
+"pin_on" = "চালু";
+"pin_off" = "বন্ধ";
+"pin_set_hint" = "This PIN will be needed to open the app";
+"pin_disable_hint" = "Enter your PIN to turn off the lock";

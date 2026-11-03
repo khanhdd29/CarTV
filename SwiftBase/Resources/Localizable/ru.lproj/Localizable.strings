@@ -155,3 +155,13 @@
 /* QR scanner */
 "scan_qr" = "Сканировать QR-код";
 "scan_qr_hint" = "Наведите камеру на QR-код со ссылкой на плейлист";
+
+/* Parental PIN lock */
+"parental_lock" = "Родительский контроль";
+"pin_enter" = "Введите PIN";
+"pin_set" = "Задайте PIN";
+"pin_confirm" = "Подтвердите PIN";
+"pin_on" = "Вкл.";
+"pin_off" = "Выкл.";
+"pin_set_hint" = "This PIN will be needed to open the app";
+"pin_disable_hint" = "Enter your PIN to turn off the lock";

@@ -155,3 +155,13 @@
 /* QR scanner */
 "scan_qr" = "Escanear código QR";
 "scan_qr_hint" = "Apunta la cámara a un código QR con un enlace de lista";
+
+/* Parental PIN lock */
+"parental_lock" = "Bloqueo parental";
+"pin_enter" = "Introduce el PIN";
+"pin_set" = "Crea un PIN";
+"pin_confirm" = "Confirma el PIN";
+"pin_on" = "Activado";
+"pin_off" = "Desactivado";
+"pin_set_hint" = "This PIN will be needed to open the app";
+"pin_disable_hint" = "Enter your PIN to turn off the lock";
