@@ -151,3 +151,7 @@
 "player_pip" = "पिक्चर इन पिक्चर";
 "player_subtitles" = "उपशीर्षक";
 "player_audio" = "ऑडियो";
+
+/* QR scanner */
+"scan_qr" = "QR कोड स्कैन करें";
+"scan_qr_hint" = "कैमरे को प्लेलिस्ट लिंक वाले QR कोड पर रखें";

@@ -151,3 +151,7 @@
 "player_pip" = "Thu nhỏ màn hình";
 "player_subtitles" = "Phụ đề";
 "player_audio" = "Âm thanh";
+
+/* QR scanner */
+"scan_qr" = "Quét mã QR";
+"scan_qr_hint" = "Hướng camera vào mã QR chứa liên kết danh sách phát";

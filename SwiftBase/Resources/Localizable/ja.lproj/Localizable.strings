@@ -151,3 +151,7 @@
 "player_pip" = "ピクチャ・イン・ピクチャ";
 "player_subtitles" = "字幕";
 "player_audio" = "音声";
+
+/* QR scanner */
+"scan_qr" = "QRコードをスキャン";
+"scan_qr_hint" = "プレイリストのリンクが入ったQRコードにカメラを向けてください";

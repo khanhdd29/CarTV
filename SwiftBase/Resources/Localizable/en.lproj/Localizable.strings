@@ -151,3 +151,7 @@
 "player_pip" = "Picture in Picture";
 "player_subtitles" = "Subtitles";
 "player_audio" = "Audio";
+
+/* QR scanner */
+"scan_qr" = "Scan QR code";
+"scan_qr_hint" = "Point the camera at a QR code with a playlist link";

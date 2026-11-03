@@ -151,3 +151,7 @@
 "player_pip" = "Resim içinde resim";
 "player_subtitles" = "Altyazılar";
 "player_audio" = "Ses";
+
+/* QR scanner */
+"scan_qr" = "QR kodu tara";
+"scan_qr_hint" = "Kamerayı oynatma listesi bağlantısı içeren bir QR koda doğrult";

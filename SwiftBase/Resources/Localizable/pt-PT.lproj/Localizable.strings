@@ -151,3 +151,7 @@
 "player_pip" = "Imagem na imagem";
 "player_subtitles" = "Legendas";
 "player_audio" = "Áudio";
+
+/* QR scanner */
+"scan_qr" = "Ler código QR";
+"scan_qr_hint" = "Aponte a câmara para um código QR com a ligação da lista";

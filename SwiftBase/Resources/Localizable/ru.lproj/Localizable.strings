@@ -151,3 +151,7 @@
 "player_pip" = "Картинка в картинке";
 "player_subtitles" = "Субтитры";
 "player_audio" = "Звук";
+
+/* QR scanner */
+"scan_qr" = "Сканировать QR-код";
+"scan_qr_hint" = "Наведите камеру на QR-код со ссылкой на плейлист";

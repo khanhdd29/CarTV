@@ -10,6 +10,8 @@
 	</dict>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Allow access so you can add videos from your library to play in the app.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Allow camera access to scan a QR code that contains a playlist link.</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<!-- Keep audio playing + enable Picture in Picture when backgrounded. -->

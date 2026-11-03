@@ -15,6 +15,7 @@ struct AddPlaylistScreen: View {
 
     @State private var showFileImporter = false
     @State private var pickedVideos: [PhotosPickerItem] = []
+    @State private var showQRScanner = false
 
     var body: some View {
         VStack(spacing: 0) {
@@ -60,6 +61,12 @@ struct AddPlaylistScreen: View {
         .onChange(of: pickedVideos) { items in
             viewModel.importVideos(items)
             pickedVideos = []
+        }
+        .sheet(isPresented: $showQRScanner) {
+            QRScannerSheet { scanned in
+                viewModel.urlText = scanned
+                showQRScanner = false
+            } onCancel: { showQRScanner = false }
         }
         .trackScreen(.addPlaylist)
     }
@@ -122,6 +129,12 @@ struct AddPlaylistScreen: View {
         VStack(alignment: .leading, spacing: 16) {
             fieldLabel("playlist_url".localized)
             darkField("https://…/playlist.m3u", text: $viewModel.urlText, axis: true)
+            Button { showQRScanner = true } label: {
+                Label("scan_qr".localized, systemImage: "qrcode.viewfinder")
+                    .font(.subheadline.weight(.medium))
+                    .foregroundStyle(AppColors.secondary)
+            }
+            .buttonStyle(.plain)
             fieldLabel("playlist_name".localized)
             darkField("playlist_name".localized, text: $viewModel.nameText)
             GradientButton("add", systemImage: "arrow.down.circle.fill") { viewModel.addURL() }

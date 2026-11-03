@@ -151,3 +151,7 @@
 "player_pip" = "Picture in Picture";
 "player_subtitles" = "Subtitel";
 "player_audio" = "Audio";
+
+/* QR scanner */
+"scan_qr" = "Pindai kode QR";
+"scan_qr_hint" = "Arahkan kamera ke kode QR berisi tautan daftar putar";

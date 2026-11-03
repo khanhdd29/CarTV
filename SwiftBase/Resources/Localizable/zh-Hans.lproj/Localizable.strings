@@ -151,3 +151,7 @@
 "player_pip" = "画中画";
 "player_subtitles" = "字幕";
 "player_audio" = "音轨";
+
+/* QR scanner */
+"scan_qr" = "扫描二维码";
+"scan_qr_hint" = "将摄像头对准含播放列表链接的二维码";

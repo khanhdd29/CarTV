@@ -151,3 +151,7 @@
 "player_pip" = "PIP 모드";
 "player_subtitles" = "자막";
 "player_audio" = "오디오";
+
+/* QR scanner */
+"scan_qr" = "QR 코드 스캔";
+"scan_qr_hint" = "재생목록 링크가 담긴 QR 코드에 카메라를 비추세요";
