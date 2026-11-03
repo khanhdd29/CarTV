@@ -21,11 +21,6 @@ struct IntroView: View {
     private let pages = IntroPage.all
     private var isLast: Bool { index == pages.count - 1 }
 
-    private var showSkip: Bool {
-        let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
-        return version == "1.0.0"
-    }
-
     #if MONETIZATION_ENABLED
     @State private var nativeIntro1VM: NativeAdViewModel?
     @State private var nativeIntro3VM: NativeAdViewModel?
@@ -51,7 +46,6 @@ struct IntroView: View {
 
             bottomBar
         }
-        .overlay(alignment: .top) { skipBar }
         .background(Color.black)
         #if MONETIZATION_ENABLED
         .onAppear { loadAds() }
@@ -136,21 +130,6 @@ struct IntroView: View {
                 .shadow(color: AppColors.primary.opacity(0.5), radius: 16, y: 8)
         }
         .buttonStyle(.plain)
-    }
-
-    private var skipBar: some View {
-        HStack {
-            Spacer()
-            Button("skip".localized) { coordinator.finishOnboarding() }
-                .font(.subheadline.weight(.semibold))
-                .foregroundStyle(.white.opacity(0.9))
-                .padding(.horizontal, 14).padding(.vertical, 8)
-                .background(.black.opacity(0.28), in: Capsule())
-                .opacity(showSkip && !isLast ? 1 : 0)
-                .disabled(!showSkip || isLast)
-        }
-        .padding(.horizontal, 16)
-        .padding(.top, 10)
     }
 
     #if MONETIZATION_ENABLED
