@@ -61,35 +61,55 @@ struct ManagePlaylistsScreen: View {
     }
 
     private func card(_ playlist: PlaylistRef) -> some View {
-        HStack(spacing: 12) {
-            Image(systemName: "list.and.film")
-                .font(.headline)
-                .foregroundStyle(AppColors.primary)
-                .frame(width: 42, height: 42)
-                .background(AppColors.primarySoft, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+        VStack(alignment: .leading, spacing: 10) {
+            HStack(spacing: 12) {
+                Image(systemName: "list.and.film")
+                    .font(.headline)
+                    .foregroundStyle(AppColors.primary)
+                    .frame(width: 42, height: 42)
+                    .background(AppColors.primarySoft, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
 
-            VStack(alignment: .leading, spacing: 3) {
-                Text(playlist.name).font(.subheadline.weight(.semibold))
-                    .foregroundStyle(AppColors.textPrimary).lineLimit(1)
-                Text(String(format: "channel_count".localized, playlist.channelCount))
-                    .font(.caption).foregroundStyle(AppColors.textTertiary)
-            }
-            Spacer()
+                VStack(alignment: .leading, spacing: 3) {
+                    Text(playlist.name).font(.subheadline.weight(.semibold))
+                        .foregroundStyle(AppColors.textPrimary).lineLimit(1)
+                    Text(String(format: "channel_count".localized, playlist.channelCount))
+                        .font(.caption).foregroundStyle(AppColors.textTertiary)
+                }
+                Spacer()
 
-            if viewModel.refreshingId == playlist.id {
-                ProgressView().tint(AppColors.secondary)
-            } else {
-                Button { viewModel.refresh(playlist) } label: {
-                    Image(systemName: "arrow.clockwise").foregroundStyle(AppColors.secondary)
+                if viewModel.checkingId == playlist.id {
+                    ProgressView().tint(AppColors.violet).frame(width: 36, height: 36)
+                } else {
+                    Button { viewModel.checkHealth(playlist) } label: {
+                        Image(systemName: "waveform.path.ecg").foregroundStyle(AppColors.violet)
+                            .frame(width: 36, height: 36)
+                    }
+                    .buttonStyle(.plain)
+                    .disabled(viewModel.checkingId != nil)
+                }
+
+                if viewModel.refreshingId == playlist.id {
+                    ProgressView().tint(AppColors.secondary).frame(width: 36, height: 36)
+                } else {
+                    Button { viewModel.refresh(playlist) } label: {
+                        Image(systemName: "arrow.clockwise").foregroundStyle(AppColors.secondary)
+                            .frame(width: 36, height: 36)
+                    }
+                    .buttonStyle(.plain)
+                }
+                Button { pendingDelete = playlist } label: {
+                    Image(systemName: "trash").foregroundStyle(AppColors.destructive)
                         .frame(width: 36, height: 36)
                 }
                 .buttonStyle(.plain)
             }
-            Button { pendingDelete = playlist } label: {
-                Image(systemName: "trash").foregroundStyle(AppColors.destructive)
-                    .frame(width: 36, height: 36)
+
+            if viewModel.checkingId == playlist.id {
+                Text("health_checking".localized)
+                    .font(.caption).foregroundStyle(AppColors.textTertiary)
+            } else if let s = viewModel.healthSummary[playlist.id] {
+                healthSummaryRow(s)
             }
-            .buttonStyle(.plain)
         }
         .padding(10)
         .background(
@@ -97,6 +117,22 @@ struct ManagePlaylistsScreen: View {
                 .fill(AppColors.surface.opacity(0.75))
                 .overlay(RoundedRectangle(cornerRadius: 16, style: .continuous).stroke(AppColors.border, lineWidth: 1))
         )
+    }
+
+    private func healthSummaryRow(_ s: (online: Int, offline: Int)) -> some View {
+        HStack(spacing: 14) {
+            countPill(AppColors.success, String(format: "health_online_n".localized, s.online))
+            countPill(AppColors.favorite, String(format: "health_offline_n".localized, s.offline))
+            Spacer()
+        }
+        .font(.caption.weight(.medium))
+    }
+
+    private func countPill(_ color: Color, _ text: String) -> some View {
+        HStack(spacing: 6) {
+            Circle().fill(color).frame(width: 8, height: 8)
+            Text(text).foregroundStyle(AppColors.textSecondary)
+        }
     }
 
     private var emptyState: some View {

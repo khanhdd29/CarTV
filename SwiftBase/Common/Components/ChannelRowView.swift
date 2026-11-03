@@ -7,8 +7,10 @@
 //
 
 import SwiftUI
+import Factory
 
 struct ChannelRowView: View {
+    @InjectedObject(\.healthCenter) private var health: HealthCenter
     let channel: Channel
     let isFavourite: Bool
     var showFavourite: Bool = true
@@ -70,5 +72,8 @@ struct ChannelRowView: View {
         .frame(width: 58, height: 42)
         .background(AppColors.surfaceElevated, in: RoundedRectangle(cornerRadius: 10, style: .continuous))
         .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+        .overlay(alignment: .bottomTrailing) {
+            HealthDot(status: health.status(for: channel.streamURL)).padding(4)
+        }
     }
 }

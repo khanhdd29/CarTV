@@ -6,8 +6,10 @@
 //
 
 import SwiftUI
+import Factory
 
 struct ChannelCard: View {
+    @InjectedObject(\.healthCenter) private var health: HealthCenter
     let channel: Channel
     var isFavourite: Bool = false
     var onPlay: () -> Void
@@ -82,6 +84,9 @@ struct ChannelCard: View {
             .padding(8)
         }
         .frame(width: width, height: 94)
+        .overlay(alignment: .topLeading) {
+            HealthDot(status: health.status(for: channel.streamURL)).padding(8)
+        }
     }
 }
 
