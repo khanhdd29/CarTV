@@ -43,4 +43,20 @@ enum KeychainStore {
         ]
         SecItemDelete(query as CFDictionary)
     }
+
+    /// Remove every generic-password item the app owns.
+    static func deleteAll() {
+        SecItemDelete([kSecClass as String: kSecClassGenericPassword] as CFDictionary)
+    }
+
+    /// The Keychain survives deleting the app, so a reinstall can inherit an old
+    /// parental PIN (and stale Xtream logins). On the first launch after an
+    /// install — detected via a UserDefaults flag, which *is* cleared when the app
+    /// is deleted — wipe the app's Keychain once so a fresh install starts clean.
+    static func wipeIfFreshInstall() {
+        let flag = "klyra.freshInstallKeychainWiped"
+        guard !UserDefaults.standard.bool(forKey: flag) else { return }
+        deleteAll()
+        UserDefaults.standard.set(true, forKey: flag)
+    }
 }

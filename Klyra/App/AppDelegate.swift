@@ -21,6 +21,9 @@ final class AppDelegate: NSObject, UIApplicationDelegate {
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil
     ) -> Bool {
+        // Keychain outlives an app delete; drop any stale secrets (parental PIN,
+        // Xtream logins) on the first launch after a fresh install.
+        KeychainStore.wipeIfFreshInstall()
         #if MONETIZATION_ENABLED
         configureFirebase()
         // Ad SDKs (MobileAds, Facebook, Adjust) are wired from SplashView.
