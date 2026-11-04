@@ -2,30 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<!-- No non-exempt encryption → skips the Export Compliance prompt on every upload. -->
-	<key>ITSAppUsesNonExemptEncryption</key>
-	<false/>
-	<key>NSAppTransportSecurity</key>
-	<dict>
-		<!-- IPTV streams are frequently served over plain HTTP; allow them. -->
-		<key>NSAllowsArbitraryLoads</key>
-		<true/>
-	</dict>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Allow access so you can add videos from your library to play in the app.</string>
-	<key>NSCameraUsageDescription</key>
-	<string>Allow camera access to scan a QR code that contains a playlist link.</string>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>Allow microphone access to search for channels by voice.</string>
-	<key>NSSpeechRecognitionUsageDescription</key>
-	<string>Allow speech recognition to turn your voice into a channel search.</string>
-	<key>UIBackgroundModes</key>
-	<array>
-		<!-- Keep audio playing + enable Picture in Picture when backgrounded. -->
-		<string>audio</string>
-		<!-- Periodic background health re-probe (BGTaskScheduler). -->
-		<string>processing</string>
-	</array>
 	<key>BGTaskSchedulerPermittedIdentifiers</key>
 	<array>
 		<string>com.klyra.iptv.player.health</string>
@@ -49,8 +25,11 @@
 	<string>a6badfa7c71e45c55352353671039509</string>
 	<key>GADApplicationIdentifier</key>
 	<string>ca-app-pub-5965765613398032~6880278315</string>
-	<key>NSUserTrackingUsageDescription</key>
-	<string>We use your data to show you more relevant ads. Your choice is respected and you can change it anytime in Settings.</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 	<key>SKAdNetworkItems</key>
 	<array>
 		<dict>
@@ -647,6 +626,11 @@
 		<key>UIApplicationSupportsMultipleScenes</key>
 		<false/>
 	</dict>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>audio</string>
+		<string>processing</string>
+	</array>
 	<key>UILaunchScreen</key>
 	<dict/>
 </dict>

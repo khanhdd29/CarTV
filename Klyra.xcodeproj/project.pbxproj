@@ -17,30 +17,30 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		3A1F00010000000000000060 /* Exceptions for "SwiftBase" folder in "SwiftBase" target */ = {
+		3A1F00010000000000000060 /* Exceptions for "Klyra" folder in "Klyra" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				"Resources/GoogleService-Info-dev.plist",
 				Resources/Info.plist,
 			);
-			target = 3A1F00010000000000000008 /* SwiftBase */;
+			target = 3A1F00010000000000000008 /* Klyra */;
 		};
-		3A1F00010000000000000061 /* Exceptions for "SwiftBase" folder in "SwiftBase-dev" target */ = {
+		3A1F00010000000000000061 /* Exceptions for "Klyra" folder in "Klyra-dev" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				"Resources/GoogleService-Info.plist",
 				Resources/Info.plist,
 			);
-			target = 3A1F00010000000000000050 /* SwiftBase-dev */;
+			target = 3A1F00010000000000000050 /* Klyra-dev */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		5F246F362FE3A1E300F2A107 /* SwiftBase */ = {
+		5F246F362FE3A1E300F2A107 /* Klyra */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				3A1F00010000000000000060 /* Exceptions for "SwiftBase" folder in "SwiftBase" target */,
-				3A1F00010000000000000061 /* Exceptions for "SwiftBase" folder in "SwiftBase-dev" target */,
+				3A1F00010000000000000060 /* Exceptions for "Klyra" folder in "Klyra" target */,
+				3A1F00010000000000000061 /* Exceptions for "Klyra" folder in "Klyra-dev" target */,
 			);
 			path = Klyra;
 			sourceTree = "<group>";
@@ -70,7 +70,7 @@
 		3A1F00010000000000000006 = {
 			isa = PBXGroup;
 			children = (
-				5F246F362FE3A1E300F2A107 /* SwiftBase */,
+				5F246F362FE3A1E300F2A107 /* Klyra */,
 				5F02779D2FE3EF0000CFAE5F /* Frameworks */,
 				3A1F00010000000000000007 /* Products */,
 			);
@@ -95,9 +95,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3A1F00010000000000000008 /* SwiftBase */ = {
+		3A1F00010000000000000008 /* Klyra */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3A1F00010000000000000009 /* Build configuration list for PBXNativeTarget "SwiftBase" */;
+			buildConfigurationList = 3A1F00010000000000000009 /* Build configuration list for PBXNativeTarget "Klyra" */;
 			buildPhases = (
 				3A1F0001000000000000000A /* Sources */,
 				3A1F00010000000000000005 /* Frameworks */,
@@ -108,7 +108,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				5F246F362FE3A1E300F2A107 /* SwiftBase */,
+				5F246F362FE3A1E300F2A107 /* Klyra */,
 			);
 			name = Klyra;
 			packageProductDependencies = (
@@ -118,9 +118,9 @@
 			productReference = 3A1F00010000000000000001 /* Klyra.app */;
 			productType = "com.apple.product-type.application";
 		};
-		3A1F00010000000000000050 /* SwiftBase-dev */ = {
+		3A1F00010000000000000050 /* Klyra-dev */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3A1F00010000000000000051 /* Build configuration list for PBXNativeTarget "SwiftBase-dev" */;
+			buildConfigurationList = 3A1F00010000000000000051 /* Build configuration list for PBXNativeTarget "Klyra-dev" */;
 			buildPhases = (
 				3A1F00010000000000000054 /* Sources */,
 				3A1F00010000000000000055 /* Frameworks */,
@@ -131,7 +131,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				5F246F362FE3A1E300F2A107 /* SwiftBase */,
+				5F246F362FE3A1E300F2A107 /* Klyra */,
 			);
 			name = "Klyra-dev";
 			packageProductDependencies = (
@@ -159,7 +159,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 3A1F0001000000000000000D /* Build configuration list for PBXProject "SwiftBase" */;
+			buildConfigurationList = 3A1F0001000000000000000D /* Build configuration list for PBXProject "Klyra" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -191,8 +191,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3A1F00010000000000000008 /* SwiftBase */,
-				3A1F00010000000000000050 /* SwiftBase-dev */,
+				3A1F00010000000000000008 /* Klyra */,
+				3A1F00010000000000000050 /* Klyra-dev */,
 			);
 		};
 /* End PBXProject section */
@@ -358,10 +358,16 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UNSD9D5G4B;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Klyra/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Klyra IPTV";
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Allow camera access to scan a QR code that contains a playlist link.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Allow microphone access to search for channels by voice.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Allow access so you can add videos from your library to play in the app.";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Allow speech recognition to turn your voice into a channel search.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
@@ -385,10 +391,16 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UNSD9D5G4B;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Klyra/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Klyra IPTV";
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Allow camera access to scan a QR code that contains a playlist link.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Allow microphone access to search for channels by voice.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Allow access so you can add videos from your library to play in the app.";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Allow speech recognition to turn your voice into a channel search.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
@@ -464,7 +476,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3A1F00010000000000000009 /* Build configuration list for PBXNativeTarget "SwiftBase" */ = {
+		3A1F00010000000000000009 /* Build configuration list for PBXNativeTarget "Klyra" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3A1F00010000000000000011 /* Debug */,
@@ -473,7 +485,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3A1F0001000000000000000D /* Build configuration list for PBXProject "SwiftBase" */ = {
+		3A1F0001000000000000000D /* Build configuration list for PBXProject "Klyra" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3A1F0001000000000000000E /* Debug */,
@@ -482,7 +494,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3A1F00010000000000000051 /* Build configuration list for PBXNativeTarget "SwiftBase-dev" */ = {
+		3A1F00010000000000000051 /* Build configuration list for PBXNativeTarget "Klyra-dev" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3A1F00010000000000000052 /* Debug */,
